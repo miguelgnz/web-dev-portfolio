@@ -1,3 +1,12 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "eqeqeq": "error",
+    "curly": "error",
+    "react/jsx-max-props-per-line": [1, {"maximum": 1, "when": "always"}]
+  }
 }
