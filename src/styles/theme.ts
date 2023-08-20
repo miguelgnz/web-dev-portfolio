@@ -1,24 +1,48 @@
-import { createTheme } from "@mui/material/styles";
-import { orange } from "@mui/material/colors";
+import { PaletteOptions, createTheme } from "@mui/material/styles";
+import { Source_Code_Pro } from "next/font/google";
 
-declare module "@mui/material/styles" {
-  interface Theme {
-    status: {
-      danger: string;
-    };
-  }
+const sourceCodePro = Source_Code_Pro({
+  style: "normal",
+  subsets: ["latin"],
+});
 
-  interface ThemeOptions {
-    status?: {
-      danger?: string;
-    };
-  }
+
+interface CustomPaletteSettings extends PaletteOptions {
+  texts?: {
+    main: string;
+  };
 }
 
 const theme = createTheme({
-  status: {
-    danger: orange[500],
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 840,
+      lg: 1200,
+      xl: 1536,
+    },
   },
+  palette: {
+    primary: {
+      main: "#A6C46C",
+    },
+    secondary: {
+      main: "#F68B6B",
+    },
+    texts: {
+      main: "#FFFFFF",
+    },
+    accent: {
+      main: "#8D8D8D",
+    },
+    background: {
+      default: "#011627",
+    },
+  } as CustomPaletteSettings,
+  typography: {
+    fontFamily: sourceCodePro.style.fontFamily
+  }
 });
 
 export default theme;
