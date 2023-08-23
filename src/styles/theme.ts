@@ -6,7 +6,6 @@ const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
 });
 
-
 interface CustomPaletteSettings extends PaletteOptions {
   texts?: {
     main: string;
@@ -41,8 +40,8 @@ const theme = createTheme({
     },
   } as CustomPaletteSettings,
   typography: {
-    fontFamily: sourceCodePro.style.fontFamily
-  }
+    fontFamily: sourceCodePro.style.fontFamily,
+  },
 });
 
 export default theme;

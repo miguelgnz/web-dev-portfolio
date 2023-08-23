@@ -1,14 +1,7 @@
-import { styled } from '@mui/material'
-
-const StyledComponent = styled('div')(({ theme }) => ({
-  display: 'flex',
-  [theme.breakpoints.down('sm')]: {
-    display: 'none'
-  }
-}));
+import Layout from "@/styles/Layout";
 
 const HomePage = () => {
-  return <div>This is the H page, layout is soposed to be here</div>;
+  return <Layout>{null}</Layout>;
 };
 
 export default HomePage;
