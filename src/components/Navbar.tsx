@@ -1,6 +1,7 @@
 import {
   AppBar,
   Box,
+  Button,
   IconButton,
   Typography,
   Toolbar,
@@ -10,6 +11,7 @@ import {
 } from "@mui/material";
 import { FiMenu } from "react-icons/fi";
 import { FaCode } from "react-icons/fa";
+import { IoDocumentTextOutline } from "react-icons/io5";
 import Link from "next/link";
 import { menuData } from "@/utils/data";
 import { useState } from "react";
@@ -23,6 +25,7 @@ const StyledAppbar = styled(AppBar)(({ theme }) => ({
 
 const LinksWrapper = styled("div")(({ theme }) => ({
   display: "flex",
+  alignItems: "center",
   gap: "24px",
   [theme.breakpoints.down("md")]: {
     display: "none",
@@ -32,13 +35,19 @@ const LinksWrapper = styled("div")(({ theme }) => ({
 const StyledLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
   "& > p": {
-    fontSize: "18px",
+    fontSize: "16px",
     color: "#FFF",
   },
   "& :hover": {
     color: theme.palette.primary.main,
   },
   [theme.breakpoints.down("sm")]: {},
+}));
+
+const ResumeButton = styled(Button)(({ theme }) => ({
+  borderRadius: "30px",
+  width: "130px",
+  [theme.breakpoints.down("md")]: {},
 }));
 
 const Navbar = () => {
@@ -84,6 +93,12 @@ const Navbar = () => {
             {menuData.menu.items.map((item) => {
               return <MenuItem key={item.id}>{item.text}</MenuItem>;
             })}
+            <ResumeButton
+              variant="contained"
+              startIcon={<IoDocumentTextOutline />}
+            >
+              Resume
+            </ResumeButton>
           </Menu>
         </Box>
         <LinksWrapper>
@@ -94,6 +109,12 @@ const Navbar = () => {
               </StyledLink>
             );
           })}
+          <ResumeButton
+            variant="outlined"
+            startIcon={<IoDocumentTextOutline />}
+          >
+            Resume
+          </ResumeButton>
         </LinksWrapper>
       </Toolbar>
     </StyledAppbar>
