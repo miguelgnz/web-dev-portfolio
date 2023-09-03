@@ -1,7 +1,12 @@
 import Layout from "@/styles/Layout";
+import HomePageBody from "@/components/HomePageBody";
 
 const HomePage = () => {
-  return <Layout>{null}</Layout>;
+  return (
+    <Layout>
+      <HomePageBody />
+    </Layout>
+  );
 };
 
 export default HomePage;
