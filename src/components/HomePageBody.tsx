@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import ExperienceSection from "./ExperienceSection";
+import ExperienceSection from "@/components/ExperienceSection";
 
 const HomePageBody = () => {
   return (

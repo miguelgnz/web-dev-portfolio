@@ -1,11 +1,24 @@
-import { Tab, Tabs, Box, Typography, styled, Chip } from "@mui/material";
+import {
+  Tab,
+  Tabs,
+  Box,
+  Typography,
+  styled,
+  Chip,
+  useTheme,
+} from "@mui/material";
 import { useState } from "react";
 import { experienceData } from "@/utils/data";
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  [theme.breakpoints.down("md")]: {},
+  width: "80%",
+  paddingLeft: "10rem",
+  [theme.breakpoints.down("md")]: {
+    paddingLeft: "1px",
+    width: "100%",
+  },
 }));
 
 const TitleTypography = styled(Typography)(({ theme }) => ({
@@ -14,16 +27,21 @@ const TitleTypography = styled(Typography)(({ theme }) => ({
   fontStyle: "normal",
   fontWeight: 700,
   lineHeight: "30px",
-  letterSpacing: "0.15px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "16px",
+  },
 }));
 
 const DatesTypography = styled(Typography)(({ theme }) => ({
   fontSize: "16px",
   color: "#FFF",
   fontStyle: "normal",
-  fontWeight: 400,
+  fontWeight: 600,
   lineHeight: "24px",
   letterSpacing: "0.15px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "12px",
+  },
 }));
 
 const DescriptionTypography = styled(Typography)(({ theme }) => ({
@@ -33,11 +51,17 @@ const DescriptionTypography = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   lineHeight: "27px",
   letterSpacing: "0.15px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "14px",
+  },
 }));
 
 const ChipsWrapper = styled("div")(({ theme }) => ({
   display: "flex",
-  [theme.breakpoints.down("md")]: {},
+  flexWrap: "wrap",
+  [theme.breakpoints.down("md")]: {
+    rowGap: "10px",
+  },
 }));
 
 const StyledChip = styled(Chip)(({ theme }) => ({
@@ -48,6 +72,7 @@ const StyledChip = styled(Chip)(({ theme }) => ({
 
 interface TabPanelProps {
   children?: React.ReactNode;
+  dir?: string;
   index: number;
   value: number;
 }
@@ -59,8 +84,8 @@ function CustomTabPanel(props: TabPanelProps) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      id={`full-width-tabpanel-${index}`}
+      aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -81,31 +106,32 @@ function CustomTabPanel(props: TabPanelProps) {
 
 const ExperienceTabs = () => {
   const [value, setValue] = useState(0);
+  const theme = useTheme();
+
+  const handleChangeIndex = (index: number) => {
+    setValue(index);
+  };
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        width: "80%",
-        paddingLeft: "10rem",
-      }}
-    >
+    <MainContainer>
       <Tabs
+        aria-label="experience tabs"
+        textColor="primary"
+        indicatorColor="primary"
+        variant="scrollable"
         value={value}
         onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        aria-label="experience tabs"
       >
         {experienceData.map((exp) => {
           return (
             <Tab
               sx={{
                 color: "texts.main",
+                fontSize: { xs: "13px", md: "16px" },
               }}
               label={exp.company}
               key={exp.id}
@@ -115,7 +141,7 @@ const ExperienceTabs = () => {
       </Tabs>
       {experienceData.map((exp) => {
         return (
-          <CustomTabPanel value={value} index={exp.id} key={exp.id}>
+          <CustomTabPanel key={exp.id} value={value} index={exp.id}>
             <Box
               sx={{
                 display: "flex",
@@ -162,7 +188,7 @@ const ExperienceTabs = () => {
           </CustomTabPanel>
         );
       })}
-    </Box>
+    </MainContainer>
   );
 };
 
