@@ -10,6 +10,9 @@ interface CustomPaletteSettings extends PaletteOptions {
   texts?: {
     main: string;
   };
+  accent?: {
+    main: string;
+  };
 }
 
 const theme = createTheme({
