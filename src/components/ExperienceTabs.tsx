@@ -13,8 +13,11 @@ import { experienceData } from "@/utils/data";
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  width: "80%",
-  paddingLeft: "10rem",
+  width: "65%",
+  paddingLeft: "2rem",
+  [theme.breakpoints.down("lg")]: {
+    width: "80%",
+  },
   [theme.breakpoints.down("md")]: {
     paddingLeft: "1px",
     width: "100%",
@@ -67,7 +70,12 @@ const ChipsWrapper = styled("div")(({ theme }) => ({
 const StyledChip = styled(Chip)(({ theme }) => ({
   color: theme.palette.secondary.main,
   border: `1px solid ${theme.palette.secondary.main}`,
-  [theme.breakpoints.down("md")]: {},
+}));
+
+const StyledTabs = styled(Tabs)(({ theme }) => ({
+  ["& .MuiTabs-scrollButtons"]: {
+    color: "#FFF",
+  },
 }));
 
 interface TabPanelProps {
@@ -91,7 +99,7 @@ function CustomTabPanel(props: TabPanelProps) {
       {value === index && (
         <Box
           sx={{
-            p: 3,
+            padding: "30px 30px 10px 10px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -117,78 +125,88 @@ const ExperienceTabs = () => {
   };
 
   return (
-    <MainContainer>
-      <Tabs
-        aria-label="experience tabs"
-        textColor="primary"
-        indicatorColor="primary"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-      >
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+      }}
+    >
+      <MainContainer>
+        <StyledTabs
+          aria-label="experience tabs"
+          textColor="primary"
+          indicatorColor="primary"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+        >
+          {experienceData.map((exp) => {
+            return (
+              <Tab
+                sx={{
+                  color: "texts.main",
+                  fontSize: { xs: "13px", md: "16px" },
+                }}
+                label={exp.company}
+                key={exp.id}
+              />
+            );
+          })}
+        </StyledTabs>
         {experienceData.map((exp) => {
           return (
-            <Tab
-              sx={{
-                color: "texts.main",
-                fontSize: { xs: "13px", md: "16px" },
-              }}
-              label={exp.company}
-              key={exp.id}
-            />
+            <CustomTabPanel key={exp.id} value={value} index={exp.id}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "48px",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "18px",
+                  }}
+                >
+                  <TitleTypography>
+                    {`${exp.title} @ ${exp.company}`}
+                  </TitleTypography>
+                  <DatesTypography>
+                    {`${exp.startDate} - ${exp.endDate}`}
+                  </DatesTypography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "29px",
+                  }}
+                >
+                  <DescriptionTypography>
+                    {exp.description}
+                  </DescriptionTypography>
+                  <ChipsWrapper>
+                    {exp.skills.map((skill, index) => {
+                      return (
+                        <StyledChip
+                          label={skill}
+                          key={index}
+                          variant="outlined"
+                          sx={{ mr: 1 }}
+                        />
+                      );
+                    })}
+                  </ChipsWrapper>
+                </Box>
+              </Box>
+            </CustomTabPanel>
           );
         })}
-      </Tabs>
-      {experienceData.map((exp) => {
-        return (
-          <CustomTabPanel key={exp.id} value={value} index={exp.id}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "48px",
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "18px",
-                }}
-              >
-                <TitleTypography>
-                  {`${exp.title} @ ${exp.company}`}
-                </TitleTypography>
-                <DatesTypography>
-                  {`${exp.startDate} - ${exp.endDate}`}
-                </DatesTypography>
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "29px",
-                }}
-              >
-                <DescriptionTypography>{exp.description}</DescriptionTypography>
-                <ChipsWrapper>
-                  {exp.skills.map((skill, index) => {
-                    return (
-                      <StyledChip
-                        label={skill}
-                        key={index}
-                        variant="outlined"
-                        sx={{ mr: 1 }}
-                      />
-                    );
-                  })}
-                </ChipsWrapper>
-              </Box>
-            </Box>
-          </CustomTabPanel>
-        );
-      })}
-    </MainContainer>
+      </MainContainer>
+    </Box>
   );
 };
 
