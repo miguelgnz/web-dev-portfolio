@@ -1,5 +1,6 @@
-import { Typography, styled } from "@mui/material";
-import ExperienceTabs from "./ExperienceTabs";
+import { styled } from "@mui/material";
+import ExperienceTabs from "@/components/ExperienceTabs";
+import HomeSubtitle from "@/components/HomeSubtitle";
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
@@ -9,19 +10,10 @@ const MainContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {},
 }));
 
-const SubtitleTypography = styled(Typography)(({ theme }) => ({
-  fontSize: "25px",
-  color: "#8D8D8D",
-  fontStyle: "normal",
-  fontWeight: 700,
-  lineHeight: "normal",
-  letterSpacing: "0.5px",
-}));
-
 const ExperienceSection = () => {
   return (
     <MainContainer>
-      <SubtitleTypography>Experience</SubtitleTypography>
+      <HomeSubtitle subtitle="Experience" />
       <ExperienceTabs />
     </MainContainer>
   );

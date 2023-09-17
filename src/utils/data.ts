@@ -1,3 +1,20 @@
+import { FaReact } from "react-icons/fa";
+import {
+  SiMui,
+  SiTypescript,
+  SiJavascript,
+  SiGit,
+  SiNextdotjs,
+} from "react-icons/si";
+import { IconType } from "react-icons";
+
+type Skill = {
+  id: number;
+  name: string;
+  icon: IconType;
+  color?: string;
+};
+
 export const menuData = {
   menu: {
     items: [
@@ -23,6 +40,49 @@ export const menuData = {
       },
     ],
   },
+};
+
+export const aboutData = {
+  description:
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+  skills: [
+    {
+      id: 1,
+      name: "ReactJS",
+      icon: FaReact,
+      color: "#139ECA",
+    },
+    {
+      id: 2,
+      name: "NextJS",
+      icon: SiNextdotjs,
+      color: "#D9D9D9",
+    },
+    {
+      id: 3,
+      name: "Material UI",
+      icon: SiMui,
+      color: "#027FFE",
+    },
+    {
+      id: 4,
+      name: "TypeScript",
+      icon: SiTypescript,
+      color: "#007ACC",
+    },
+    {
+      id: 5,
+      name: "JavaScript",
+      icon: SiJavascript,
+      color: "#F7DF1E",
+    },
+    {
+      id: 6,
+      name: "Git",
+      icon: SiGit,
+      color: "#F05032",
+    },
+  ] as Skill[],
 };
 
 export const experienceData = [
