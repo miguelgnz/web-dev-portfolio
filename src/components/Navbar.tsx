@@ -63,7 +63,7 @@ const Navbar = () => {
   };
 
   return (
-    <StyledAppbar color="transparent">
+    <StyledAppbar position="fixed" sx={{ backgroundColor: "#011627" }}>
       <Toolbar>
         <IconButton size="large" edge="start" sx={{ color: "#f0f0f0" }}>
           <FaCode />

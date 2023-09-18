@@ -1,6 +1,9 @@
 import { Icon, Typography, styled } from "@mui/material";
 import HomeSubtitle from "@/components/HomeSubtitle";
 import { aboutData } from "@/utils/data";
+import Image from "next/image";
+import Link from "next/link";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
@@ -14,17 +17,23 @@ const AboutContents = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   gap: "25px",
+  minHeight: "400px",
   [theme.breakpoints.down("md")]: {
-    flexDirection: "column",
+    flexDirection: "column-reverse",
+    alignItems: "center",
+    gap: "40px",
+    paddingTop: "40px",
   },
 }));
 
 const InfoWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  width: "70%",
-  gap: "25px",
-  [theme.breakpoints.down("md")]: {},
+  width: "60%",
+  gap: "44px",
+  [theme.breakpoints.down("md")]: {
+    width: "100%",
+  },
 }));
 
 const SkillsContainer = styled("div")(({ theme }) => ({
@@ -45,10 +54,33 @@ const IndividualSkillWrapper = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {},
 }));
 
-const ImageWrapper = styled("div")(({ theme }) => ({
+const ImageAndBadgeWrapper = styled("div")(({ theme }) => ({
   display: "flex",
-  width: "30%",
-  [theme.breakpoints.down("md")]: {},
+  width: "40%",
+  justifyContent: "center",
+  [theme.breakpoints.down("md")]: {
+    width: "100%",
+  },
+}));
+
+const PhotoContainer = styled("div")(({ theme }) => ({
+  borderRadius: "24px",
+  minWidth: "180px",
+  height: "190px",
+  [theme.breakpoints.down("md")]: {
+    minWidth: "145px",
+    height: "155px",
+  },
+}));
+
+const BadgeContainer = styled("div")(({ theme }) => ({
+  position: "absolute",
+  marginTop: "-36px",
+  marginLeft: "172px",
+  [theme.breakpoints.down("md")]: {
+    marginTop: "-28px",
+    marginLeft: "142px",
+  },
 }));
 
 const DescriptionTypography = styled(Typography)(({ theme }) => ({
@@ -64,6 +96,7 @@ const DescriptionTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const AboutSection = () => {
+  const mobileView = useMediaQuery("(max-width: 840px)");
   return (
     <MainContainer>
       <HomeSubtitle subtitle="About" />
@@ -86,7 +119,46 @@ const AboutSection = () => {
             })}
           </SkillsContainer>
         </InfoWrapper>
-        <ImageWrapper></ImageWrapper>
+        <ImageAndBadgeWrapper>
+          <PhotoContainer>
+            <Image
+              src={"/profile.jpg"}
+              width={100}
+              height={100}
+              alt={"profile picture"}
+              objectFit="cover"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "24px",
+                border: "4px solid transparent",
+                background: "linear-gradient(145deg, #8D8D8D, #8D8D8D)",
+                boxShadow: " 0 10px 20px rgba(0, 0, 0, 0.2)",
+              }}
+            />
+          </PhotoContainer>
+          <BadgeContainer>
+            <Link
+              href={
+                "https://www.credly.com/badges/df638cc1-377b-42de-a136-280321f8a901/public_url"
+              }
+              target="_blank"
+            >
+              <Image
+                src={"/aws-badge.png"}
+                width={100}
+                height={100}
+                alt={"badge"}
+                style={{
+                  width: mobileView ? "68px" : "90px",
+                  height: mobileView ? "68px" : "90px",
+                  objectFit: "cover",
+                }}
+              />
+            </Link>
+          </BadgeContainer>
+        </ImageAndBadgeWrapper>
       </AboutContents>
     </MainContainer>
   );
