@@ -126,7 +126,6 @@ const AboutSection = () => {
               width={100}
               height={100}
               alt={"profile picture"}
-              objectFit="cover"
               style={{
                 width: "100%",
                 height: "100%",

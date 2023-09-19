@@ -28,7 +28,7 @@ const TitleTypography = styled(Typography)(({ theme }) => ({
   fontSize: "20px",
   color: theme.palette.primary.main,
   fontStyle: "normal",
-  fontWeight: 700,
+  fontWeight: 600,
   lineHeight: "30px",
   [theme.breakpoints.down("md")]: {
     fontSize: "16px",
@@ -75,6 +75,16 @@ const StyledChip = styled(Chip)(({ theme }) => ({
 const StyledTabs = styled(Tabs)(({ theme }) => ({
   ["& .MuiTabs-scrollButtons"]: {
     color: "#FFF",
+  },
+  ["& .MuiButtonBase-root"]: {
+    fontSize: "17px",
+    letterSpacing: "0.35px",
+    fontWeight: 700,
+  },
+  [theme.breakpoints.down("md")]: {
+    ["& .MuiButtonBase-root"]: {
+      fontSize: "15px",
+    },
   },
 }));
 
