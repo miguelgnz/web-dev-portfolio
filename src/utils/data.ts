@@ -1,4 +1,5 @@
 import { FaReact } from "react-icons/fa";
+import { IconType } from "react-icons";
 import {
   SiMui,
   SiTypescript,
@@ -6,7 +7,6 @@ import {
   SiGit,
   SiNextdotjs,
 } from "react-icons/si";
-import { IconType } from "react-icons";
 
 type Skill = {
   id: number;
@@ -78,7 +78,7 @@ export const aboutData = {
     },
     {
       id: 6,
-      name: "Git",
+      name: "Gitflow",
       icon: SiGit,
       color: "#F05032",
     },
