@@ -6,6 +6,8 @@ import {
   SiJavascript,
   SiGit,
   SiNextdotjs,
+  SiStyledcomponents,
+  SiGraphql,
 } from "react-icons/si";
 
 type Skill = {
@@ -40,6 +42,13 @@ export const menuData = {
       },
     ],
   },
+};
+
+export const heroData = {
+  nameTitle: "MIGUEL GNZ",
+  subtitle: "FRONTEND DEVELOPER",
+  intro:
+    "From responsive layouts to interactive elements, I'm dedicated to shaping the future of web interfaces and pushing the boundaries of what's possible",
 };
 
 export const aboutData = {
@@ -81,6 +90,18 @@ export const aboutData = {
       name: "Gitflow",
       icon: SiGit,
       color: "#F05032",
+    },
+    {
+      id: 7,
+      name: "Styled Components",
+      icon: SiStyledcomponents,
+      color: "#DB7093",
+    },
+    {
+      id: 8,
+      name: "GraphQL",
+      icon: SiGraphql,
+      color: "#E10098",
     },
   ] as Skill[],
 };

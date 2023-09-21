@@ -1,7 +1,6 @@
 import {
   AppBar,
   Box,
-  Button,
   IconButton,
   Typography,
   Toolbar,
@@ -42,12 +41,6 @@ const StyledLink = styled(Link)(({ theme }) => ({
     color: theme.palette.primary.main,
   },
   [theme.breakpoints.down("sm")]: {},
-}));
-
-const ResumeButton = styled(Button)(({ theme }) => ({
-  borderRadius: "30px",
-  width: "130px",
-  [theme.breakpoints.down("md")]: {},
 }));
 
 const Navbar = () => {
@@ -93,12 +86,6 @@ const Navbar = () => {
             {menuData.menu.items.map((item) => {
               return <MenuItem key={item.id}>{item.text}</MenuItem>;
             })}
-            <ResumeButton
-              variant="contained"
-              startIcon={<IoDocumentTextOutline />}
-            >
-              Resume
-            </ResumeButton>
           </Menu>
         </Box>
         <LinksWrapper>
@@ -109,12 +96,6 @@ const Navbar = () => {
               </StyledLink>
             );
           })}
-          <ResumeButton
-            variant="outlined"
-            startIcon={<IoDocumentTextOutline />}
-          >
-            Resume
-          </ResumeButton>
         </LinksWrapper>
       </Toolbar>
     </StyledAppbar>
