@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import { FiMenu } from "react-icons/fi";
 import { FaCode } from "react-icons/fa";
-import { IoDocumentTextOutline } from "react-icons/io5";
 import Link from "next/link";
 import { menuData } from "@/utils/data";
 import { useState } from "react";
