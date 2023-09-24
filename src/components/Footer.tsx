@@ -6,6 +6,7 @@ const MainContainer = styled("footer")(({ theme }) => ({
   alignItems: "center",
   height: "12rem",
   backgroundColor: "#011627",
+  margin: "4rem 0 1rem 0",
   [theme.breakpoints.down("md")]: {},
 }));
 
@@ -28,7 +29,7 @@ const pulseAnimation = keyframes`
     transform: translateY(0);
   }
   50% {
-    transform: translateY(3px); /* Adjust the distance as needed */
+    transform: translateY(5px);
   }
   100% {
     transform: translateY(0);

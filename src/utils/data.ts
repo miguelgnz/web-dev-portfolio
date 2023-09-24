@@ -17,6 +17,14 @@ type Skill = {
   color?: string;
 };
 
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  skills: string[];
+  sourceLink: string;
+};
+
 export const menuData = {
   menu: {
     items: [
@@ -46,7 +54,7 @@ export const menuData = {
 
 export const heroData = {
   nameTitle: "MIGUEL GNZ",
-  subtitle: "FRONTEND DEVELOPER",
+  subtitle: "SOFTWARE ENGINEER",
   intro:
     "From responsive layouts to interactive elements, I'm dedicated to shaping the future of web interfaces and pushing the boundaries of what's possible",
 };
@@ -147,3 +155,30 @@ export const experienceData = [
     skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
   },
 ];
+
+export const projectsData = [
+  {
+    title: "miguelgnz.com",
+    description:
+      "Chocolate bar sugar plum pie biscuit apple pie chupa chups. Croissant biscuit sweet bonbon sweet roll jelly-o halvah chocolate. Tart sugar plum pastry toffee pudding brownie jelly tiramisu",
+    image: "/600x400.svg",
+    skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
+    sourceLink: "#",
+  },
+  {
+    title: "autotradegt.com",
+    description:
+      "Chocolate bar sugar plum pie biscuit apple pie chupa chups. Croissant biscuit sweet bonbon sweet roll jelly-o halvah chocolate. Tart sugar plum pastry toffee pudding brownie jelly tiramisu",
+    image: "/600x400.svg",
+    skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
+    sourceLink: "#",
+  },
+  {
+    title: "devconnector.com",
+    description:
+      "Chocolate bar sugar plum pie biscuit apple pie chupa chups. Croissant biscuit sweet bonbon sweet roll jelly-o halvah chocolate. Tart sugar plum pastry toffee pudding brownie jelly tiramisu",
+    image: "/600x400.svg",
+    skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
+    sourceLink: "#",
+  },
+] as Project[];
