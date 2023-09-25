@@ -56,7 +56,7 @@ export const heroData = {
   nameTitle: "MIGUEL GNZ",
   subtitle: "SOFTWARE ENGINEER",
   intro:
-    "From responsive layouts to interactive elements, I'm dedicated to shaping the future of web interfaces and pushing the boundaries of what's possible",
+    "Bringing ideas to life with clean code and intuitive user experiences.",
 };
 
 export const aboutData = {
@@ -162,15 +162,21 @@ export const projectsData = [
     description:
       "Chocolate bar sugar plum pie biscuit apple pie chupa chups. Croissant biscuit sweet bonbon sweet roll jelly-o halvah chocolate. Tart sugar plum pastry toffee pudding brownie jelly tiramisu",
     image: "/600x400.svg",
-    skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
+    skills: ["Nextjs", "Typescritp", "MUI", "AWS S3", "AWS Cloudfront"],
     sourceLink: "#",
   },
   {
     title: "autotradegt.com",
     description:
       "Chocolate bar sugar plum pie biscuit apple pie chupa chups. Croissant biscuit sweet bonbon sweet roll jelly-o halvah chocolate. Tart sugar plum pastry toffee pudding brownie jelly tiramisu",
-    image: "/600x400.svg",
-    skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
+    image: "/autotrademin.png",
+    skills: [
+      "Reactjs",
+      "Javascript",
+      "CSS Modules",
+      "AWS S3",
+      "AWS Cloudfront",
+    ],
     sourceLink: "#",
   },
   {

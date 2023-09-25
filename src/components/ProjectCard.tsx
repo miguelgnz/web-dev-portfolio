@@ -7,9 +7,8 @@ import {
   CardActions,
   Typography,
   Chip,
-  IconButton,
+  Button,
 } from "@mui/material";
-import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
 
 type Props = {
@@ -36,7 +35,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
 const StyledCardActions = styled(CardActions)(({ theme }) => ({
   display: "flex",
-  justifyContent: "center",
+  justifyContent: "flex-end",
   "& .MuiButtonBase-root": {
     display: "flex",
     flexDirection: "column",
@@ -64,6 +63,7 @@ const DescriptionTypography = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   lineHeight: "20px",
   letterSpacing: "0.15px",
+  paddingTop: "12px",
   [theme.breakpoints.down("md")]: {
     fontSize: "12px",
   },
@@ -74,7 +74,6 @@ const ChipsWrapper = styled("div")(({ theme }) => ({
   flexWrap: "wrap",
   columnGap: "6px",
   rowGap: "6px",
-  [theme.breakpoints.down("md")]: {},
 }));
 
 const StyledChip = styled(Chip)(({ theme }) => ({
@@ -106,11 +105,15 @@ const ProjectCard = ({
         </CardContent>
       </CardActionArea>
       <StyledCardActions>
-        <Link href={sourceLink}>
-          <IconButton color="primary">
-            <FiGithub />
-          </IconButton>
-        </Link>
+        <Button
+          variant="outlined"
+          href={sourceLink}
+          sx={{
+            width: "10%",
+          }}
+        >
+          <FiGithub />
+        </Button>
       </StyledCardActions>
     </StyledCard>
   );
