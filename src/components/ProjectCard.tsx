@@ -37,12 +37,8 @@ const StyledCardActions = styled(CardActions)(({ theme }) => ({
   display: "flex",
   justifyContent: "flex-end",
   "& .MuiButtonBase-root": {
-    display: "flex",
-    flexDirection: "column",
-    gap: "0px",
+    minWidth: "48px",
   },
-  "& .MuiCardActions-root": {},
-  [theme.breakpoints.down("md")]: {},
 }));
 
 const TitleTypography = styled(Typography)(({ theme }) => ({
@@ -105,13 +101,7 @@ const ProjectCard = ({
         </CardContent>
       </CardActionArea>
       <StyledCardActions>
-        <Button
-          variant="outlined"
-          href={sourceLink}
-          sx={{
-            width: "10%",
-          }}
-        >
+        <Button variant="outlined" href={sourceLink}>
           <FiGithub />
         </Button>
       </StyledCardActions>
