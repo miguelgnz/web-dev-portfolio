@@ -3,6 +3,7 @@ import ExperienceSection from "@/components/ExperienceSection";
 import AboutSection from "@/components/AboutSection";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
 
 const HomePageBody = () => {
   return (
@@ -18,6 +19,9 @@ const HomePageBody = () => {
       </Grid>
       <Grid item xs={10} md={9}>
         <ProjectsSection />
+      </Grid>
+      <Grid item xs={10} md={9}>
+        <ContactSection />
       </Grid>
     </Grid>
   );

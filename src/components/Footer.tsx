@@ -1,13 +1,12 @@
 import { keyframes, styled, Typography } from "@mui/material";
 
-const MainContainer = styled("footer")(({ theme }) => ({
+const MainContainer = styled("footer")(() => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   height: "12rem",
   backgroundColor: "#011627",
   margin: "4rem 0 1rem 0",
-  [theme.breakpoints.down("md")]: {},
 }));
 
 const FooterContent = styled("div")(({ theme }) => ({
@@ -63,9 +62,9 @@ const Footer = () => (
     <FooterContent>
       <FooterTypography>
         {`Designed in Figma, coded using NextJS/Typescript & MUI, deployed in
-      AWS S3.`}
+      AWS S3 & Cloudfront.`}
       </FooterTypography>
-      <FooterTypography>{"w/<3 by me."}</FooterTypography>
+      <FooterTypography>{"w/<3"}</FooterTypography>
       <EmojiWrapper>
         <span role="img" aria-label="rocket">
           🚀

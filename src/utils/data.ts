@@ -114,6 +114,16 @@ export const aboutData = {
   ] as Skill[],
 };
 
+type Experience = {
+  id: number;
+  title: string;
+  company: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  skills: string[];
+};
+
 export const experienceData = [
   {
     id: 0,
@@ -154,7 +164,7 @@ export const experienceData = [
     description: "Lorem ipsum",
     skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
   },
-];
+] as Experience[];
 
 export const projectsData = [
   {
@@ -188,3 +198,13 @@ export const projectsData = [
     sourceLink: "#",
   },
 ] as Project[];
+
+type Contact = {
+  linkedin: string;
+  github: string;
+};
+
+export const contactData = {
+  linkedin: "https://www.linkedin.com/in/miguel-gnz/",
+  github: "https://github.com/miguelgnz",
+} as Contact;
