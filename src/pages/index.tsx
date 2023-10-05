@@ -1,4 +1,36 @@
+import { useState, useEffect } from "react";
+import { styled } from "@mui/material";
 import HomePage from "@/views/HomePage";
+import Spinner from "@/components/Spinner";
+
+const SpinnerWrapper = styled("div")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  height: "100vh",
+}));
+
 export default function Home() {
-  return <HomePage />;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      {loading ? (
+        <SpinnerWrapper>
+          <Spinner />
+        </SpinnerWrapper>
+      ) : (
+        <HomePage />
+      )}
+    </>
+  );
 }
