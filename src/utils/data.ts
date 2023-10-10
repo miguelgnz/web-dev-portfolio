@@ -179,16 +179,18 @@ export const experienceData = [
 
 type Project = {
   title: string;
+  url: string;
+  sourceLink: string;
   description: string;
   image: string;
   skills: string[];
-  url: string | undefined;
 };
 
 export const projectsData = [
   {
     title: "miguelgnz.com",
     url: "https://www.miguelgnz.com/",
+    sourceLink: "https://github.com/miguelgnz/web-dev-portfolio",
     description:
       "A dynamic single-page portfolio site built with Next.js and MUI. Showcasing my software engineering journey and expertise.",
     image: "/600x400.svg",
@@ -197,6 +199,7 @@ export const projectsData = [
   {
     title: "autotradegt.com",
     url: "https://www.autotradegt.com/",
+    sourceLink: "https://github.com/miguelgnz/autotradeprod",
     description:
       "A dynamic and user-friendly single-page web application built using React.js, JavaScript, and CSS. It serves as an online showcase for a local car retailer, offering visitors easy access to vital information.",
     image: "/autotrademin.png",
@@ -210,7 +213,8 @@ export const projectsData = [
   },
   {
     title: "devconnector",
-    url: undefined,
+    url: "/",
+    sourceLink: "https://github.com/miguelgnz/dev_connector_prj",
     description:
       "A MERN stack application, built while learning web technologies through an online course. Consist in a social media network for developers.",
     image: "/600x400.svg",

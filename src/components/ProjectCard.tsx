@@ -13,10 +13,11 @@ import { FiGithub } from "react-icons/fi";
 
 type Props = {
   title: string;
+  url: string;
+  sourceLink: string;
   description: string;
   image: string;
   skills: string[];
-  sourceLink: string;
 };
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -26,12 +27,10 @@ const StyledCard = styled(Card)(({ theme }) => ({
     display: "flex",
     flexDirection: "column",
     gap: "14px",
-    // height: "272px",
   },
   "& .MuiCardMedia-root": {
     height: "200px",
   },
-  [theme.breakpoints.down("md")]: {},
 }));
 
 const StyledCardActions = styled(CardActions)(({ theme }) => ({
@@ -84,14 +83,15 @@ const StyledChip = styled(Chip)(({ theme }) => ({
 
 const ProjectCard = ({
   title,
+  url,
+  sourceLink,
   description,
   image,
   skills,
-  sourceLink,
 }: Props) => {
   return (
     <StyledCard raised>
-      <CardActionArea>
+      <CardActionArea href={url} target="blank">
         <CardMedia component="img" height="140" image={image} alt={title} />
         <CardContent>
           <TitleTypography>{title}</TitleTypography>
@@ -104,7 +104,7 @@ const ProjectCard = ({
         </CardContent>
       </CardActionArea>
       <StyledCardActions>
-        <Button variant="outlined" href={sourceLink}>
+        <Button variant="outlined" href={sourceLink} target="blank">
           <FiGithub />
         </Button>
       </StyledCardActions>
