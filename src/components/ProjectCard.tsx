@@ -26,6 +26,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
     display: "flex",
     flexDirection: "column",
     gap: "14px",
+    // height: "272px",
   },
   "& .MuiCardMedia-root": {
     height: "200px",
@@ -59,8 +60,10 @@ const DescriptionTypography = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   lineHeight: "20px",
   letterSpacing: "0.15px",
+  minHeight: "162px",
   paddingTop: "12px",
   [theme.breakpoints.down("md")]: {
+    minHeight: "144px",
     fontSize: "12px",
   },
 }));

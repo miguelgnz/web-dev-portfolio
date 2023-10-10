@@ -52,6 +52,9 @@ const FooterTypography = styled(Typography)(({ theme }) => ({
   lineHeight: "22.5px",
   letterSpacing: "0.15px",
   textAlign: "center",
+  "& span": {
+    fontWeight: 400,
+  },
   [theme.breakpoints.down("md")]: {
     fontSize: "13px",
   },
@@ -61,8 +64,9 @@ const Footer = () => (
   <MainContainer>
     <FooterContent>
       <FooterTypography>
-        {`Designed in Figma, coded using NextJS/Typescript & MUI, deployed in
-      AWS S3 & Cloudfront.`}
+        Designed in <span>Figma</span>, coded using{" "}
+        <span>NextJS/Typescript</span> & <span>MUI</span>, deployed with AWS{" "}
+        <span>S3</span> & <span>Cloudfront</span>.
       </FooterTypography>
       <FooterTypography>{"w/<3"}</FooterTypography>
       <EmojiWrapper>

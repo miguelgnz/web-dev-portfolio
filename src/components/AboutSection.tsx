@@ -4,6 +4,13 @@ import { aboutData } from "@/utils/data";
 import Image from "next/image";
 import Link from "next/link";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import sanitizeHtlm from "sanitize-html";
+
+const sanitizeHtmlOptions = {
+  allowedTags: ["span"],
+  allowedAttributes: {},
+  allowedIframeHostnames: [],
+};
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
@@ -84,12 +91,16 @@ const BadgeContainer = styled("div")(({ theme }) => ({
 }));
 
 const DescriptionTypography = styled(Typography)(({ theme }) => ({
-  fontSize: "18px",
+  fontSize: "16px",
   color: "#D9D9D9",
   fontStyle: "normal",
   fontWeight: 400,
   lineHeight: "27px",
   letterSpacing: "0.15px",
+  "& > span": {
+    color: "#a6b981",
+    fontweight: 600,
+  },
   [theme.breakpoints.down("md")]: {
     fontSize: "14px",
   },
@@ -97,12 +108,21 @@ const DescriptionTypography = styled(Typography)(({ theme }) => ({
 
 const AboutSection = () => {
   const mobileView = useMediaQuery("(max-width: 840px)");
+
+  const sanitizedIntro = sanitizeHtlm(
+    aboutData.description,
+    sanitizeHtmlOptions,
+  );
+
   return (
     <MainContainer>
       <HomeSubtitle subtitle="About" />
       <AboutContents>
         <InfoWrapper>
-          <DescriptionTypography>{aboutData.description}</DescriptionTypography>
+          <DescriptionTypography
+            dangerouslySetInnerHTML={{ __html: sanitizedIntro }}
+          />
+          <DescriptionTypography>{"My tech stack:"}</DescriptionTypography>
           <SkillsContainer>
             {aboutData.skills.map((skill) => {
               return (

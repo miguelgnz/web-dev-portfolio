@@ -32,9 +32,9 @@ const LowerTextWrapper = styled("div")(({ theme }) => ({
 
 const PhraseTypography = styled(Typography)(({ theme }) => ({
   fontSize: "18px",
-  color: "rgba(246, 139, 107, 0.8)",
+  color: "#FFF",
   fontStyle: "normal",
-  fontWeight: 400,
+  fontWeight: 300,
   lineHeight: "normal",
   letterSpacing: "0.5px",
   [theme.breakpoints.down("md")]: {
@@ -65,7 +65,7 @@ const HeroSection = () => {
         }}
       >
         <UpperTextWrapper>
-          <BigTitle sx={{ color: "#85d6f1", fontWeight: 300 }}>
+          <BigTitle sx={{ color: "#85d6f1", fontWeight: 400 }}>
             {heroData.nameTitle}
           </BigTitle>
           <BigTitle sx={{ color: "#3780BB" }}>{heroData.subtitle}</BigTitle>

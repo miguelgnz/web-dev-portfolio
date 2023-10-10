@@ -6,9 +6,12 @@ import {
   styled,
   Chip,
   useTheme,
+  keyframes,
 } from "@mui/material";
 import { useState } from "react";
 import { experienceData } from "@/utils/data";
+import Link from "next/link";
+import { MdOpenInNew } from "react-icons/md";
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
@@ -25,7 +28,7 @@ const MainContainer = styled("div")(({ theme }) => ({
 }));
 
 const TitleTypography = styled(Typography)(({ theme }) => ({
-  fontSize: "20px",
+  fontSize: "18px",
   color: theme.palette.primary.main,
   fontStyle: "normal",
   fontWeight: 600,
@@ -36,7 +39,7 @@ const TitleTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const DatesTypography = styled(Typography)(({ theme }) => ({
-  fontSize: "16px",
+  fontSize: "14px",
   color: "#FFF",
   fontStyle: "normal",
   fontWeight: 600,
@@ -48,7 +51,7 @@ const DatesTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const DescriptionTypography = styled(Typography)(({ theme }) => ({
-  fontSize: "18px",
+  fontSize: "16px",
   color: "#D9D9D9",
   fontStyle: "normal",
   fontWeight: 400,
@@ -62,14 +65,36 @@ const DescriptionTypography = styled(Typography)(({ theme }) => ({
 const ChipsWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   flexWrap: "wrap",
-  [theme.breakpoints.down("md")]: {
-    rowGap: "10px",
-  },
+  rowGap: "8px",
 }));
 
 const StyledChip = styled(Chip)(({ theme }) => ({
   color: theme.palette.secondary.main,
   border: `1px solid ${theme.palette.secondary.main}`,
+}));
+
+const forwardAnimation = keyframes`
+  0% {
+    transform: translate(0, 0),
+    
+  }
+  100% {
+    transform: translate(3px, -3px);
+  }
+`;
+
+const StyledLink = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
+  "& svg": {
+    marginLeft: "6px",
+    color: theme.palette.primary.main,
+    fontSize: "16px",
+  },
+  "&:hover": {
+    "& svg": {
+      animation: `${forwardAnimation} 0.3s ease-in-out forwards`,
+    },
+  },
 }));
 
 const StyledTabs = styled(Tabs)(({ theme }) => ({
@@ -181,9 +206,12 @@ const ExperienceTabs = () => {
                     gap: "18px",
                   }}
                 >
-                  <TitleTypography>
-                    {`${exp.title} @ ${exp.company}`}
-                  </TitleTypography>
+                  <StyledLink href={exp.url} target="blank">
+                    <TitleTypography>
+                      {`${exp.title} @ ${exp.company}`}
+                      <MdOpenInNew />
+                    </TitleTypography>
+                  </StyledLink>
                   <DatesTypography>
                     {`${exp.startDate} - ${exp.endDate}`}
                   </DatesTypography>

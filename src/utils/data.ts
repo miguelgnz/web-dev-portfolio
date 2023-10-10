@@ -17,14 +17,6 @@ type Skill = {
   color?: string;
 };
 
-type Project = {
-  title: string;
-  description: string;
-  image: string;
-  skills: string[];
-  sourceLink: string;
-};
-
 export const menuData = {
   menu: {
     items: [
@@ -55,13 +47,12 @@ export const menuData = {
 export const heroData = {
   nameTitle: "MIGUEL GNZ",
   subtitle: "SOFTWARE ENGINEER",
-  intro:
-    "Bringing ideas to life with clean code and intuitive user experiences.",
+  intro: "Crafting stunning web experiences.",
 };
 
 export const aboutData = {
   description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    "I'm a Frontend Developer with a passion for building captivating web experiences. With a strong foundation in <span>modern web technologies</span> and agile teams, I specialize in creating user-friendly and responsive websites. Currently, I'm channeling my expertise into building products for our clients as a <span>Software Engineer</span> at <span>3Pillar Global</span>. Beyond work, I thrive on continuous learning and devote my free time to mastering new web technologies",
   skills: [
     {
       id: 1,
@@ -118,6 +109,7 @@ type Experience = {
   id: number;
   title: string;
   company: string;
+  url: string;
   startDate: string;
   endDate: string;
   description: string;
@@ -129,56 +121,84 @@ export const experienceData = [
     id: 0,
     title: "Senior Software Engineer",
     company: "3Pillar Global",
-    startDate: "May 2021",
+    url: "https://www.3pillarglobal.com/",
+    startDate: "Apr 2022",
     endDate: "Present",
     description:
-      "Carrot cake pastry chocolate sweet icing. Chocolate bar sugar plum pie biscuit apple pie chupa chups. Croissant biscuit sweet bonbon sweet roll jelly-o halvah chocolate. Tart sugar plum pastry toffee pudding brownie jelly tiramisu",
-    skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
+      "Contributing to distinct projects for our clients, involving the development of a cybersecurity portal, where I harnessed the power of Typescript and React to create a robust and secure user interface. In another engagement within the healthcare industry, I worked with Next.js, MUI, and Typescript, delivering seamless and user-friendly web solutions tailored to the unique demands of this sector. ",
+    skills: [
+      "ReactJS",
+      "NextJS",
+      "TypeScript",
+      "GraphQL",
+      "MUI",
+      "Styled Components",
+    ],
   },
   {
     id: 1,
     title: "Software Engineer",
     company: "Cognits",
-    startDate: "May 2020",
-    endDate: "November 2021",
+    url: "https://cognits.co/",
+    startDate: "Jun 2020",
+    endDate: "Apr 2022",
     description:
-      "Donut caramels jelly marzipan biscuit pudding tootsie roll. Oat cake pastry tart croissant tiramisu apple pie jelly beans macaroon chocolate. Sweet jelly-o tiramisu sweet pie. ",
-    skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
+      "Played a pivotal role in shaping digital solutions for the banking industry. I undertook several projects that involved interfacing with banking core systems through API consumption, effectively leveraging JavaScript to integrate critical financial data into user-friendly interfaces. I showcased my frontend skills by crafting responsive UIs using CSS, ensuring an optimal user experience.",
+    skills: ["Javascript", "REST API", "CSS Modules"],
   },
   {
     id: 2,
     title: "Software Technical Specialist",
-    company: "HCL Technologies",
-    startDate: "May 2021",
-    endDate: "April 2021",
+    company: "HCL Tech",
+    url: "https://www.hcltech.com/",
+    startDate: "Jun 2019",
+    endDate: "May 2020",
     description:
-      "Powder pudding jelly carrot cake chocolate cake marzipan. Marzipan apple pie dessert apple pie cookie. Dragée chocolate bar gingerbread dragée icing brownie cotton candy ice cream.",
-    skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
+      "While my role was centered around the technical field of networking, primarily focusing on delivering intricate solutions for multifunctional printers from a renowned brand. I adeptly tackled the challenges of this niche by providing technical expertise and problem-solving skills to optimize printer functionality. I also delved into the world of software by working with native applications developed using JavaScript.",
+    skills: ["Networking", "CISCO", "Javascript"],
   },
   {
     id: 3,
-    title: "Software Helpdesk Specialist",
-    company: "Banco Promerica",
-    startDate: "May 2019",
-    endDate: "January 2020",
-    description: "Lorem ipsum",
-    skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
+    title: "Freelancer/Selft-taught",
+    company: "Freelancer",
+    url: "https://www.miguelgnz.com/",
+    startDate: "Jun 2016",
+    endDate: "Present",
+    description:
+      "During my journey as a Freelancer and self-taught enthusiast, I've dedicated substantial time to continuous learning and skill development. I've eagerly pursued courses and certifications across a spectrum of cutting-edge web technologies, ensuring that my knowledge remains current and adaptable. Moreover, I've embraced personal projects as valuable learning opportunities, allowing me to put theory into practice and gain hands-on experience.",
+    skills: [
+      "NextJS",
+      "Typescript",
+      "MUI",
+      "Figma",
+      "AWS S3",
+      "AWS Cloudfront",
+    ],
   },
 ] as Experience[];
+
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  skills: string[];
+  url: string | undefined;
+};
 
 export const projectsData = [
   {
     title: "miguelgnz.com",
+    url: "https://www.miguelgnz.com/",
     description:
-      "Chocolate bar sugar plum pie biscuit apple pie chupa chups. Croissant biscuit sweet bonbon sweet roll jelly-o halvah chocolate. Tart sugar plum pastry toffee pudding brownie jelly tiramisu",
+      "A dynamic single-page portfolio site built with Next.js and MUI. Showcasing my software engineering journey and expertise.",
     image: "/600x400.svg",
     skills: ["Nextjs", "Typescritp", "MUI", "AWS S3", "AWS Cloudfront"],
-    sourceLink: "#",
   },
   {
     title: "autotradegt.com",
+    url: "https://www.autotradegt.com/",
     description:
-      "Chocolate bar sugar plum pie biscuit apple pie chupa chups. Croissant biscuit sweet bonbon sweet roll jelly-o halvah chocolate. Tart sugar plum pastry toffee pudding brownie jelly tiramisu",
+      "A dynamic and user-friendly single-page web application built using React.js, JavaScript, and CSS. It serves as an online showcase for a local car retailer, offering visitors easy access to vital information.",
     image: "/autotrademin.png",
     skills: [
       "Reactjs",
@@ -187,15 +207,14 @@ export const projectsData = [
       "AWS S3",
       "AWS Cloudfront",
     ],
-    sourceLink: "#",
   },
   {
-    title: "devconnector.com",
+    title: "devconnector",
+    url: undefined,
     description:
-      "Chocolate bar sugar plum pie biscuit apple pie chupa chups. Croissant biscuit sweet bonbon sweet roll jelly-o halvah chocolate. Tart sugar plum pastry toffee pudding brownie jelly tiramisu",
+      "A MERN stack application, built while learning web technologies through an online course. Consist in a social media network for developers.",
     image: "/600x400.svg",
-    skills: ["React", "Node", "TypeScript", "GraphQL", "AWS"],
-    sourceLink: "#",
+    skills: ["MongoDB", "Express", "ReactJS", "NodeJS"],
   },
 ] as Project[];
 
