@@ -33,9 +33,9 @@ const LinksWrapper = styled("div")(({ theme }) => ({
 
 const StyledLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
+  color: "#FFF",
   "& > p": {
     fontSize: "16px",
-    color: "#FFF",
   },
   "& :hover": {
     color: theme.palette.primary.main,
@@ -43,16 +43,30 @@ const StyledLink = styled(Link)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {},
 }));
 
+const StyledMenu = styled(Menu)(({ theme }) => ({
+  "& .MuiPaper-root": {
+    // backgroundColor: "#02121F",
+  },
+}));
+
+const StyledMenuLink = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
+  color: "#02121F",
+  "& > p": {},
+}));
+
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
-    console.log(event.currentTarget);
+    setIsMenuOpen(true);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -70,9 +84,9 @@ const Navbar = () => {
           >
             <FiMenu />
           </IconButton>
-          <Menu
+          <StyledMenu
             anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
+            open={isMenuOpen}
             onClose={handleClose}
             anchorOrigin={{
               vertical: "top",
@@ -84,15 +98,30 @@ const Navbar = () => {
             }}
           >
             {menuData.menu.items.map((item) => {
-              return <MenuItem key={item.id}>{item.text}</MenuItem>;
+              return (
+                <StyledMenuLink
+                  onClick={() => {
+                    setAnchorEl(null);
+                    setIsMenuOpen(false);
+                  }}
+                  key={item.id}
+                  href={item.url}
+                >
+                  <MenuItem>
+                    <Typography>{item.text}</Typography>
+                  </MenuItem>
+                </StyledMenuLink>
+              );
             })}
-          </Menu>
+          </StyledMenu>
         </Box>
         <LinksWrapper>
           {menuData.menu.items.map((item) => {
             return (
               <StyledLink key={item.id} href={item.url}>
-                <Typography>{item.text}</Typography>
+                <MenuItem>
+                  <Typography>{item.text}</Typography>
+                </MenuItem>
               </StyledLink>
             );
           })}

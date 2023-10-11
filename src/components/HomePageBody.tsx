@@ -9,19 +9,29 @@ const HomePageBody = () => {
   return (
     <Grid container justifyContent={"center"} mt={10} rowGap={12}>
       <Grid item xs={10} md={9}>
-        <HeroSection />
+        <div id="#home">
+          <HeroSection />
+        </div>
       </Grid>
       <Grid item xs={10} md={9}>
-        <AboutSection />
+        <div id="about">
+          <AboutSection />
+        </div>
       </Grid>
       <Grid item xs={10} md={9}>
-        <ExperienceSection />
+        <div id="experience">
+          <ExperienceSection />
+        </div>
       </Grid>
       <Grid item xs={10} md={9}>
-        <ProjectsSection />
+        <div id="projects">
+          <ProjectsSection />
+        </div>
       </Grid>
       <Grid item xs={10} md={9}>
-        <ContactSection />
+        <div id="contact">
+          <ContactSection />
+        </div>
       </Grid>
     </Grid>
   );
