@@ -2,13 +2,6 @@ import { styled, Typography, Box } from "@mui/material";
 import ResumeButton from "@/components/ResumeButton";
 import { heroData } from "@/utils/data";
 
-const HeroSectionContainer = styled("div")`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -37,6 +30,7 @@ const PhraseTypography = styled(Typography)(({ theme }) => ({
   fontWeight: 300,
   lineHeight: "normal",
   letterSpacing: "0.5px",
+  userSelect: "none",
   [theme.breakpoints.down("md")]: {
     fontSize: "16px",
   },
@@ -44,11 +38,12 @@ const PhraseTypography = styled(Typography)(({ theme }) => ({
 
 const BigTitle = styled(Typography)(({ theme }) => ({
   fontSize: "60px",
-  //   color: "#8D8D8D",
+  color: "#3780BB",
   fontStyle: "normal",
   fontWeight: 700,
   lineHeight: "normal",
   letterSpacing: "3px",
+  userSelect: "none",
   [theme.breakpoints.down("md")]: {
     fontSize: "48px",
   },
@@ -68,7 +63,7 @@ const HeroSection = () => {
           <BigTitle sx={{ color: "#85d6f1", fontWeight: 400 }}>
             {heroData.nameTitle}
           </BigTitle>
-          <BigTitle sx={{ color: "#3780BB" }}>{heroData.subtitle}</BigTitle>
+          <BigTitle>{heroData.subtitle}</BigTitle>
         </UpperTextWrapper>
         <LowerTextWrapper>
           <PhraseTypography>{heroData.intro}</PhraseTypography>
