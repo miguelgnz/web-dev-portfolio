@@ -9,11 +9,10 @@ import {
   MenuItem,
 } from "@mui/material";
 import { FiMenu } from "react-icons/fi";
-import { FaCode } from "react-icons/fa";
-import { PiMonitorThin } from "react-icons/pi";
 import Link from "next/link";
 import { menuData } from "@/utils/data";
 import { useState } from "react";
+import Image from "next/image";
 
 const StyledAppbar = styled(AppBar)(({ theme }) => ({
   "& .MuiToolbar-root": {
@@ -72,8 +71,13 @@ const Navbar = () => {
   return (
     <StyledAppbar position="fixed" sx={{ backgroundColor: "#011627" }}>
       <Toolbar>
-        <IconButton size="large" edge="start" sx={{ color: "#f0f0f0" }}>
-          <PiMonitorThin />
+        <IconButton
+          href="#home"
+          size="large"
+          edge="start"
+          sx={{ color: "#f0f0f0" }}
+        >
+          <Image alt="logo" src={"/memoji.png"} width={40} height={40} />
         </IconButton>
         <Box sx={{ display: { xs: "flex", md: "none" } }}>
           <IconButton

@@ -9,7 +9,7 @@ const HomePageBody = () => {
   return (
     <Grid container justifyContent={"center"} mt={10} rowGap={12}>
       <Grid item xs={10} md={9}>
-        <div id="#home">
+        <div id="home">
           <HeroSection />
         </div>
       </Grid>
