@@ -64,9 +64,9 @@ const Footer = () => (
   <MainContainer>
     <FooterContent>
       <FooterTypography>
-        Designed in <span>Figma</span>, coded using{" "}
-        <span>NextJS/Typescript</span> & <span>MUI</span>, deployed with AWS{" "}
-        <span>S3</span> & <span>Cloudfront</span>.
+        Designed in <span>Figma</span>, coded in <span>VS Code</span> with{" "}
+        <span>NextJS/Typescript</span> & <span>MUI</span>, deployed in{" "}
+        <span>AWS S3</span> & <span>Cloudfront</span>.
       </FooterTypography>
       <FooterTypography>{"w/<3"}</FooterTypography>
       <EmojiWrapper>
