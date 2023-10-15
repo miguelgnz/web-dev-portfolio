@@ -188,21 +188,12 @@ type Project = {
 
 export const projectsData = [
   {
-    title: "miguelgnz.com",
-    url: "https://www.miguelgnz.com/",
-    sourceLink: "https://github.com/miguelgnz/web-dev-portfolio",
-    description:
-      "A dynamic single-page portfolio site built with Next.js and MUI. Showcasing my software engineering journey and expertise.",
-    image: "/600x400.svg",
-    skills: ["Nextjs", "Typescritp", "MUI", "AWS S3", "AWS Cloudfront"],
-  },
-  {
     title: "autotradegt.com",
     url: "https://www.autotradegt.com/",
     sourceLink: "https://github.com/miguelgnz/autotradeprod",
     description:
       "A dynamic and user-friendly single-page web application built using React.js, JavaScript, and CSS. It serves as an online showcase for a local car retailer, offering visitors easy access to vital information.",
-    image: "/autotrademin.png",
+    image: "/autotrade.png",
     skills: [
       "Reactjs",
       "Javascript",
@@ -212,12 +203,30 @@ export const projectsData = [
     ],
   },
   {
+    title: "NextJS Blog",
+    url: "https://nextjs-blog-miguelgnz.vercel.app",
+    sourceLink: "https://github.com/miguelgnz/nextjs-blog",
+    description:
+      "A dynamic and user-friendly single-page web application built using React.js, JavaScript, and CSS. It serves as an online showcase for a local car retailer, offering visitors easy access to vital information.",
+    image: "/nextjsblog.png",
+    skills: ["NextJS", "Typescript"],
+  },
+  {
+    title: "miguelgnz.com",
+    url: "https://www.miguelgnz.com/",
+    sourceLink: "https://github.com/miguelgnz/web-dev-portfolio",
+    description:
+      "A dynamic single-page portfolio site built with Next.js and MUI. Showcasing my software engineering journey and expertise.",
+    image: "/devportfolio.png",
+    skills: ["Nextjs", "Typescritp", "MUI", "AWS S3", "AWS Cloudfront"],
+  },
+  {
     title: "devconnector",
-    url: "/",
+    url: "",
     sourceLink: "https://github.com/miguelgnz/dev_connector_prj",
     description:
       "A MERN stack application, built while learning web technologies through an online course. Consist in a social media network for developers.",
-    image: "/600x400.svg",
+    image: "/devconnector.png",
     skills: ["MongoDB", "Express", "ReactJS", "NodeJS"],
   },
 ] as Project[];
