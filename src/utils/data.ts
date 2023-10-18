@@ -207,9 +207,9 @@ export const projectsData = [
     url: "https://nextjs-blog-miguelgnz.vercel.app",
     sourceLink: "https://github.com/miguelgnz/nextjs-blog",
     description:
-      "A dynamic and user-friendly single-page web application built using React.js, JavaScript, and CSS. It serves as an online showcase for a local car retailer, offering visitors easy access to vital information.",
+      "Built a simple NextJS blog application while learning the framework through an interactive course provided by Vercel. ",
     image: "/nextjsblog.png",
-    skills: ["NextJS", "Typescript"],
+    skills: ["NextJS", "Typescript", "Vercel"],
   },
   {
     title: "miguelgnz.com",
@@ -221,7 +221,7 @@ export const projectsData = [
     skills: ["Nextjs", "Typescritp", "MUI", "AWS S3", "AWS Cloudfront"],
   },
   {
-    title: "devconnector",
+    title: "Developer Connector",
     url: "",
     sourceLink: "https://github.com/miguelgnz/dev_connector_prj",
     description:
