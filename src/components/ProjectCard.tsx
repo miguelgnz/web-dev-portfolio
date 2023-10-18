@@ -9,6 +9,7 @@ import {
   Chip,
   Button,
 } from "@mui/material";
+import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
 
 type Props = {
@@ -91,8 +92,20 @@ const ProjectCard = ({
 }: Props) => {
   return (
     <StyledCard raised>
-      <CardActionArea href={url} target="blank">
-        <CardMedia component="img" height="140" image={image} alt={title} />
+      <CardActionArea href={url} target="">
+        <div style={{ position: "relative" }}>
+          <CardMedia component="img" height="140" image={image} alt={title} />
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+            }}
+          />
+        </div>
         <CardContent>
           <TitleTypography>{title}</TitleTypography>
           <DescriptionTypography>{description}</DescriptionTypography>
@@ -104,7 +117,7 @@ const ProjectCard = ({
         </CardContent>
       </CardActionArea>
       <StyledCardActions>
-        <Button variant="outlined" href={sourceLink} target="blank">
+        <Button variant="outlined" href={sourceLink}>
           <FiGithub />
         </Button>
       </StyledCardActions>
