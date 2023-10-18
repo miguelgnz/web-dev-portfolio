@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { styled } from "@mui/material";
 import HomePage from "@/views/HomePage";
 import Spinner from "@/components/Spinner";
+import Head from "next/head";
 
 const SpinnerWrapper = styled("div")(({ theme }) => ({
   display: "flex",
@@ -17,7 +18,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 750);
 
     return () => clearTimeout(timer);
   }, []);
@@ -29,7 +30,12 @@ export default function Home() {
           <Spinner />
         </SpinnerWrapper>
       ) : (
-        <HomePage />
+        <div>
+          <Head>
+            <title>Miguel Gnz - Software Developer</title>
+          </Head>
+          <HomePage />
+        </div>
       )}
     </>
   );

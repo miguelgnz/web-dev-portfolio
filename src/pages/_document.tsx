@@ -16,6 +16,11 @@ export default class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico" sizes="any" />
           <link rel="favicon" href="/favicon.ico" sizes="any" />
           <link rel="apple-icon" href="/memoji.png" sizes="any" />
+          <meta
+            name="description"
+            content="Miguel is a software developer based in Guatemala, with a passion for building web applications."
+            key="developer"
+          />
         </Head>
         <body>
           <Main />
