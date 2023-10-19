@@ -113,7 +113,7 @@ const AboutSection = () => {
 
   const sanitizedIntro = sanitizeHtlm(
     aboutData.description,
-    sanitizeHtmlOptions
+    sanitizeHtmlOptions,
   );
 
   return (
