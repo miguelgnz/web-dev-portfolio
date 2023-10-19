@@ -72,10 +72,10 @@ const ImageAndBadgeWrapper = styled("div")(({ theme }) => ({
 
 const PhotoContainer = styled("div")(({ theme }) => ({
   borderRadius: "24px",
-  minWidth: "180px",
+  width: "180px",
   height: "190px",
   [theme.breakpoints.down("md")]: {
-    minWidth: "145px",
+    width: "145px",
     height: "155px",
   },
 }));
@@ -142,7 +142,7 @@ const AboutSection = () => {
         <ImageAndBadgeWrapper>
           <PhotoContainer>
             <Image
-              src={"/profile.jpg"}
+              src={"/avatar.png"}
               width={100}
               height={100}
               alt={"profile picture"}
