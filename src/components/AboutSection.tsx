@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import sanitizeHtlm from "sanitize-html";
+import avatar from "../../public/avatar.png";
+import awsBadge from "../../public/aws-badge.png";
 
 const sanitizeHtmlOptions = {
   allowedTags: ["span"],
@@ -142,10 +144,8 @@ const AboutSection = () => {
         <ImageAndBadgeWrapper>
           <PhotoContainer>
             <Image
-              src={"/avatar.png"}
-              width={100}
-              height={100}
-              alt={"profile picture"}
+              src={avatar}
+              alt={"avatar"}
               style={{
                 width: "100%",
                 height: "100%",
@@ -165,9 +165,7 @@ const AboutSection = () => {
               target="_blank"
             >
               <Image
-                src={"/aws-badge.png"}
-                width={100}
-                height={100}
+                src={awsBadge}
                 alt={"badge"}
                 style={{
                   width: mobileView ? "68px" : "90px",
