@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import sanitizeHtlm from "sanitize-html";
-import avatar from "../images/avatar-min.png";
+import avatar from "../images/profile-min.jpg";
 import awsBadge from "../../public/aws-badge.png";
 
 const sanitizeHtmlOptions = {
