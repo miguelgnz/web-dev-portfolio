@@ -209,7 +209,7 @@ export const projectsData = [
     description:
       "Built a simple NextJS blog application while learning the framework through an interactive course provided by Vercel. ",
     image: "/nextjsblog.png",
-    skills: ["NextJS", "Typescript", "Vercel"],
+    skills: ["NextJS", "Typescript", "Tailwind CSS", "Vercel"],
   },
   {
     title: "miguelgnz.com",

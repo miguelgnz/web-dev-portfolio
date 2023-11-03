@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
             content="Miguel is a software developer based in Guatemala, with a passion for building web applications."
             key="developer"
           />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <body>
           <Main />

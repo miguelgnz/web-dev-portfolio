@@ -164,7 +164,7 @@ const ExperienceTabs = () => {
       sx={{
         display: "flex",
         flexDirection: "row",
-        justifyContent: "center",
+        justifyContent: "flex-start",
       }}
     >
       <MainContainer>
