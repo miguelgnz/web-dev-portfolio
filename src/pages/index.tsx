@@ -3,6 +3,7 @@ import { styled } from "@mui/material";
 import HomePage from "@/views/HomePage";
 import Spinner from "@/components/Spinner";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 const SpinnerWrapper = styled("div")(({ theme }) => ({
   display: "flex",
@@ -13,30 +14,20 @@ const SpinnerWrapper = styled("div")(({ theme }) => ({
 }));
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 750);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <>
-      {loading ? (
-        <SpinnerWrapper>
-          <Spinner />
-        </SpinnerWrapper>
-      ) : (
-        <div>
-          <Head>
-            <title>Miguel Gnz - Software Developer</title>
-          </Head>
-          <HomePage />
-        </div>
-      )}
+      <Head>
+        <title>Miguel Gnz - Software Developer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.75 }}
+      >
+        <HomePage />
+      </motion.div>
+      )
     </>
   );
 }
