@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
 import { styled } from "@mui/material";
 import HomePage from "@/views/HomePage";
-import Spinner from "@/components/Spinner";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
@@ -23,7 +21,7 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.75 }}
+        transition={{ delay: 1 }}
       >
         <HomePage />
       </motion.div>

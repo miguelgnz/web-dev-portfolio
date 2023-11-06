@@ -1,3 +1,4 @@
+"use client";
 import {
   Tab,
   Tabs,
@@ -12,6 +13,7 @@ import { useState } from "react";
 import { experienceData } from "@/utils/data";
 import Link from "next/link";
 import { MdOpenInNew } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
@@ -191,56 +193,64 @@ const ExperienceTabs = () => {
         </StyledTabs>
         {experienceData.map((exp) => {
           return (
-            <CustomTabPanel key={exp.id} value={value} index={exp.id}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "48px",
-                }}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "18px",
-                  }}
+            <>
+              <CustomTabPanel key={exp.id} value={value} index={exp.id}>
+                <motion.div
+                  initial={{ opacity: 0, x: 800 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.15 }}
                 >
-                  <StyledLink href={exp.url} target="blank">
-                    <TitleTypography>
-                      {`${exp.title} @ ${exp.company}`}
-                      <MdOpenInNew />
-                    </TitleTypography>
-                  </StyledLink>
-                  <DatesTypography>
-                    {`${exp.startDate} - ${exp.endDate}`}
-                  </DatesTypography>
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "29px",
-                  }}
-                >
-                  <DescriptionTypography>
-                    {exp.description}
-                  </DescriptionTypography>
-                  <ChipsWrapper>
-                    {exp.skills.map((skill, index) => {
-                      return (
-                        <StyledChip
-                          label={skill}
-                          key={index}
-                          variant="outlined"
-                          sx={{ mr: 1 }}
-                        />
-                      );
-                    })}
-                  </ChipsWrapper>
-                </Box>
-              </Box>
-            </CustomTabPanel>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "48px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "18px",
+                      }}
+                    >
+                      <StyledLink href={exp.url} target="blank">
+                        <TitleTypography>
+                          {`${exp.title} @ ${exp.company}`}
+                          <MdOpenInNew />
+                        </TitleTypography>
+                      </StyledLink>
+                      <DatesTypography>
+                        {`${exp.startDate} - ${exp.endDate}`}
+                      </DatesTypography>
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "29px",
+                      }}
+                    >
+                      <DescriptionTypography>
+                        {exp.description}
+                      </DescriptionTypography>
+                      <ChipsWrapper>
+                        {exp.skills.map((skill, index) => {
+                          return (
+                            <StyledChip
+                              label={skill}
+                              key={index}
+                              variant="outlined"
+                              sx={{ mr: 1 }}
+                            />
+                          );
+                        })}
+                      </ChipsWrapper>
+                    </Box>
+                  </Box>
+                </motion.div>
+              </CustomTabPanel>
+            </>
           );
         })}
       </MainContainer>

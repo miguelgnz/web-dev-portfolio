@@ -1,3 +1,4 @@
+"use client";
 import {
   styled,
   Card,
@@ -11,6 +12,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 type Props = {
   title: string;
@@ -91,37 +93,51 @@ const ProjectCard = ({
   skills,
 }: Props) => {
   return (
-    <StyledCard raised>
-      <CardActionArea href={url} target="">
-        <div style={{ position: "relative" }}>
-          <CardMedia component="img" height="140" image={image} alt={title} />
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-            }}
-          />
-        </div>
-        <CardContent>
-          <TitleTypography>{title}</TitleTypography>
-          <DescriptionTypography>{description}</DescriptionTypography>
-          <ChipsWrapper>
-            {skills.map((skill, index) => (
-              <StyledChip key={index} label={skill} />
-            ))}
-          </ChipsWrapper>
-        </CardContent>
-      </CardActionArea>
-      <StyledCardActions>
-        <Button variant="outlined" href={sourceLink}>
-          <FiGithub />
-        </Button>
-      </StyledCardActions>
-    </StyledCard>
+    <>
+      <motion.div
+        whileTap={{ scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 100 }}
+        transition={{ delay: 0.5 }}
+      >
+        <StyledCard raised>
+          <CardActionArea href={url} target="">
+            <div style={{ position: "relative" }}>
+              <CardMedia
+                component="img"
+                height="140"
+                image={image}
+                alt={title}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                }}
+              />
+            </div>
+            <CardContent>
+              <TitleTypography>{title}</TitleTypography>
+              <DescriptionTypography>{description}</DescriptionTypography>
+              <ChipsWrapper>
+                {skills.map((skill, index) => (
+                  <StyledChip key={index} label={skill} />
+                ))}
+              </ChipsWrapper>
+            </CardContent>
+          </CardActionArea>
+          <StyledCardActions>
+            <Button variant="outlined" href={sourceLink}>
+              <FiGithub />
+            </Button>
+          </StyledCardActions>
+        </StyledCard>
+      </motion.div>
+    </>
   );
 };
 

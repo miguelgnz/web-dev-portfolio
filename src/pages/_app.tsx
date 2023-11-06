@@ -24,7 +24,7 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <Component {...pageProps} />
         </AnimatePresence>
       </ThemeProvider>
