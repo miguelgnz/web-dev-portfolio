@@ -14,9 +14,11 @@ const MainContainer = styled("div")(({ theme }) => ({
 const CardsContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
-  gap: "72px",
+  columnGap: "182px",
+  rowGap: "inherit",
   flexWrap: "wrap",
   justifyContent: "center",
+  maxWidth: "1000px",
   [theme.breakpoints.down("md")]: {},
 }));
 
