@@ -40,7 +40,7 @@ const SubtitleLine = styled("div")(({ theme }) => ({
 const HomeSubtitle = ({ subtitle }: Props) => {
   return (
     <SubtitleWrapper>
-      <SubtitleTypography>{subtitle}</SubtitleTypography>
+      <SubtitleTypography variant="h4">{subtitle}</SubtitleTypography>
       <LineWrapper>
         <SubtitleLine />
       </LineWrapper>

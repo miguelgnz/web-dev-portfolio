@@ -214,7 +214,7 @@ const ExperienceTabs = () => {
                     }}
                   >
                     <StyledLink href={exp.url} target="blank">
-                      <TitleTypography>
+                      <TitleTypography variant="h6">
                         {`${exp.title} @ ${exp.company}`}
                         <MdOpenInNew />
                       </TitleTypography>

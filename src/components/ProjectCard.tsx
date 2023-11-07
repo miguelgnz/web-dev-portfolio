@@ -121,7 +121,7 @@ const ProjectCard = ({
               />
             </div>
             <CardContent>
-              <TitleTypography>{title}</TitleTypography>
+              <TitleTypography variant="h6">{title}</TitleTypography>
               <DescriptionTypography>{description}</DescriptionTypography>
               <ChipsWrapper>
                 {skills.map((skill, index) => (

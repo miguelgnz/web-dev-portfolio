@@ -63,17 +63,17 @@ const HeroSection = () => {
       >
         <UpperTextWrapper>
           <AnimatedWrapper variants={commonVariants} delay={1}>
-            <BigTitle sx={{ color: "#85d6f1", fontWeight: 400 }}>
+            <BigTitle variant="h1" sx={{ color: "#85d6f1", fontWeight: 400 }}>
               {heroData.nameTitle}
             </BigTitle>
           </AnimatedWrapper>
           <AnimatedWrapper variants={commonVariants} delay={1.1}>
-            <BigTitle>{heroData.subtitle}</BigTitle>
+            <BigTitle variant="h1"> {heroData.subtitle}</BigTitle>
           </AnimatedWrapper>
         </UpperTextWrapper>
         <LowerTextWrapper>
           <AnimatedWrapper variants={commonVariants} delay={1.2}>
-            <PhraseTypography>{heroData.intro}</PhraseTypography>
+            <PhraseTypography variant="h2">{heroData.intro}</PhraseTypography>
           </AnimatedWrapper>
         </LowerTextWrapper>
         <AnimatedWrapper variants={commonVariants} delay={1.3}>
