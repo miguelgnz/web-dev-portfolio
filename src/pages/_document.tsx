@@ -17,6 +17,7 @@ export default class MyDocument extends Document {
           <link rel="favicon" href="/favicon.ico" sizes="any" />
           <link rel="apple-icon" href="/memoji.png" sizes="any" />
           <meta
+            title="Miguel Gnz - Software Developer"
             name="description"
             content="Miguel is a software developer based in Guatemala, with a passion for building web applications."
             key="developer"
