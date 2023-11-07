@@ -1,6 +1,7 @@
 import { styled, Typography, Box } from "@mui/material";
 import ResumeButton from "@/components/ResumeButton";
 import { heroData } from "@/utils/data";
+import AnimatedWrapper from "@/components/animations/AnimatedWrapper";
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
@@ -50,6 +51,7 @@ const BigTitle = styled(Typography)(({ theme }) => ({
 }));
 
 const HeroSection = () => {
+  const commonVariants = { opacity: 0, x: -100 };
   return (
     <MainContainer>
       <Box
@@ -60,15 +62,23 @@ const HeroSection = () => {
         }}
       >
         <UpperTextWrapper>
-          <BigTitle sx={{ color: "#85d6f1", fontWeight: 400 }}>
-            {heroData.nameTitle}
-          </BigTitle>
-          <BigTitle>{heroData.subtitle}</BigTitle>
+          <AnimatedWrapper variants={commonVariants} delay={1}>
+            <BigTitle sx={{ color: "#85d6f1", fontWeight: 400 }}>
+              {heroData.nameTitle}
+            </BigTitle>
+          </AnimatedWrapper>
+          <AnimatedWrapper variants={commonVariants} delay={1.1}>
+            <BigTitle>{heroData.subtitle}</BigTitle>
+          </AnimatedWrapper>
         </UpperTextWrapper>
         <LowerTextWrapper>
-          <PhraseTypography>{heroData.intro}</PhraseTypography>
+          <AnimatedWrapper variants={commonVariants} delay={1.2}>
+            <PhraseTypography>{heroData.intro}</PhraseTypography>
+          </AnimatedWrapper>
         </LowerTextWrapper>
-        <ResumeButton />
+        <AnimatedWrapper variants={commonVariants} delay={1.3}>
+          <ResumeButton />
+        </AnimatedWrapper>
       </Box>
     </MainContainer>
   );

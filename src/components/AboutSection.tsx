@@ -2,6 +2,7 @@ import { Icon, Typography, styled } from "@mui/material";
 import HomeSubtitle from "@/components/HomeSubtitle";
 import { aboutData } from "@/utils/data";
 import Image from "next/image";
+import AnimatedWrapper from "@/components/animations/AnimatedWrapper";
 import Link from "next/link";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import sanitizeHtlm from "sanitize-html";
@@ -118,12 +119,16 @@ const AboutSection = () => {
 
   return (
     <MainContainer>
-      <HomeSubtitle subtitle="About" />
+      <AnimatedWrapper delay={1.4} variants={{ opacity: 0, x: -100 }}>
+        <HomeSubtitle subtitle="About" />
+      </AnimatedWrapper>
       <AboutContents>
         <InfoWrapper>
-          <DescriptionTypography
-            dangerouslySetInnerHTML={{ __html: sanitizedIntro }}
-          />
+          <AnimatedWrapper delay={1} variants={{ opacity: 0, x: -100 }}>
+            <DescriptionTypography
+              dangerouslySetInnerHTML={{ __html: sanitizedIntro }}
+            />
+          </AnimatedWrapper>
           <DescriptionTypography>{"My tech stack:"}</DescriptionTypography>
           <SkillsContainer>
             {aboutData.skills.map((skill) => {
