@@ -188,19 +188,13 @@ type Project = {
 
 export const projectsData = [
   {
-    title: "autotradegt.com",
-    url: "https://www.autotradegt.com/",
-    sourceLink: "https://github.com/miguelgnz/autotradeprod",
+    title: "Tattoo Studio SAP",
+    url: "https://mdt-ui.vercel.app",
+    sourceLink: "https://github.com/miguelgnz/mdt_ui",
     description:
-      "A dynamic and user-friendly single-page web application built using React.js, JavaScript, and CSS. It serves as an online showcase for a local car retailer, offering visitors easy access to vital information.",
-    image: "/autotrade.png",
-    skills: [
-      "Reactjs",
-      "Javascript",
-      "CSS Modules",
-      "AWS S3",
-      "AWS Cloudfront",
-    ],
+      " Responsive single-page application for a local tattoo studio. The site provides comprehensive information about the studio and artists, showcases featured tattoos, and includes essential contact details. The design ensures a seamless experience across all devices.",
+    image: "/mdt.png",
+    skills: ["NextJS", "Typescript", "Material UI"],
   },
   {
     title: "NextJS Blog",
@@ -228,6 +222,21 @@ export const projectsData = [
       "A MERN stack application, built while learning web technologies through an online course. Consist in a social media network for developers.",
     image: "/devconnector.png",
     skills: ["MongoDB", "Express", "ReactJS", "NodeJS"],
+  },
+  {
+    title: "Car Seller Landing Page",
+    url: "https://miguelgnz.github.io/autotradeprod/",
+    sourceLink: "https://github.com/miguelgnz/autotradeprod",
+    description:
+      "A dynamic and user-friendly single-page web application built using React.js, JavaScript, and CSS. It serves as an online showcase for a local car dealer, offering visitors easy access to vital information.",
+    image: "/autotrade.png",
+    skills: [
+      "Reactjs",
+      "Javascript",
+      "CSS Modules",
+      "AWS S3",
+      "AWS Cloudfront",
+    ],
   },
 ] as Project[];
 
