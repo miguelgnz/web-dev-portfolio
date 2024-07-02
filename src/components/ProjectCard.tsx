@@ -101,7 +101,7 @@ const ProjectCard = ({
         transition={{ delay: 0.5 }}
       >
         <StyledCard raised>
-          <CardActionArea href={url} target="">
+          <CardActionArea href={url} target="_blank">
             <div style={{ position: "relative" }}>
               <CardMedia
                 component="img"
