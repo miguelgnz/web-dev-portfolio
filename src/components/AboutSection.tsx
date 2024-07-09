@@ -146,7 +146,7 @@ const AboutSection = () => {
             })}
           </SkillsContainer>
         </InfoWrapper>
-        <ImageAndBadgeWrapper>
+        {/* <ImageAndBadgeWrapper>
           <PhotoContainer>
             <Image
               src={avatar}
@@ -180,7 +180,7 @@ const AboutSection = () => {
               />
             </Link>
           </BadgeContainer>
-        </ImageAndBadgeWrapper>
+        </ImageAndBadgeWrapper> */}
       </AboutContents>
     </MainContainer>
   );

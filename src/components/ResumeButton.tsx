@@ -14,7 +14,11 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 const ResumeButton = () => {
   return (
-    <StyledButton variant="outlined" startIcon={<HiOutlineDocumentText />}>
+    <StyledButton
+      href="https://drive.google.com/file/d/1n3tqOxS0pjagJod9XKcgnSvtOr81hha3/view?usp=sharing"
+      variant="outlined"
+      startIcon={<HiOutlineDocumentText />}
+    >
       Resume
     </StyledButton>
   );

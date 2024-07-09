@@ -10,6 +10,8 @@ import {
   SiGraphql,
 } from "react-icons/si";
 
+import { FaAws } from "react-icons/fa";
+
 type Skill = {
   id: number;
   name: string;
@@ -52,7 +54,7 @@ export const heroData = {
 
 export const aboutData = {
   description:
-    "I'm a Frontend Developer with a passion for building captivating web experiences. With a strong foundation in <span>modern web technologies</span> and agile teams, I specialize in creating user-friendly and responsive websites. Currently, I'm channeling my expertise into building products for our clients as a <span>Software Engineer</span> at <span>3Pillar Global</span>. Beyond work, I thrive on continuous learning and devote my free time to mastering new web technologies",
+    "I'm a Frontend Developer with a passion for building captivating web experiences. With a strong foundation in <span>modern web technologies</span> and agile teams, I specialize in creating user-friendly and responsive websites. Currently, I'm channeling my expertise into building products for our clients as a <span>Senior Software Engineer</span> at <span>3Pillar Global</span>. Beyond work, I thrive on continuous learning and devote my free time to mastering new web technologies",
   skills: [
     {
       id: 1,
@@ -101,6 +103,12 @@ export const aboutData = {
       name: "GraphQL",
       icon: SiGraphql,
       color: "#E10098",
+    },
+    {
+      id: 9,
+      name: "AWS Certified Cloud Practitioner",
+      icon: FaAws,
+      color: "#FF9900",
     },
   ] as Skill[],
 };
@@ -188,7 +196,7 @@ type Project = {
 
 export const projectsData = [
   {
-    title: "Tattoo Studio SAP",
+    title: "Tattoo Studio SPA",
     url: "https://mdt-ui.vercel.app",
     sourceLink: "https://github.com/miguelgnz/mdt_ui",
     description:
