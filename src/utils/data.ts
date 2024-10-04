@@ -8,6 +8,9 @@ import {
   SiNextdotjs,
   SiStyledcomponents,
   SiGraphql,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
 } from "react-icons/si";
 
 import { FaAws } from "react-icons/fa";
@@ -48,13 +51,18 @@ export const menuData = {
 
 export const heroData = {
   nameTitle: "MIGUEL GNZ",
-  subtitle: "FRONTEND DEVELOPER",
+  subtitle: "SOFTWARE DEVELOPER",
   intro: "Crafting stunning web experiences.",
 };
 
 export const aboutData = {
   description:
-    "I'm a Frontend Developer with a passion for building captivating web experiences. With a strong foundation in <span>modern web technologies</span> and agile teams, I specialize in creating user-friendly and responsive websites. Currently, I'm channeling my expertise into building products for our clients as a <span>Senior Software Engineer</span> at <span>3Pillar Global</span>. Beyond work, I thrive on continuous learning and devote my free time to mastering new web technologies",
+    "As a Web Developer with a solid background in modern web technologies, I specialize in crafting responsive,\n" +
+    "stateful and user-centric web applications. My experience spans across diverse, high-impact projects in various" +
+    "industries, where I have consistently delivered engaging and intuitive web experiences." +
+    "I am a self-driven and quick learner who thrives in agile team environments, always eager to expand my knowledge" +
+    "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to" +
+    "create innovative solutions that align with user needs and business goals.",
   skills: [
     {
       id: 1,
@@ -67,6 +75,24 @@ export const aboutData = {
       name: "NextJS",
       icon: SiNextdotjs,
       color: "#D9D9D9",
+    },
+    {
+      id: 9,
+      name: "NodeJS",
+      icon: SiNodedotjs,
+      color: "#68A063",
+    },
+    {
+      id: 10,
+      name: "Express",
+      icon: SiExpress,
+      color: "#FFF",
+    },
+    {
+      id: 11,
+      name: "MongoDB",
+      icon: SiMongodb,
+      color: "#47A248",
     },
     {
       id: 3,
@@ -88,25 +114,14 @@ export const aboutData = {
     },
     {
       id: 6,
-      name: "Gitflow",
+      name: "Git",
       icon: SiGit,
       color: "#F05032",
     },
+
     {
-      id: 7,
-      name: "Styled Components",
-      icon: SiStyledcomponents,
-      color: "#DB7093",
-    },
-    {
-      id: 8,
-      name: "GraphQL",
-      icon: SiGraphql,
-      color: "#E10098",
-    },
-    {
-      id: 9,
-      name: "AWS Certified Cloud Practitioner",
+      id: 12,
+      name: "AWS",
       icon: FaAws,
       color: "#FF9900",
     },
@@ -131,9 +146,12 @@ export const experienceData = [
     company: "3Pillar Global",
     url: "https://www.3pillarglobal.com/",
     startDate: "Apr 2022",
-    endDate: "Present",
+    endDate: "Sep 2024",
     description:
-      "Contributing to distinct projects for our clients, involving the development of a cybersecurity portal, where I harnessed the power of Typescript and React to create a robust and secure user interface. In another engagement within the healthcare industry, I worked with Next.js, MUI, and Typescript, delivering seamless and user-friendly web solutions tailored to the unique demands of this sector. ",
+      "Contributing to distinct projects for different clients, involving the development of a cybersecurity portal, " +
+      "where I harnessed the power of Typescript and React to create a robust and secure user interface. In another " +
+      "engagement within the healthcare industry, I worked with Next.js, MUI, and Typescript, delivering seamless and " +
+      "user-friendly web solutions tailored to the unique demands of this sector. ",
     skills: [
       "ReactJS",
       "NextJS",
@@ -202,7 +220,7 @@ export const projectsData = [
     description:
       " Responsive single-page application for a local tattoo studio. The site provides comprehensive information about the studio and artists, showcases featured tattoos, and includes essential contact details. The design ensures a seamless experience across all devices.",
     image: "/mdt.png",
-    skills: ["NextJS", "Typescript", "Material UI"],
+    skills: ["NextJS", "Typescript", "MUI"],
   },
   {
     title: "NextJS Blog",
