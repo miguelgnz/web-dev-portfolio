@@ -125,6 +125,12 @@ export const aboutData = {
       icon: FaAws,
       color: "#FF9900",
     },
+    {
+      id: 9,
+      name: "AWS Certified Cloud Practitioner",
+      icon: FaAws,
+      color: "#FF9900",
+    },
   ] as Skill[],
 };
 
