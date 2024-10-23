@@ -6,8 +6,6 @@ import {
   SiJavascript,
   SiGit,
   SiNextdotjs,
-  SiStyledcomponents,
-  SiGraphql,
   SiNodedotjs,
   SiExpress,
   SiMongodb,
@@ -57,10 +55,10 @@ export const heroData = {
 
 export const aboutData = {
   description:
-    "As a Web Developer with a solid background in modern web technologies, I specialize in crafting responsive,\n" +
+    "As a <span>Web Developer</span> with a solid background in modern web technologies, I specialize in crafting responsive,\n" +
     "stateful and user-centric web applications. My experience spans across diverse, high-impact projects in various" +
     "industries, where I have consistently delivered engaging and intuitive web experiences." +
-    "I am a self-driven and quick learner who thrives in agile team environments, always eager to expand my knowledge" +
+    "I am a self-driven and <span>quick learner</span> who thrives in agile team environments, always eager to expand my knowledge" +
     "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to" +
     "create innovative solutions that align with user needs and business goals.",
   skills: [
@@ -223,33 +221,6 @@ export const projectsData = [
     skills: ["NextJS", "Typescript", "MUI"],
   },
   {
-    title: "NextJS Blog",
-    url: "https://nextjs-blog-miguelgnz.vercel.app",
-    sourceLink: "https://github.com/miguelgnz/nextjs-blog",
-    description:
-      "Built a simple NextJS blog application while learning the framework through an interactive course provided by Vercel. ",
-    image: "/nextjsblog.png",
-    skills: ["NextJS", "Typescript", "Tailwind CSS", "Vercel"],
-  },
-  {
-    title: "miguelgnz.com",
-    url: "https://www.miguelgnz.com/",
-    sourceLink: "https://github.com/miguelgnz/web-dev-portfolio",
-    description:
-      "A dynamic single-page portfolio site built with Next.js and MUI. Showcasing my software engineering journey and expertise.",
-    image: "/devportfolio.png",
-    skills: ["Nextjs", "Typescritp", "MUI", "AWS S3", "AWS Cloudfront"],
-  },
-  {
-    title: "Developer Connector",
-    url: "",
-    sourceLink: "https://github.com/miguelgnz/dev_connector_prj",
-    description:
-      "A MERN stack application, built while learning web technologies through an online course. Consist in a social media network for developers.",
-    image: "/devconnector.png",
-    skills: ["MongoDB", "Express", "ReactJS", "NodeJS"],
-  },
-  {
     title: "Car Seller Landing Page",
     url: "https://miguelgnz.github.io/autotradeprod/",
     sourceLink: "https://github.com/miguelgnz/autotradeprod",
@@ -263,6 +234,24 @@ export const projectsData = [
       "AWS S3",
       "AWS Cloudfront",
     ],
+  },
+  {
+    title: "Developer Connector",
+    url: "",
+    sourceLink: "https://github.com/miguelgnz/dev_connector_prj",
+    description:
+      "A MERN stack application, built while learning web technologies through an online course. Consist in a social media network for developers.",
+    image: "/devconnector.png",
+    skills: ["MongoDB", "Express", "ReactJS", "NodeJS"],
+  },
+  {
+    title: "NextJS Blog",
+    url: "https://nextjs-blog-miguelgnz.vercel.app",
+    sourceLink: "https://github.com/miguelgnz/nextjs-blog",
+    description:
+      "Built a simple NextJS blog application while learning the framework through an interactive course provided by Vercel. ",
+    image: "/nextjsblog.png",
+    skills: ["NextJS", "Typescript", "Tailwind CSS", "Vercel"],
   },
 ] as Project[];
 
