@@ -55,11 +55,11 @@ export const heroData = {
 
 export const aboutData = {
   description:
-    "As a <span>Web Developer</span> with a solid background in modern web technologies, I specialize in crafting responsive,\n" +
-    "stateful and user-centric web applications. My experience spans across diverse, high-impact projects in various" +
-    "industries, where I have consistently delivered engaging and intuitive web experiences." +
-    "I am a self-driven and <span>quick learner</span> who thrives in agile team environments, always eager to expand my knowledge" +
-    "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to" +
+    "As a <span>Web Developer</span> with a solid background in modern web technologies, I specialize in crafting responsive, " +
+    "stateful and user-centric web applications. My experience spans across diverse high-impact projects in various " +
+    "industries where I have consistently delivered engaging and intuitive web experiences. " +
+    "I am a self-driven and <span>quick learner</span> who thrives in agile team environments, always eager to expand my knowledge " +
+    "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to " +
     "create innovative solutions that align with user needs and business goals.",
   skills: [
     {
