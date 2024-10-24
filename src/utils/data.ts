@@ -237,7 +237,7 @@ export const projectsData = [
   },
   {
     title: "Developer Connector",
-    url: "",
+    url: "https://dev-connector-prj-fe.onrender.com/",
     sourceLink: "https://github.com/miguelgnz/dev_connector_prj",
     description:
       "A MERN stack application, built while learning web technologies through an online course. Consist in a social media network for developers.",
