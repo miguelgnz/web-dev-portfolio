@@ -6,14 +6,10 @@ import {
   SiJavascript,
   SiGit,
   SiNextdotjs,
-  SiStyledcomponents,
-  SiGraphql,
   SiNodedotjs,
   SiExpress,
-  SiMongodb,
+  SiTailwindcss,
 } from "react-icons/si";
-
-import { FaAws } from "react-icons/fa";
 
 type Skill = {
   id: number;
@@ -31,14 +27,14 @@ export const menuData = {
         url: "#about",
       },
       {
-        id: 2,
-        text: "Experience",
-        url: "#experience",
-      },
-      {
         id: 3,
         text: "Projects",
         url: "#projects",
+      },
+      {
+        id: 2,
+        text: "Experience",
+        url: "#experience",
       },
       {
         id: 4,
@@ -57,11 +53,11 @@ export const heroData = {
 
 export const aboutData = {
   description:
-    "As a Web Developer with a solid background in modern web technologies, I specialize in crafting responsive,\n" +
-    "stateful and user-centric web applications. My experience spans across diverse, high-impact projects in various" +
-    "industries, where I have consistently delivered engaging and intuitive web experiences." +
-    "I am a self-driven and quick learner who thrives in agile team environments, always eager to expand my knowledge" +
-    "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to" +
+    "As a <span>Web Developer</span> with a solid background in modern web technologies, I specialize in crafting responsive, " +
+    "stateful and user-centric web applications. My experience spans across diverse high-impact projects in various " +
+    "industries where I have consistently delivered engaging and intuitive web experiences. " +
+    "I am a self-driven and <span>quick learner</span> who thrives in agile team environments, always eager to expand my knowledge " +
+    "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to " +
     "create innovative solutions that align with user needs and business goals.",
   skills: [
     {
@@ -77,30 +73,6 @@ export const aboutData = {
       color: "#D9D9D9",
     },
     {
-      id: 9,
-      name: "NodeJS",
-      icon: SiNodedotjs,
-      color: "#68A063",
-    },
-    {
-      id: 10,
-      name: "Express",
-      icon: SiExpress,
-      color: "#FFF",
-    },
-    {
-      id: 11,
-      name: "MongoDB",
-      icon: SiMongodb,
-      color: "#47A248",
-    },
-    {
-      id: 3,
-      name: "Material UI",
-      icon: SiMui,
-      color: "#027FFE",
-    },
-    {
       id: 4,
       name: "TypeScript",
       icon: SiTypescript,
@@ -113,23 +85,35 @@ export const aboutData = {
       color: "#F7DF1E",
     },
     {
+      id: 3,
+      name: "Material UI",
+      icon: SiMui,
+      color: "#027FFE",
+    },
+    {
+      id: 9,
+      name: "Tailwind CSS",
+      icon: SiTailwindcss,
+      color: " #38B2AC",
+    },
+    {
+      id: 11,
+      name: "NodeJS",
+      icon: SiNodedotjs,
+      color: "#68A063",
+    },
+    {
+      id: 10,
+      name: "Express",
+      icon: SiExpress,
+      color: "#FFF",
+    },
+
+    {
       id: 6,
       name: "Git",
       icon: SiGit,
       color: "#F05032",
-    },
-
-    {
-      id: 12,
-      name: "AWS",
-      icon: FaAws,
-      color: "#FF9900",
-    },
-    {
-      id: 9,
-      name: "AWS Certified Cloud Practitioner",
-      icon: FaAws,
-      color: "#FF9900",
     },
   ] as Skill[],
 };
@@ -220,35 +204,26 @@ type Project = {
 
 export const projectsData = [
   {
+    title: "Trello Clone App",
+    url: "https://trello-clone-six-dun.vercel.app",
+    sourceLink: "https://github.com/miguelgnz/trello-clone-fe",
+    description:
+      "A clone of the popular project management tool Trello. The app allows users to create boards, lists, and cards, and manage tasks efficiently.",
+    image: "/trello_clone.jpg",
+    skills: ["NextJS", "React", "Typescript", "Tailwind CSS", "NextUI"],
+  },
+  {
     title: "Tattoo Studio SPA",
     url: "https://mdt-ui.vercel.app",
     sourceLink: "https://github.com/miguelgnz/mdt_ui",
     description:
       " Responsive single-page application for a local tattoo studio. The site provides comprehensive information about the studio and artists, showcases featured tattoos, and includes essential contact details. The design ensures a seamless experience across all devices.",
     image: "/mdt.png",
-    skills: ["NextJS", "Typescript", "MUI"],
-  },
-  {
-    title: "NextJS Blog",
-    url: "https://nextjs-blog-miguelgnz.vercel.app",
-    sourceLink: "https://github.com/miguelgnz/nextjs-blog",
-    description:
-      "Built a simple NextJS blog application while learning the framework through an interactive course provided by Vercel. ",
-    image: "/nextjsblog.png",
-    skills: ["NextJS", "Typescript", "Tailwind CSS", "Vercel"],
-  },
-  {
-    title: "miguelgnz.com",
-    url: "https://www.miguelgnz.com/",
-    sourceLink: "https://github.com/miguelgnz/web-dev-portfolio",
-    description:
-      "A dynamic single-page portfolio site built with Next.js and MUI. Showcasing my software engineering journey and expertise.",
-    image: "/devportfolio.png",
-    skills: ["Nextjs", "Typescritp", "MUI", "AWS S3", "AWS Cloudfront"],
+    skills: ["NextJS", "React", "Typescript", "MUI"],
   },
   {
     title: "Developer Connector",
-    url: "",
+    url: "https://dev-connector-prj-fe.onrender.com/",
     sourceLink: "https://github.com/miguelgnz/dev_connector_prj",
     description:
       "A MERN stack application, built while learning web technologies through an online course. Consist in a social media network for developers.",
