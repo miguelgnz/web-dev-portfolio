@@ -36,11 +36,6 @@ export const menuData = {
         text: "Experience",
         url: "#experience",
       },
-      {
-        id: 4,
-        text: "Contact",
-        url: "#contact",
-      },
     ],
   },
 };
@@ -250,9 +245,11 @@ export const projectsData = [
 type Contact = {
   linkedin: string;
   github: string;
+  credly: string;
 };
 
 export const contactData = {
   linkedin: "https://www.linkedin.com/in/miguel-gnz/",
   github: "https://github.com/miguelgnz",
+  credly: "https://www.credly.com/users/miguel-gonzalez.4e4d7660",
 } as Contact;

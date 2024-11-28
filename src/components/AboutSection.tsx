@@ -1,13 +1,8 @@
 import { Icon, Typography, styled } from "@mui/material";
 import HomeSubtitle from "@/components/HomeSubtitle";
 import { aboutData } from "@/utils/data";
-import Image from "next/image";
 import AnimatedWrapper from "@/components/animations/AnimatedWrapper";
-import Link from "next/link";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import sanitizeHtlm from "sanitize-html";
-import avatar from "../images/profile-min.jpg";
-import awsBadge from "../../public/aws-badge.png";
 
 const sanitizeHtmlOptions = {
   allowedTags: ["span"],
@@ -64,35 +59,6 @@ const IndividualSkillWrapper = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {},
 }));
 
-const ImageAndBadgeWrapper = styled("div")(({ theme }) => ({
-  display: "flex",
-  width: "40%",
-  justifyContent: "center",
-  [theme.breakpoints.down("md")]: {
-    width: "100%",
-  },
-}));
-
-const PhotoContainer = styled("div")(({ theme }) => ({
-  borderRadius: "24px",
-  width: "180px",
-  height: "190px",
-  [theme.breakpoints.down("md")]: {
-    width: "145px",
-    height: "155px",
-  },
-}));
-
-const BadgeContainer = styled("div")(({ theme }) => ({
-  position: "absolute",
-  marginTop: "-36px",
-  marginLeft: "172px",
-  [theme.breakpoints.down("md")]: {
-    marginTop: "-28px",
-    marginLeft: "142px",
-  },
-}));
-
 const DescriptionTypography = styled(Typography)(({ theme }) => ({
   fontSize: "16px",
   color: "#D9D9D9",
@@ -109,13 +75,14 @@ const DescriptionTypography = styled(Typography)(({ theme }) => ({
   },
 }));
 
+const DescriptionWrapper = styled("article")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: "20px",
+}));
+
 const AboutSection = () => {
   const mobileView = useMediaQuery("(max-width: 840px)");
-
-  const sanitizedIntro = sanitizeHtlm(
-    aboutData.description,
-    sanitizeHtmlOptions,
-  );
 
   return (
     <MainContainer>
@@ -125,9 +92,22 @@ const AboutSection = () => {
       <AboutContents>
         <InfoWrapper>
           <AnimatedWrapper delay={1} variants={{ opacity: 0, x: -100 }}>
-            <DescriptionTypography
-              dangerouslySetInnerHTML={{ __html: sanitizedIntro }}
-            />
+            <DescriptionWrapper>
+              <DescriptionTypography>
+                As a Web Developer with a solid background in modern web
+                technologies, I specialize in crafting responsive, stateful and
+                user-centric web applications. My experience spans across
+                diverse high-impact projects in various industries where I have
+                consistently delivered engaging and intuitive web experiences.
+              </DescriptionTypography>
+              <DescriptionTypography>
+                I am a self-driven and quick learner who thrives in agile team
+                environments, always eager to expand my knowledge + and adapt to
+                new challenges. My commitment to staying current with industry
+                trends and best practices allows me to + create innovative
+                solutions that align with user needs and business goals.
+              </DescriptionTypography>
+            </DescriptionWrapper>
           </AnimatedWrapper>
           <DescriptionTypography>{"My tech stack:"}</DescriptionTypography>
           <SkillsContainer>
@@ -146,41 +126,6 @@ const AboutSection = () => {
             })}
           </SkillsContainer>
         </InfoWrapper>
-        {/* <ImageAndBadgeWrapper>
-          <PhotoContainer>
-            <Image
-              src={avatar}
-              alt={"avatar"}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                borderRadius: "24px",
-                border: "4px solid transparent",
-                background: "linear-gradient(145deg, #8D8D8D, #8D8D8D)",
-                boxShadow: " 0 10px 20px rgba(0, 0, 0, 0.2)",
-              }}
-            />
-          </PhotoContainer>
-          <BadgeContainer>
-            <Link
-              href={
-                "https://www.credly.com/badges/df638cc1-377b-42de-a136-280321f8a901/public_url"
-              }
-              target="_blank"
-            >
-              <Image
-                src={awsBadge}
-                alt={"badge"}
-                style={{
-                  width: mobileView ? "68px" : "90px",
-                  height: mobileView ? "68px" : "90px",
-                  objectFit: "cover",
-                }}
-              />
-            </Link>
-          </BadgeContainer>
-        </ImageAndBadgeWrapper> */}
       </AboutContents>
     </MainContainer>
   );
