@@ -3,7 +3,7 @@ import { HiOutlineDocumentText } from "react-icons/hi2";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   borderRadius: "30px",
-  width: "340px",
+  width: "168px",
   [theme.breakpoints.down("lg")]: {
     width: "300px",
   },

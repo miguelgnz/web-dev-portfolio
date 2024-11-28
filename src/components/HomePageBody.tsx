@@ -28,11 +28,6 @@ const HomePageBody = () => {
           <ProjectsSection />
         </div>
       </Grid>
-      <Grid item xs={10} md={9}>
-        <div id="contact">
-          <ContactSection />
-        </div>
-      </Grid>
     </Grid>
   );
 };

@@ -2,17 +2,20 @@ import { styled, Typography, Box } from "@mui/material";
 import ResumeButton from "@/components/ResumeButton";
 import { heroData } from "@/utils/data";
 import AnimatedWrapper from "@/components/animations/AnimatedWrapper";
+import { SiLinkedin, SiGithub, SiCredly } from "react-icons/si";
+import { contactData } from "@/utils/data";
+import Link from "next/link";
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  [theme.breakpoints.down("md")]: {},
+  justifyContent: "center",
+  height: "calc(100vh - 4rem)",
 }));
 
 const UpperTextWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  [theme.breakpoints.down("md")]: {},
 }));
 
 const LowerTextWrapper = styled("div")(({ theme }) => ({
@@ -33,7 +36,7 @@ const PhraseTypography = styled(Typography)(({ theme }) => ({
   letterSpacing: "0.5px",
   userSelect: "none",
   [theme.breakpoints.down("md")]: {
-    fontSize: "16px",
+    fontSize: "14px",
   },
 }));
 
@@ -46,14 +49,38 @@ const BigTitle = styled(Typography)(({ theme }) => ({
   letterSpacing: "3px",
   userSelect: "none",
   [theme.breakpoints.down("md")]: {
-    fontSize: "48px",
+    fontSize: "40px",
+  },
+}));
+
+const SocialIconsWrapper = styled("div")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  gap: "24px",
+}));
+
+const FlatLink = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
+  color: "inherit",
+  "& > svg": {
+    color: "#FFF",
+    fontSize: "2.5rem",
+    "&:hover": {
+      transform: "scale(1.2)",
+      transition: "transform 0.3s ease-in-out",
+    },
+  },
+  [theme.breakpoints.down("md")]: {
+    "& > svg": {
+      fontSize: "2rem",
+    },
   },
 }));
 
 const HeroSection = () => {
   const commonVariants = { opacity: 0, x: -100 };
   return (
-    <MainContainer>
+    <MainContainer id="HeroSection">
       <Box
         sx={{
           display: "flex",
@@ -76,6 +103,18 @@ const HeroSection = () => {
             <PhraseTypography variant="h2">{heroData.intro}</PhraseTypography>
           </AnimatedWrapper>
         </LowerTextWrapper>
+
+        <SocialIconsWrapper>
+          <FlatLink href={contactData.linkedin} target="_blank">
+            <SiLinkedin />
+          </FlatLink>
+          <FlatLink href={contactData.github} target="_blank">
+            <SiGithub />
+          </FlatLink>
+          <FlatLink href={contactData.credly} target="_blank">
+            <SiCredly />
+          </FlatLink>
+        </SocialIconsWrapper>
         <AnimatedWrapper variants={commonVariants} delay={1.3}>
           <ResumeButton />
         </AnimatedWrapper>
