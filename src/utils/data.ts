@@ -46,14 +46,34 @@ export const heroData = {
   intro: "Crafting stunning web experiences.",
 };
 
+type DescriptionSegment = {
+  text: string;
+  highlight?: boolean;
+};
+
 export const aboutData = {
-  description:
-    "As a <span>Web Developer</span> with a solid background in modern web technologies, I specialize in crafting responsive, " +
-    "stateful and user-centric web applications. My experience spans across diverse high-impact projects in various " +
-    "industries where I have consistently delivered engaging and intuitive web experiences. " +
-    "I am a self-driven and <span>quick learner</span> who thrives in agile team environments, always eager to expand my knowledge " +
-    "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to " +
-    "create innovative solutions that align with user needs and business goals.",
+  description: [
+    [
+      { text: "As a " },
+      { text: "Web Developer", highlight: true },
+      {
+        text:
+          " with a solid background in modern web technologies, I specialize in crafting responsive, " +
+          "stateful and user-centric web applications. My experience spans across diverse high-impact projects in various " +
+          "industries where I have consistently delivered engaging and intuitive web experiences.",
+      },
+    ],
+    [
+      { text: "I am a self-driven and " },
+      { text: "quick learner", highlight: true },
+      {
+        text:
+          " who thrives in agile team environments, always eager to expand my knowledge " +
+          "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to " +
+          "create innovative solutions that align with user needs and business goals.",
+      },
+    ],
+  ] as DescriptionSegment[][],
   skills: [
     {
       id: 1,

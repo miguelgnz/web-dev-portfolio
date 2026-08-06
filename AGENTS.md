@@ -15,7 +15,7 @@ Stack: Next.js 13 (**pages router**) + TypeScript (strict) + MUI v5 with Emotion
 ## Architecture
 
 - Single page: `src/pages/index.tsx` → `src/views/HomePage.tsx` → `src/styles/Layout.tsx` (Navbar/Footer) + `src/components/HomePageBody.tsx` → section components (`HeroSection`, `AboutSection`, `ExperienceSection`/`ExperienceTabs`, `ProjectsSection`/`ProjectCard`). Anchor nav via `id` divs (`#home`, `#about`, `#experience`, `#projects`) and `scrollBehavior: smooth` on `<html>`.
-- **All site content lives in `src/utils/data.ts`** (`heroData`, `aboutData.skills`, `experienceData`, `projectsData`, `contactData`, `menuData`). To change text, links, skills, jobs, or projects, edit that file — components render it. Project images live in `public/` and are referenced by root-relative paths (e.g. `/trello_clone.jpg`). Skill icons are `react-icons` components stored directly in the data.
+- **All site content lives in `src/utils/data.ts`** (`heroData`, `aboutData.description`/`skills`, `experienceData`, `projectsData`, `contactData`, `menuData`). To change text, links, skills, jobs, or projects, edit that file — components render it. `aboutData.description` is an array of paragraphs, each an array of `{ text, highlight? }` segments (`highlight: true` renders as an accent-colored `<span>`). Project images live in `public/` and are referenced by root-relative paths (e.g. `/trello_clone.jpg`). Skill icons are `react-icons` components stored directly in the data.
 - Display order = array order in `data.ts` (ids are not sorted — e.g. `menuData` ids are 1,3,2 on purpose). Keep ids unique when adding entries; `ExperienceTabs` uses `exp.id` as the tab index.
 - Styling: per-component MUI `styled()` wrappers + `sx` props; breakpoints customized in theme (`md: 840`, not the MUI default 900 — `useMediaQuery("(max-width: 840px)")` matches it).
 - Theme (`src/styles/theme.ts`): palette has **custom keys `texts` and `accent`** injected via an `as CustomPaletteSettings` cast (used as `color: "texts.main"` in sx). Font is Source Code Pro via `next/font/google`.
@@ -29,9 +29,6 @@ Stack: Next.js 13 (**pages router**) + TypeScript (strict) + MUI v5 with Emotion
 
 ## Known dead code / inconsistencies (don't propagate)
 
-- `src/styles/globals.css` is **never imported** (create-next-app leftover); `sanitize-html` (+ its types) is a dependency but unused — `AboutSection` has an orphaned `sanitizeHtmlOptions` object.
-- `AboutSection` **hardcodes** its description paragraphs instead of rendering `aboutData.description` (which contains `<span>` markup intended for sanitize-html). The hardcoded copy has drifted from the data and contains stray `+` characters.
-- `Spinner.tsx` and the `SpinnerWrapper` styled-component in `pages/index.tsx` are unused; `ContactSection` is imported in `HomePageBody` but not rendered (contact icons live in `HeroSection`).
-- `robots.txt` is at the repo root, so it is **not** deployed — only `public/` is copied to `out/`.
+- `ContactSection.tsx` exists but is **not rendered** anywhere (contact icons live in `HeroSection`) — pending a render-or-delete decision.
 - `AnimatedWrapper` accepts a `variants` prop but ignores it (hardcoded `initial`/`animate`).
-- Roboto is loaded twice (`@fontsource/roboto` in `_app.tsx` + Google Fonts CDN link in `_document.tsx`) yet the theme doesn't use it. Page `<meta description>` sits in `_document.tsx` with an invalid `title` attribute instead of in the page's `<Head>`.
+- Roboto is loaded twice (`@fontsource/roboto` in `_app.tsx` + Google Fonts CDN link in `_document.tsx`) yet the theme doesn't use it.
