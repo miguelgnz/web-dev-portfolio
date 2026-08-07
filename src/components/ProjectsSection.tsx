@@ -27,17 +27,21 @@ const ProjectsSection = () => {
     <MainContainer>
       <HomeSubtitle subtitle="Projects" />
       <CardsContainer>
-        {projectsData.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            url={project.url}
-            description={project.description}
-            skills={project.skills}
-            image={project.image}
-            sourceLink={project.sourceLink}
-          />
-        ))}
+        {[...projectsData]
+          .sort(
+            (a, b) => Number(b.featured ?? false) - Number(a.featured ?? false),
+          )
+          .map((project) => (
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              url={project.url}
+              description={project.description}
+              skills={project.skills}
+              image={project.image}
+              sourceLink={project.sourceLink}
+            />
+          ))}
       </CardsContainer>
     </MainContainer>
   );

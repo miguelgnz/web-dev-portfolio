@@ -186,14 +186,14 @@ const ExperienceTabs = () => {
                   fontSize: { xs: "13px", md: "16px" },
                 }}
                 label={exp.company}
-                key={exp.id}
+                key={exp.company}
               />
             );
           })}
         </StyledTabs>
-        {experienceData.map((exp) => {
+        {experienceData.map((exp, index) => {
           return (
-            <CustomTabPanel key={exp.id} value={value} index={exp.id}>
+            <CustomTabPanel key={exp.company} value={value} index={index}>
               <motion.div
                 initial={{ opacity: 0, x: 800 }}
                 animate={{ opacity: 1, x: 0 }}

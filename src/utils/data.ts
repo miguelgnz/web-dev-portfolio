@@ -27,12 +27,12 @@ export const menuData = {
         url: "#about",
       },
       {
-        id: 3,
+        id: 2,
         text: "Projects",
         url: "#projects",
       },
       {
-        id: 2,
+        id: 3,
         text: "Experience",
         url: "#experience",
       },
@@ -73,7 +73,7 @@ export const aboutData = {
           "create innovative solutions that align with user needs and business goals.",
       },
     ],
-  ] as DescriptionSegment[][],
+  ] satisfies DescriptionSegment[][],
   skills: [
     {
       id: 1,
@@ -88,53 +88,52 @@ export const aboutData = {
       color: "#D9D9D9",
     },
     {
-      id: 4,
+      id: 3,
       name: "TypeScript",
       icon: SiTypescript,
       color: "#007ACC",
     },
     {
-      id: 5,
+      id: 4,
       name: "JavaScript",
       icon: SiJavascript,
       color: "#F7DF1E",
     },
     {
-      id: 3,
+      id: 5,
       name: "Material UI",
       icon: SiMui,
       color: "#027FFE",
     },
     {
-      id: 9,
+      id: 6,
       name: "Tailwind CSS",
       icon: SiTailwindcss,
       color: " #38B2AC",
     },
     {
-      id: 11,
+      id: 7,
       name: "NodeJS",
       icon: SiNodedotjs,
       color: "#68A063",
     },
     {
-      id: 10,
+      id: 8,
       name: "Express",
       icon: SiExpress,
       color: "#FFF",
     },
 
     {
-      id: 6,
+      id: 9,
       name: "Git",
       icon: SiGit,
       color: "#F05032",
     },
-  ] as Skill[],
+  ] satisfies Skill[],
 };
 
 type Experience = {
-  id: number;
   title: string;
   company: string;
   url: string;
@@ -146,7 +145,6 @@ type Experience = {
 
 export const experienceData = [
   {
-    id: 0,
     title: "Senior Software Engineer",
     company: "3Pillar Global",
     url: "https://www.3pillarglobal.com/",
@@ -167,7 +165,6 @@ export const experienceData = [
     ],
   },
   {
-    id: 1,
     title: "Software Engineer",
     company: "Cognits",
     url: "https://cognits.co/",
@@ -178,7 +175,6 @@ export const experienceData = [
     skills: ["Javascript", "REST API", "CSS Modules"],
   },
   {
-    id: 2,
     title: "Software Technical Specialist",
     company: "HCL Tech",
     url: "https://www.hcltech.com/",
@@ -189,7 +185,6 @@ export const experienceData = [
     skills: ["Networking", "CISCO", "Javascript"],
   },
   {
-    id: 3,
     title: "Freelancer/Selft-taught",
     company: "Freelancer",
     url: "https://www.miguelgnz.com/",
@@ -206,7 +201,7 @@ export const experienceData = [
       "AWS Cloudfront",
     ],
   },
-] as Experience[];
+] satisfies Experience[];
 
 type Project = {
   title: string;
@@ -215,6 +210,7 @@ type Project = {
   description: string;
   image: string;
   skills: string[];
+  featured?: boolean;
 };
 
 export const projectsData = [
@@ -226,6 +222,7 @@ export const projectsData = [
       "A clone of the popular project management tool Trello. The app allows users to create boards, lists, and cards, and manage tasks efficiently.",
     image: "/trello_clone.jpg",
     skills: ["NextJS", "React", "Typescript", "Tailwind CSS", "NextUI"],
+    featured: true,
   },
   {
     title: "Tattoo Studio SPA",
@@ -235,6 +232,7 @@ export const projectsData = [
       " Responsive single-page application for a local tattoo studio. The site provides comprehensive information about the studio and artists, showcases featured tattoos, and includes essential contact details. The design ensures a seamless experience across all devices.",
     image: "/mdt.png",
     skills: ["NextJS", "React", "Typescript", "MUI"],
+    featured: true,
   },
   {
     title: "Developer Connector",
@@ -260,7 +258,7 @@ export const projectsData = [
       "AWS Cloudfront",
     ],
   },
-] as Project[];
+] satisfies Project[];
 
 type Contact = {
   linkedin: string;
@@ -272,4 +270,4 @@ export const contactData = {
   linkedin: "https://www.linkedin.com/in/miguel-gnz/",
   github: "https://github.com/miguelgnz",
   credly: "https://www.credly.com/users/miguel-gonzalez.4e4d7660",
-} as Contact;
+} satisfies Contact;
