@@ -1,20 +1,19 @@
 import { styled } from "@mui/material";
-import ExperienceTabs from "@/components/ExperienceTabs";
+import ExperienceTimeline from "@/components/ExperienceTimeline";
 import HomeSubtitle from "@/components/HomeSubtitle";
 
-const MainContainer = styled("div")(({ theme }) => ({
+const MainContainer = styled("div")({
   display: "flex",
   flexDirection: "column",
   gap: "35px",
   justifyContent: "center",
-  [theme.breakpoints.down("md")]: {},
-}));
+});
 
 const ExperienceSection = () => {
   return (
     <MainContainer>
       <HomeSubtitle subtitle="Experience" />
-      <ExperienceTabs />
+      <ExperienceTimeline />
     </MainContainer>
   );
 };

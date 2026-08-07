@@ -239,7 +239,7 @@ export const experienceData = [
     company: "Freelancer",
     url: "https://www.miguelgnz.com/",
     startDate: "Jun 2016",
-    endDate: "Present",
+    endDate: "Jan 2019",
     description:
       "During my journey as a Freelancer and self-taught enthusiast, I've dedicated substantial time to continuous learning and skill development. I've eagerly pursued courses and certifications across a spectrum of cutting-edge web technologies, ensuring that my knowledge remains current and adaptable. Moreover, I've embraced personal projects as valuable learning opportunities, allowing me to put theory into practice and gain hands-on experience.",
     skills: [
