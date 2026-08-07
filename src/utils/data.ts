@@ -90,7 +90,10 @@ export const aboutData = {
         key: "stack",
         value: ["ReactJS", "NextJS", "TypeScript", "AWS", "GitHub Actions"],
       },
-      { key: "mission", value: "Crafting stunning web experiences." },
+      {
+        key: "AI Tools",
+        value: ["Claude Code", "GitHub Copilot", "Opencode"],
+      },
     ] satisfies CodeWindowEntry[],
   },
   skills: [

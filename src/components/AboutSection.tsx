@@ -98,6 +98,10 @@ const LineNumber = styled("span")({
   userSelect: "none",
 });
 
+const EntryContent = styled("span")({
+  paddingLeft: "2ch",
+});
+
 const Keyword = styled("span")(({ theme }) => ({
   color: theme.palette.secondary.main,
 }));
@@ -268,7 +272,7 @@ const AboutSection = () => {
                   return (
                     <CodeLine key={entry.key}>
                       <LineNumber>{index + 2}</LineNumber>
-                      <span>
+                      <EntryContent>
                         <PropertyKey>{entry.key}</PropertyKey>
                         <Punctuation>: </Punctuation>
                         {Array.isArray(entry.value) && (
@@ -287,7 +291,7 @@ const AboutSection = () => {
                         ) : (
                           <Punctuation>,</Punctuation>
                         )}
-                      </span>
+                      </EntryContent>
                     </CodeLine>
                   );
                 })}
