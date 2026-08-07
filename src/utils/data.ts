@@ -145,6 +145,34 @@ type Experience = {
 
 export const experienceData = [
   {
+    title: "Software Engineer",
+    company: "Vana",
+    url: "https://www.vana.gt/",
+    startDate: "Feb 2025",
+    endDate: "Present",
+    description:
+      "Directly contributing to the frontend of various collection systems, where I implemented and " +
+      "consumed APIs, built responsive user interfaces, and styled components following modern design " +
+      "practices. I managed deployment environments through GitHub Actions, configuring CI/CD pipelines " +
+      "to streamline delivery and ensure reliable releases. Leveraged AI-assisted coding tools such as " +
+      "Claude Code to accelerate development workflows and uphold code quality. Integrated AWS cloud " +
+      "services including Lambda and DynamoDB to support scalable, serverless architectures.",
+    skills: [
+      "ReactJS",
+      "NextJS",
+      "TypeScript",
+      "React Query",
+      "Github Actions",
+      "CI/CD",
+      "Claude Code",
+      "Ant Design",
+      "AWS S3",
+      "AWS Cloudfront",
+      "AWS Lambda",
+      "AWS DynamoDB",
+    ],
+  },
+  {
     title: "Senior Software Engineer",
     company: "3Pillar Global",
     url: "https://www.3pillarglobal.com/",
