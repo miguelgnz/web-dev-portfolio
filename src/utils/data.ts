@@ -51,6 +51,11 @@ type DescriptionSegment = {
   highlight?: boolean;
 };
 
+type CodeWindowEntry = {
+  key: string;
+  value: string | string[];
+};
+
 export const aboutData = {
   description: [
     [
@@ -74,6 +79,20 @@ export const aboutData = {
       },
     ],
   ] satisfies DescriptionSegment[][],
+  codeWindow: {
+    fileName: "profile.ts",
+    variableName: "profile",
+    entries: [
+      { key: "name", value: "Miguel Gnz" },
+      { key: "role", value: "Software Engineer" },
+      { key: "company", value: "Vana" },
+      {
+        key: "stack",
+        value: ["ReactJS", "NextJS", "TypeScript", "AWS", "GitHub Actions"],
+      },
+      { key: "mission", value: "Crafting stunning web experiences." },
+    ] satisfies CodeWindowEntry[],
+  },
   skills: [
     {
       id: 1,
@@ -109,7 +128,7 @@ export const aboutData = {
       id: 6,
       name: "Tailwind CSS",
       icon: SiTailwindcss,
-      color: " #38B2AC",
+      color: "#38B2AC",
     },
     {
       id: 7,
