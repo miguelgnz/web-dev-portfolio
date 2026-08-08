@@ -9,7 +9,12 @@ import {
   SiNodedotjs,
   SiExpress,
   SiTailwindcss,
+  SiAntdesign,
+  SiOpencode,
 } from "react-icons/si";
+import { SiClaudecode } from "react-icons/si";
+import { RiCopilotFill } from "react-icons/ri";
+import { FaAws } from "react-icons/fa";
 
 type Skill = {
   id: number;
@@ -145,12 +150,41 @@ export const aboutData = {
       icon: SiExpress,
       color: "#FFF",
     },
-
     {
       id: 9,
       name: "Git",
       icon: SiGit,
       color: "#F05032",
+    },
+    {
+      id: 10,
+      name: "Claude Code",
+      icon: SiClaudecode,
+      color: "#F05032",
+    },
+    {
+      id: 11,
+      name: "Copilot",
+      icon: RiCopilotFill,
+      color: "#fff",
+    },
+    {
+      id: 12,
+      name: "Ant Design",
+      icon: SiAntdesign,
+      color: "#0170FE",
+    },
+    {
+      id: 13,
+      name: "Opencode",
+      icon: SiOpencode,
+      color: "#fff",
+    },
+    {
+      id: 14,
+      name: "AWS",
+      icon: FaAws,
+      color: "#FF9900",
     },
   ] satisfies Skill[],
 };

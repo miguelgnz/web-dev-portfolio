@@ -2,7 +2,8 @@ import { styled, Typography, Box } from "@mui/material";
 import ResumeButton from "@/components/ResumeButton";
 import { heroData } from "@/utils/data";
 import AnimatedWrapper from "@/components/animations/AnimatedWrapper";
-import { SiLinkedin, SiGithub, SiCredly } from "react-icons/si";
+import { SiGithub, SiCredly } from "react-icons/si";
+import { TfiLinkedin } from "react-icons/tfi";
 import { contactData } from "@/utils/data";
 import Link from "next/link";
 
@@ -106,7 +107,7 @@ const HeroSection = () => {
 
         <SocialIconsWrapper>
           <FlatLink href={contactData.linkedin} target="_blank">
-            <SiLinkedin />
+            <TfiLinkedin />
           </FlatLink>
           <FlatLink href={contactData.github} target="_blank">
             <SiGithub />
