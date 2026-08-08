@@ -10,9 +10,9 @@ import {
   SiExpress,
   SiTailwindcss,
   SiAntdesign,
-  SiOpencode,
 } from "react-icons/si";
 import { SiClaudecode } from "react-icons/si";
+import { SiOpencode } from "react-icons/si";
 import { RiCopilotFill } from "react-icons/ri";
 import { FaAws } from "react-icons/fa";
 
