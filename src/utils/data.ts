@@ -47,7 +47,7 @@ export const menuData = {
 
 export const heroData = {
   nameTitle: "MIGUEL GNZ",
-  subtitle: "SOFTWARE DEVELOPER",
+  subtitle: "SOFTWARE ENGINEER",
   intro: "Crafting stunning web experiences.",
 };
 
