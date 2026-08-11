@@ -22,11 +22,11 @@ const HomePageBody = () => {
           <ExperienceSection />
         </div>
       </Grid>
-      <Grid item xs={10} md={9}>
+      {/* <Grid item xs={10} md={9}>
         <div id="projects">
           <ProjectsSection />
         </div>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };

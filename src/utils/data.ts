@@ -9,7 +9,12 @@ import {
   SiNodedotjs,
   SiExpress,
   SiTailwindcss,
+  SiAntdesign,
 } from "react-icons/si";
+import { SiClaudecode } from "react-icons/si";
+import { SiOpencode } from "react-icons/si";
+import { RiCopilotFill } from "react-icons/ri";
+import { FaAws } from "react-icons/fa";
 
 type Skill = {
   id: number;
@@ -42,13 +47,18 @@ export const menuData = {
 
 export const heroData = {
   nameTitle: "MIGUEL GNZ",
-  subtitle: "SOFTWARE DEVELOPER",
+  subtitle: "SOFTWARE ENGINEER",
   intro: "Crafting stunning web experiences.",
 };
 
 type DescriptionSegment = {
   text: string;
   highlight?: boolean;
+};
+
+type CodeWindowEntry = {
+  key: string;
+  value: string | string[];
 };
 
 export const aboutData = {
@@ -74,6 +84,23 @@ export const aboutData = {
       },
     ],
   ] satisfies DescriptionSegment[][],
+  codeWindow: {
+    fileName: "profile.ts",
+    variableName: "profile",
+    entries: [
+      { key: "name", value: "Miguel Gnz" },
+      { key: "role", value: "Software Engineer" },
+      { key: "company", value: "Vana" },
+      {
+        key: "stack",
+        value: ["ReactJS", "NextJS", "TypeScript", "AWS", "GitHub Actions"],
+      },
+      {
+        key: "AI Tools",
+        value: ["Claude Code", "GitHub Copilot", "Opencode"],
+      },
+    ] satisfies CodeWindowEntry[],
+  },
   skills: [
     {
       id: 1,
@@ -109,7 +136,7 @@ export const aboutData = {
       id: 6,
       name: "Tailwind CSS",
       icon: SiTailwindcss,
-      color: " #38B2AC",
+      color: "#38B2AC",
     },
     {
       id: 7,
@@ -123,12 +150,41 @@ export const aboutData = {
       icon: SiExpress,
       color: "#FFF",
     },
-
     {
       id: 9,
       name: "Git",
       icon: SiGit,
       color: "#F05032",
+    },
+    {
+      id: 10,
+      name: "Claude Code",
+      icon: SiClaudecode,
+      color: "#F05032",
+    },
+    {
+      id: 11,
+      name: "Copilot",
+      icon: RiCopilotFill,
+      color: "#fff",
+    },
+    {
+      id: 12,
+      name: "Ant Design",
+      icon: SiAntdesign,
+      color: "#0170FE",
+    },
+    {
+      id: 13,
+      name: "Opencode",
+      icon: SiOpencode,
+      color: "#fff",
+    },
+    {
+      id: 14,
+      name: "AWS",
+      icon: FaAws,
+      color: "#FF9900",
     },
   ] satisfies Skill[],
 };
@@ -144,6 +200,34 @@ type Experience = {
 };
 
 export const experienceData = [
+  {
+    title: "Software Engineer",
+    company: "Vana",
+    url: "https://www.vana.gt/",
+    startDate: "Feb 2025",
+    endDate: "Present",
+    description:
+      "Directly contributing to the frontend of various collection systems, where I implemented and " +
+      "consumed APIs, built responsive user interfaces, and styled components following modern design " +
+      "practices. I managed deployment environments through GitHub Actions, configuring CI/CD pipelines " +
+      "to streamline delivery and ensure reliable releases. Leveraged AI-assisted coding tools such as " +
+      "Claude Code to accelerate development workflows and uphold code quality. Integrated AWS cloud " +
+      "services including Lambda and DynamoDB to support scalable, serverless architectures.",
+    skills: [
+      "ReactJS",
+      "NextJS",
+      "TypeScript",
+      "React Query",
+      "Github Actions",
+      "CI/CD",
+      "Claude Code",
+      "Ant Design",
+      "AWS S3",
+      "AWS Cloudfront",
+      "AWS Lambda",
+      "AWS DynamoDB",
+    ],
+  },
   {
     title: "Senior Software Engineer",
     company: "3Pillar Global",
@@ -189,7 +273,7 @@ export const experienceData = [
     company: "Freelancer",
     url: "https://www.miguelgnz.com/",
     startDate: "Jun 2016",
-    endDate: "Present",
+    endDate: "Jan 2019",
     description:
       "During my journey as a Freelancer and self-taught enthusiast, I've dedicated substantial time to continuous learning and skill development. I've eagerly pursued courses and certifications across a spectrum of cutting-edge web technologies, ensuring that my knowledge remains current and adaptable. Moreover, I've embraced personal projects as valuable learning opportunities, allowing me to put theory into practice and gain hands-on experience.",
     skills: [
