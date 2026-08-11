@@ -1,6 +1,7 @@
 import { styled } from "@mui/material";
 import HomeSubtitle from "@/components/HomeSubtitle";
-import { SiLinkedin, SiGithub } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
+import { TfiLinkedin } from "react-icons/tfi";
 import Link from "next/link";
 import { contactData } from "@/utils/data";
 
@@ -37,7 +38,7 @@ const ContactSection = () => {
       <HomeSubtitle subtitle="Git & Contact" />
       <IconsWrapper>
         <FlatLink href={contactData.linkedin} target="_blank">
-          <SiLinkedin />
+          <TfiLinkedin />
         </FlatLink>
         <FlatLink href={contactData.github} target="_blank">
           <SiGithub />

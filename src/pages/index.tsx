@@ -1,21 +1,16 @@
-import { styled } from "@mui/material";
 import HomePage from "@/views/HomePage";
 import Head from "next/head";
 import { motion } from "framer-motion";
-
-const SpinnerWrapper = styled("div")(({ theme }) => ({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
-  height: "100vh",
-}));
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Miguel Gnz - Software Developer</title>
+        <meta
+          name="description"
+          content="Miguel is a software developer based in Guatemala, with a passion for building web applications."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <motion.div

@@ -9,7 +9,12 @@ import {
   SiNodedotjs,
   SiExpress,
   SiTailwindcss,
+  SiAntdesign,
 } from "react-icons/si";
+import { SiClaudecode } from "react-icons/si";
+import { SiOpencode } from "react-icons/si";
+import { RiCopilotFill } from "react-icons/ri";
+import { FaAws } from "react-icons/fa";
 
 type Skill = {
   id: number;
@@ -27,12 +32,12 @@ export const menuData = {
         url: "#about",
       },
       {
-        id: 3,
+        id: 2,
         text: "Projects",
         url: "#projects",
       },
       {
-        id: 2,
+        id: 3,
         text: "Experience",
         url: "#experience",
       },
@@ -42,18 +47,60 @@ export const menuData = {
 
 export const heroData = {
   nameTitle: "MIGUEL GNZ",
-  subtitle: "SOFTWARE DEVELOPER",
+  subtitle: "SOFTWARE ENGINEER",
   intro: "Crafting stunning web experiences.",
 };
 
+type DescriptionSegment = {
+  text: string;
+  highlight?: boolean;
+};
+
+type CodeWindowEntry = {
+  key: string;
+  value: string | string[];
+};
+
 export const aboutData = {
-  description:
-    "As a <span>Web Developer</span> with a solid background in modern web technologies, I specialize in crafting responsive, " +
-    "stateful and user-centric web applications. My experience spans across diverse high-impact projects in various " +
-    "industries where I have consistently delivered engaging and intuitive web experiences. " +
-    "I am a self-driven and <span>quick learner</span> who thrives in agile team environments, always eager to expand my knowledge " +
-    "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to " +
-    "create innovative solutions that align with user needs and business goals.",
+  description: [
+    [
+      { text: "As a " },
+      { text: "Web Developer", highlight: true },
+      {
+        text:
+          " with a solid background in modern web technologies, I specialize in crafting responsive, " +
+          "stateful and user-centric web applications. My experience spans across diverse high-impact projects in various " +
+          "industries where I have consistently delivered engaging and intuitive web experiences.",
+      },
+    ],
+    [
+      { text: "I am a self-driven and " },
+      { text: "quick learner", highlight: true },
+      {
+        text:
+          " who thrives in agile team environments, always eager to expand my knowledge " +
+          "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to " +
+          "create innovative solutions that align with user needs and business goals.",
+      },
+    ],
+  ] satisfies DescriptionSegment[][],
+  codeWindow: {
+    fileName: "profile.ts",
+    variableName: "profile",
+    entries: [
+      { key: "name", value: "Miguel Gnz" },
+      { key: "role", value: "Software Engineer" },
+      { key: "company", value: "Vana" },
+      {
+        key: "stack",
+        value: ["ReactJS", "NextJS", "TypeScript", "AWS", "GitHub Actions"],
+      },
+      {
+        key: "AI Tools",
+        value: ["Claude Code", "GitHub Copilot", "Opencode"],
+      },
+    ] satisfies CodeWindowEntry[],
+  },
   skills: [
     {
       id: 1,
@@ -68,53 +115,81 @@ export const aboutData = {
       color: "#D9D9D9",
     },
     {
-      id: 4,
+      id: 3,
       name: "TypeScript",
       icon: SiTypescript,
       color: "#007ACC",
     },
     {
-      id: 5,
+      id: 4,
       name: "JavaScript",
       icon: SiJavascript,
       color: "#F7DF1E",
     },
     {
-      id: 3,
+      id: 5,
       name: "Material UI",
       icon: SiMui,
       color: "#027FFE",
     },
     {
-      id: 9,
+      id: 6,
       name: "Tailwind CSS",
       icon: SiTailwindcss,
-      color: " #38B2AC",
+      color: "#38B2AC",
     },
     {
-      id: 11,
+      id: 7,
       name: "NodeJS",
       icon: SiNodedotjs,
       color: "#68A063",
     },
     {
-      id: 10,
+      id: 8,
       name: "Express",
       icon: SiExpress,
       color: "#FFF",
     },
-
     {
-      id: 6,
+      id: 9,
       name: "Git",
       icon: SiGit,
       color: "#F05032",
     },
-  ] as Skill[],
+    {
+      id: 10,
+      name: "Claude Code",
+      icon: SiClaudecode,
+      color: "#F05032",
+    },
+    {
+      id: 11,
+      name: "Copilot",
+      icon: RiCopilotFill,
+      color: "#fff",
+    },
+    {
+      id: 12,
+      name: "Ant Design",
+      icon: SiAntdesign,
+      color: "#0170FE",
+    },
+    {
+      id: 13,
+      name: "Opencode",
+      icon: SiOpencode,
+      color: "#fff",
+    },
+    {
+      id: 14,
+      name: "AWS",
+      icon: FaAws,
+      color: "#FF9900",
+    },
+  ] satisfies Skill[],
 };
 
 type Experience = {
-  id: number;
   title: string;
   company: string;
   url: string;
@@ -126,7 +201,34 @@ type Experience = {
 
 export const experienceData = [
   {
-    id: 0,
+    title: "Software Engineer",
+    company: "Vana",
+    url: "https://www.vana.gt/",
+    startDate: "Feb 2025",
+    endDate: "Present",
+    description:
+      "Directly contributing to the frontend of various collection systems, where I implemented and " +
+      "consumed APIs, built responsive user interfaces, and styled components following modern design " +
+      "practices. I managed deployment environments through GitHub Actions, configuring CI/CD pipelines " +
+      "to streamline delivery and ensure reliable releases. Leveraged AI-assisted coding tools such as " +
+      "Claude Code to accelerate development workflows and uphold code quality. Integrated AWS cloud " +
+      "services including Lambda and DynamoDB to support scalable, serverless architectures.",
+    skills: [
+      "ReactJS",
+      "NextJS",
+      "TypeScript",
+      "React Query",
+      "Github Actions",
+      "CI/CD",
+      "Claude Code",
+      "Ant Design",
+      "AWS S3",
+      "AWS Cloudfront",
+      "AWS Lambda",
+      "AWS DynamoDB",
+    ],
+  },
+  {
     title: "Senior Software Engineer",
     company: "3Pillar Global",
     url: "https://www.3pillarglobal.com/",
@@ -147,7 +249,6 @@ export const experienceData = [
     ],
   },
   {
-    id: 1,
     title: "Software Engineer",
     company: "Cognits",
     url: "https://cognits.co/",
@@ -158,7 +259,6 @@ export const experienceData = [
     skills: ["Javascript", "REST API", "CSS Modules"],
   },
   {
-    id: 2,
     title: "Software Technical Specialist",
     company: "HCL Tech",
     url: "https://www.hcltech.com/",
@@ -169,12 +269,11 @@ export const experienceData = [
     skills: ["Networking", "CISCO", "Javascript"],
   },
   {
-    id: 3,
     title: "Freelancer/Selft-taught",
     company: "Freelancer",
     url: "https://www.miguelgnz.com/",
     startDate: "Jun 2016",
-    endDate: "Present",
+    endDate: "Jan 2019",
     description:
       "During my journey as a Freelancer and self-taught enthusiast, I've dedicated substantial time to continuous learning and skill development. I've eagerly pursued courses and certifications across a spectrum of cutting-edge web technologies, ensuring that my knowledge remains current and adaptable. Moreover, I've embraced personal projects as valuable learning opportunities, allowing me to put theory into practice and gain hands-on experience.",
     skills: [
@@ -186,7 +285,7 @@ export const experienceData = [
       "AWS Cloudfront",
     ],
   },
-] as Experience[];
+] satisfies Experience[];
 
 type Project = {
   title: string;
@@ -195,6 +294,7 @@ type Project = {
   description: string;
   image: string;
   skills: string[];
+  featured?: boolean;
 };
 
 export const projectsData = [
@@ -206,6 +306,7 @@ export const projectsData = [
       "A clone of the popular project management tool Trello. The app allows users to create boards, lists, and cards, and manage tasks efficiently.",
     image: "/trello_clone.jpg",
     skills: ["NextJS", "React", "Typescript", "Tailwind CSS", "NextUI"],
+    featured: true,
   },
   {
     title: "Tattoo Studio SPA",
@@ -215,6 +316,7 @@ export const projectsData = [
       " Responsive single-page application for a local tattoo studio. The site provides comprehensive information about the studio and artists, showcases featured tattoos, and includes essential contact details. The design ensures a seamless experience across all devices.",
     image: "/mdt.png",
     skills: ["NextJS", "React", "Typescript", "MUI"],
+    featured: true,
   },
   {
     title: "Developer Connector",
@@ -240,7 +342,7 @@ export const projectsData = [
       "AWS Cloudfront",
     ],
   },
-] as Project[];
+] satisfies Project[];
 
 type Contact = {
   linkedin: string;
@@ -252,4 +354,4 @@ export const contactData = {
   linkedin: "https://www.linkedin.com/in/miguel-gnz/",
   github: "https://github.com/miguelgnz",
   credly: "https://www.credly.com/users/miguel-gonzalez.4e4d7660",
-} as Contact;
+} satisfies Contact;
