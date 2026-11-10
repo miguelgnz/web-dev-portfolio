@@ -11,7 +11,7 @@ export default function CcBotPrivacy() {
       <p>
         Esta política corresponde a CC Bot Tracker, una herramienta privada de
         uso personal administrada por Miguel González. Contacto:{" "}
-        <a href="mailto:mgx.gon@gmail.com">mgx.gon@gmail.com</a>.
+        <a href="mailto:mitts_deep.9i@icloud.com">mitts_deep.9i@icloud.com</a>.
       </p>
       <h2>Acceso a Gmail y datos utilizados</h2>
       <p>
@@ -97,9 +97,9 @@ export default function CcBotPrivacy() {
       <p>
         Para solicitar la eliminación de registros, credenciales o respaldos de
         la aplicación, contacta al responsable en{" "}
-        <a href="mailto:mgx.gon@gmail.com">mgx.gon@gmail.com</a>. Los mensajes
-        del chat y los datos conservados por proveedores se gestionan también
-        mediante los controles y políticas de esos servicios.
+        <a href="mailto:mitts_deep.9i@icloud.com">mitts_deep.9i@icloud.com</a>.
+        Los mensajes del chat y los datos conservados por proveedores se
+        gestionan también mediante los controles y políticas de esos servicios.
       </p>
       <h2>Uso limitado y cambios</h2>
       <p>

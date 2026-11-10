@@ -48,7 +48,7 @@ export default function CcBotHome() {
         Consulta cómo se tratan los datos en la{" "}
         <Link href="/cc-bot/privacy">política de privacidad</Link>. Para
         contactar al responsable, escribe a{" "}
-        <a href="mailto:mgx.gon@gmail.com">mgx.gon@gmail.com</a>.
+        <a href="mailto:mitts_deep.9i@icloud.com">mitts_deep.9i@icloud.com</a>.
       </p>
     </CcBotPage>
   );
