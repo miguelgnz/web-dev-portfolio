@@ -19,6 +19,7 @@ export default function CcBotPage({
       <Head>
         <title>{title} | CC Bot Tracker</title>
         <meta name="description" content={description} />
+        <meta name="robots" content="noindex, nofollow" key="robots" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={`https://www.miguelgnz.dev${path}`} />
       </Head>
@@ -26,7 +27,6 @@ export default function CcBotPage({
         <main className={styles.page} lang="es">
           <nav aria-label="Navegación de CC Bot Tracker">
             <Link href="/cc-bot">CC Bot Tracker</Link>
-            <Link href="/">Miguel Gnz ↗</Link>
           </nav>
           <article>
             <p className={styles.label}>UNA HERRAMIENTA PERSONAL</p>
@@ -35,7 +35,7 @@ export default function CcBotPage({
           </article>
           <footer>
             <Link href="/cc-bot/privacy">Política de privacidad</Link>
-            <a href="mailto:mgx.gon@gmail.com">Contacto</a>
+            <a href="mailto:mitts_deep.9i@icloud.com">Contacto</a>
           </footer>
         </main>
       </div>
