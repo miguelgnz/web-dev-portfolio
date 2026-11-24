@@ -1,3 +1,5 @@
+> **Source art, not deployed.** The site only ships `public/miguel-pixel-avatar-v2/navbar/miguel-head-256.png`, `miguel-head-512.png` and `favicon/favicon.ico` + `favicon-32.png`. The originals below live here so the avatar can be re-exported later; paths in this README refer to the original export layout.
+
 # Miguel — avatar caricatura pixel art
 
 Versión de caricatura con cabeza más pequeña, rasgos simples y píxeles grandes. Basada en tus señas personales: slick back, barba, anteojos de marco metálico, tatuajes estilizados y una monstera. Los tatuajes interpretan los motivos visibles; no son una reproducción exacta.

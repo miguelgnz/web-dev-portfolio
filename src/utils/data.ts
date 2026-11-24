@@ -87,8 +87,6 @@ type ArchitectureNode = {
   emphasis?: "accent" | "optional";
 };
 
-type ChatMessage = { from: "me" | "bot"; text: string };
-
 export const caseStudyData = {
   title: "CC Bot Tracker",
   badges: ["Case study", "2026", "Private repo", "In production"],
@@ -136,21 +134,18 @@ export const caseStudyData = {
       emphasis: "optional",
     },
   ] satisfies ArchitectureNode[],
-  // Illustrative conversation with sample data — replace with the screen recording.
-  chat: [
-    { from: "me", text: "/ciclo" },
-    {
-      from: "bot",
-      text: "Ciclo actual · cierra 25 nov\nTotal: Q 3,482.10\n18 compras\nPago esperado: 15 dic",
-    },
-    { from: "me", text: "/compras de hoy" },
-    {
-      from: "bot",
-      text: "Hoy · 2 compras\nSupermercado · Q 214.35\nGasolinera · Q 300.00",
-    },
-    { from: "me", text: "¿cuánto gasté en gasolina este mes?" },
-  ] satisfies ChatMessage[],
-  chatCaption: "Illustrative demo · sample data",
+  // Screen recording of a dedicated demo bot seeded with synthetic purchases
+  // (see docs/DEMO.md in the bot repository).
+  video: {
+    mp4: "/media/cc-bot-demo.mp4",
+    webm: "/media/cc-bot-demo.webm",
+    poster: "/media/cc-bot-demo-poster.jpg",
+    width: 600,
+    height: 1224,
+    label:
+      "Screen recording of the Telegram bot answering /ciclo, /compras de hoy, “¿Cuánto gasté hoy?” and /compras Gasolinera with cycle totals and purchase lists",
+    caption: "Real recording · demo bot with synthetic data",
+  },
 };
 
 type Project = {
@@ -171,7 +166,7 @@ export const projectsData = [
     description:
       "Responsive single-page site for a local tattoo studio: artists, featured work gallery, location and WhatsApp contact.",
     stack: "Next.js · TypeScript · MUI",
-    image: "/mdt.png",
+    image: "/mdt.webp",
     imageAlt: "Tattoo Studio site: featured art gallery",
     liveUrl: "https://mdt-ui.vercel.app",
     sourceUrl: "https://github.com/miguelgnz/mdt_ui",
