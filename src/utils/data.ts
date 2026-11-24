@@ -166,13 +166,13 @@ export const projectsData = [
     title: "Tattoo Studio SPA",
     label: "Client work · Live",
     description:
-      "Responsive single-page site for a local tattoo studio: artists, featured work gallery, location and WhatsApp contact.",
+      "Responsive single-page site for a local tattoo studio, redesigned in 2026: artists with work sliders, featured gallery, booking info, login and WhatsApp contact.",
     stack: "Next.js · TypeScript · MUI",
     image: "/mdt-full.webp",
     imageWidth: 1120,
-    imageHeight: 4104,
+    imageHeight: 5176,
     imageAlt:
-      "Full-page preview of the Tattoo Studio site: hero, artist cards, studio story and featured art gallery",
+      "Full-page preview of the redesigned Tattoo Studio site: hero, process, artists, studio, featured art and contact",
     liveUrl: "https://mdt-ui.vercel.app",
     sourceUrl: "https://github.com/miguelgnz/mdt_ui",
   },
