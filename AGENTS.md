@@ -1,34 +1,36 @@
 # AGENTS.md
 
-Personal software developer portfolio for **Miguel Gnz** (miguelgnz.com) — a single-page static site presenting his hero intro, about/tech-stack, work experience, and project showcase. Dark navy theme (`#011627`), green/coral accents, monospace typography (Source Code Pro). Deployed on Vercel.
+Personal portfolio for **Miguel González** (miguelgnz.dev) — a single-page static site: hero, highlights, selected work (CC Bot Tracker case study + Tattoo Studio), AI workflow, experience timeline + stack, contact footer. Minimal editorial dark theme (`#09090b` background, one accent `#8ea8ff`), Space Grotesk headings, Inter body, JetBrains Mono details. Deployed on Vercel.
 
-Stack: Next.js 13 (**pages router**) + TypeScript (strict) + MUI v5 with Emotion + framer-motion. Content is data-driven from one file (see below).
+Stack: Next.js 16 (**App Router**) + React 19 + TypeScript (strict) + Tailwind CSS v4. No UI kit, no animation library. Content is data-driven from one file (see below).
 
 ## Commands
 
 - `npm run dev` — dev server
-- `npm run lint` — ESLint; **Prettier runs as an ESLint plugin and violations are errors** (no separate format script, no `.prettierrc` — Prettier defaults apply)
-- `npm run build` — static export to `out/` (`output: "export"` in `next.config.js`)
-- `npm run start` does **not** work with static export — preview with `npx serve out`
-- No tests, no CI. Verify changes with `npm run lint` + `npm run build`.
+- `npm run lint` — ESLint 9 flat config (`eslint.config.mjs`); **Prettier runs as an ESLint plugin and violations are errors** (no `.prettierrc` — Prettier defaults apply). `npx prettier --write src` fixes formatting.
+- `npm run build` — static export to `out/` (`output: "export"` in `next.config.ts`)
+- `npm run preview` — serves `out/` (`next start` does not work with static export)
+- No tests, no CI. Verify changes with `npm run lint` + `npm run build`, then look at the page (desktop and 390px mobile).
 
 ## Architecture
 
-- Single page: `src/pages/index.tsx` → `src/views/HomePage.tsx` → `src/styles/Layout.tsx` (Navbar/Footer) + `src/components/HomePageBody.tsx` → section components (`HeroSection`, `AboutSection`, `ExperienceSection`/`ExperienceTimeline`, `ProjectsSection`/`ProjectCard`). Anchor nav via `id` divs (`#home`, `#about`, `#experience`, `#projects`) and `scrollBehavior: smooth` on `<html>`.
-- **All site content lives in `src/utils/data.ts`** (`heroData`, `aboutData.description`/`codeWindow`/`skills`, `experienceData`, `projectsData`, `contactData`, `menuData`). To change text, links, skills, jobs, or projects, edit that file — components render it. `aboutData.description` is an array of paragraphs, each an array of `{ text, highlight? }` segments (`highlight: true` renders as an accent-colored `<span>`). `aboutData.codeWindow` feeds the faux editor card in the About section (`entries` are `{ key, value: string | string[] }` rendered as a JS object literal with syntax-colored tokens). Project images live in `public/` and are referenced by root-relative paths (e.g. `/trello_clone.jpg`). Skill icons are `react-icons` components stored directly in the data.
-- Display order = array order in `data.ts`. `ExperienceTimeline` renders experience entries in array order, newest first (experience entries have no id — reordering is safe; `endDate: "Present"` gets the green "current" dot); `ProjectsSection` renders `featured: true` projects first (stable sort, order otherwise preserved). Exports use `satisfies` — don't revert to `as` casts.
-- Styling: per-component MUI `styled()` wrappers + `sx` props; breakpoints customized in theme (`md: 840`, not the MUI default 900 — `useMediaQuery("(max-width: 840px)")` matches it).
-- Theme (`src/styles/theme.ts`): palette has **custom keys `texts` and `accent`** injected via an `as CustomPaletteSettings` cast (used as `color: "texts.main"` in sx). Font is Source Code Pro via `next/font/google`.
-- MUI/Emotion SSR is wired manually: `src/utils/createEmotionCache.ts` is shared by `src/pages/_app.tsx` and `src/pages/_document.tsx` (`getInitialProps` + `extractCriticalToChunks`). Keep both in sync if touching the styling setup.
-- Imports use the `@/` alias (`@/` → `src/`). `Layout.tsx` lives in `src/styles/` even though it's a component — existing quirk.
+- `src/app/layout.tsx` — fonts (`next/font/google`, exposed as CSS vars), site metadata (title, description, Open Graph/Twitter pointing at `/og.png`, favicons), Person JSON-LD.
+- `src/app/page.tsx` — the home page: `Navbar`, `Hero`, `Highlights`, `SelectedWork`, `AiWorkflow`, `Experience`, `Footer` (all in `src/components/`). Anchor nav via section ids (`#work`, `#ai`, `#experience`, `#contact`).
+- `src/app/og.png/route.tsx` — Open Graph image generated at build time with `next/og` (a route, not `opengraph-image.tsx`, so the exported file keeps its `.png` extension). `sitemap.ts` and `robots.ts` also live in `src/app` and need `export const dynamic = "force-static"`.
+- `src/app/cc-bot/` and `src/app/cc-bot/privacy/` — Spanish info + privacy pages for the CC Bot Tracker Telegram bot. **They back the bot's Google OAuth verification: keep them reachable, `noindex`, and don't restyle them with the portfolio theme.** They use `CcBotPage` + `CcBotPage.module.css` and `ccBotMetadata()` for metadata.
+- **All site content lives in `src/utils/data.ts`** (`siteData`, `contactData`, `navItems`, `highlightsData`, `caseStudyData`, `projectsData`, `aiWorkflowData`, `experienceData`, `stackData`). To change text, links, numbers, jobs, projects or skills, edit that file — components render it. Display order = array order. Icons are `react-icons` components stored in the data (`lu` = Lucide UI icons, `si`/`fa6` = brand logos). Exports use `satisfies` — don't revert to `as` casts. Keep every number in `highlightsData` verifiable.
+- Images live in `public/` and are referenced by root-relative paths. The avatar is `public/miguel-pixel-avatar-v2/navbar/miguel-head-*.png` (pixel art: always render with the `pixelated` utility).
+- Styling: Tailwind utility classes in the components. Design tokens are defined in `src/app/globals.css` under `@theme` (`bg`, `surface*`, `line*`, `fg*`, `muted`, `subtle`, `accent`, `font-display`, `font-mono`) — use them (`bg-surface`, `text-muted`, `border-line-strong`) instead of raw hex values. Custom utilities: `grid-backdrop`, `dot-backdrop`, `pixelated`, `reveal`.
+- Scroll reveal is CSS only (`Reveal` component → `.reveal` with `animation-timeline: view()`). Content must stay visible without JavaScript and with `prefers-reduced-motion`; don't reintroduce JS-driven `opacity: 0` initial states.
+- Imports use the `@/` alias (`@/` → `src/`).
 
 ## Conventions
 
 - Enforced by lint: double quotes, semicolons, `eqeqeq`, always-curly.
-- `next.config.js` sets `images.unoptimized` (required for static export) — no Next image optimization; `next/image` is fine to use but acts as a plain img.
+- `next.config.ts` sets `images.unoptimized` (required for static export) — `next/image` is fine to use but acts as a plain img.
+- Accessibility: icon-only links need `aria-label`; decorative icons get `aria-hidden="true"`; keep text contrast at AA on the dark background (`text-muted` is the lightest grey allowed for body copy).
 
-## Known dead code / inconsistencies (don't propagate)
+## Pending
 
-- `ContactSection.tsx` exists but is **not rendered** anywhere (contact icons live in `HeroSection`) — pending a render-or-delete decision.
-- `AnimatedWrapper` accepts a `variants` prop but ignores it (hardcoded `initial`/`animate`).
-- Roboto is loaded twice (`@fontsource/roboto` in `_app.tsx` + Google Fonts CDN link in `_document.tsx`) yet the theme doesn't use it.
+- CC Bot Tracker phone mock (`PhoneMock`) shows an illustrative chat with sample data; replace it with an autoplaying muted screen recording (MP4/WebM + poster, synthetic data) when available.
+- The resume button points to a Google Drive file (`siteData.resumeUrl`); swap to `/resume.pdf` once the updated CV is exported.

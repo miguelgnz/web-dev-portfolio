@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #09090b;
+  --color-surface: #0f0f12;
+  --color-surface-2: #0c0c0f;
+  --color-surface-3: #18181b;
+  --color-line: #1c1c21;
+  --color-line-strong: #27272a;
+  --color-line-bright: #3f3f46;
+  --color-fg: #fafafa;
+  --color-fg-2: #e4e4e7;
+  --color-fg-3: #d4d4d8;
+  --color-muted: #a1a1aa;
+  --color-subtle: #71717a;
+  --color-accent: #8ea8ff;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    color-scheme: dark;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+  }
+}
+
+@utility grid-backdrop {
+  background-image:
+    linear-gradient(#141418 1px, transparent 1px),
+    linear-gradient(90deg, #141418 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility dot-backdrop {
+  background-image: radial-gradient(#1c1c21 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+@utility pixelated {
+  image-rendering: pixelated;
+}
+
+/* Scroll-driven reveal. CSS only: content is always visible without JS,
+   in browsers without scroll timelines, and with reduced motion. */
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer utilities {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .reveal {
+        animation: reveal-in linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 35%;
+      }
+    }
+  }
+}

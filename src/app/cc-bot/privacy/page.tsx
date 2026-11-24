@@ -1,12 +1,15 @@
-import CcBotPage from "@/components/CcBotPage";
+import CcBotPage, { ccBotMetadata } from "@/components/CcBotPage";
+
+export const metadata = ccBotMetadata({
+  title: "Política de privacidad",
+  description:
+    "Cómo CC Bot Tracker accede, utiliza, conserva y protege los datos de Gmail y Telegram.",
+  path: "/cc-bot/privacy",
+});
 
 export default function CcBotPrivacy() {
   return (
-    <CcBotPage
-      title="Política de privacidad"
-      description="Cómo CC Bot Tracker accede, utiliza, conserva y protege los datos de Gmail y Telegram."
-      path="/cc-bot/privacy"
-    >
+    <CcBotPage title="Política de privacidad">
       <p>Última actualización: 5 de noviembre de 2026.</p>
       <p>
         Esta política corresponde a CC Bot Tracker, una herramienta privada de

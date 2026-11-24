@@ -1,81 +1,49 @@
-import { keyframes, styled, Typography } from "@mui/material";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { LuDownload } from "react-icons/lu";
 
-const MainContainer = styled("footer")(() => ({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "12rem",
-  backgroundColor: "#011627",
-  margin: "4rem 0 1rem 0",
-}));
+import { contactData, siteData } from "@/utils/data";
 
-const FooterContent = styled("div")(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  gap: "1rem",
-  width: "420px",
-  [theme.breakpoints.down("lg")]: {
-    width: "268px%",
-  },
-  [theme.breakpoints.down("md")]: {
-    width: "248px",
-  },
-}));
+export default function Footer() {
+  const year = new Date().getFullYear();
 
-const pulseAnimation = keyframes`
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-`;
-
-const EmojiWrapper = styled("div")(({ theme }) => ({
-  display: "flex",
-  animation: `${pulseAnimation} 1.3s infinite`,
-  fontSize: "30px",
-  [theme.breakpoints.down("md")]: {
-    fontSize: "26px",
-  },
-}));
-
-const FooterTypography = styled(Typography)(({ theme }) => ({
-  fontSize: "15px",
-  color: "#8D8D8D",
-  fontStyle: "normal",
-  fontWeight: 300,
-  lineHeight: "22.5px",
-  letterSpacing: "0.15px",
-  textAlign: "center",
-  "& span": {
-    fontWeight: 400,
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "13px",
-  },
-}));
-
-const Footer = () => (
-  <MainContainer>
-    <FooterContent>
-      <FooterTypography>
-        Designed in <span>Figma</span>, coded in <span>VS Code</span> with{" "}
-        <span>NextJS/Typescript</span> & <span>MUI</span>, deployed in{" "}
-        <span>Vercel</span>.
-      </FooterTypography>
-      <FooterTypography>{"w/<3"}</FooterTypography>
-      <EmojiWrapper>
-        <span role="img" aria-label="rocket">
-          🚀
-        </span>
-      </EmojiWrapper>
-    </FooterContent>
-  </MainContainer>
-);
-
-export default Footer;
+  return (
+    <footer id="contact" className="border-t border-line">
+      <div className="mx-auto flex max-w-[1200px] flex-col gap-10 px-6 pt-24 pb-12">
+        <h2 className="max-w-[16ch] font-display text-[clamp(36px,6vw,80px)] leading-none font-semibold tracking-[-0.035em]">
+          Have a frontend role in mind? Let’s talk.
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={siteData.resumeUrl}
+            className="inline-flex items-center gap-2 rounded-full bg-fg px-6 py-3.5 font-semibold text-bg transition-opacity hover:opacity-90"
+          >
+            <LuDownload aria-hidden="true" className="size-[18px]" />
+            Download CV
+          </a>
+          <a
+            href={contactData.linkedin}
+            className="inline-flex items-center gap-2 rounded-full border border-line-bright px-6 py-3.5 transition-colors hover:border-fg-3"
+          >
+            <FaLinkedin aria-hidden="true" className="size-[18px]" />
+            LinkedIn
+          </a>
+          <a
+            href={contactData.github}
+            className="inline-flex items-center gap-2 rounded-full border border-line-bright px-6 py-3.5 transition-colors hover:border-fg-3"
+          >
+            <FaGithub aria-hidden="true" className="size-[18px]" />
+            GitHub
+          </a>
+        </div>
+        <div className="flex flex-wrap justify-between gap-3 border-t border-line pt-8 text-[13px] text-muted">
+          <span>
+            © {year} {siteData.name} · {siteData.domainLabel}
+          </span>
+          <span className="font-mono">
+            Next.js · Tailwind · built with Claude Code
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
+}
