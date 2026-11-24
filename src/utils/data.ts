@@ -46,8 +46,7 @@ export const siteData = {
   languages: "English · Spanish",
   avatar: "/miguel-pixel-avatar-v2/navbar/miguel-head-256.png",
   avatarAlt: "Pixel-art portrait of Miguel",
-  resumeUrl:
-    "https://drive.google.com/file/d/1uLlEibcZCC1Ho1BRY5J-4auTdwg_d-DY/view?usp=drive_link",
+  resumeUrl: "/resume.pdf",
 };
 
 export const contactData = {

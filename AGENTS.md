@@ -10,6 +10,8 @@ Stack: Next.js 16 (**App Router**) + React 19 + TypeScript (strict) + Tailwind C
 - `npm run lint` — ESLint 9 flat config (`eslint.config.mjs`); **Prettier runs as an ESLint plugin and violations are errors** (no `.prettierrc` — Prettier defaults apply). `npx prettier --write src` fixes formatting.
 - `npm run build` — static export to `out/` (`output: "export"` in `next.config.ts`)
 - `npm run preview` — serves `out/` (`next start` does not work with static export)
+- `npm run resume` — renders `resume/cv.html` to `public/resume.pdf` with headless Chrome (macOS path by default; override with `CHROME_BIN`). The CV is one US Letter page: after editing, check the page count before committing. Keep its content consistent with `src/utils/data.ts`.
+- `npm run resume:docx` — builds the Word version from `resume/make-docx.js` into `resume/dist/` (git-ignored). Its text mirrors `resume/cv.html`: update both together.
 - No tests, no CI. Verify changes with `npm run lint` + `npm run build`, then look at the page (desktop and 390px mobile).
 
 ## Architecture
@@ -30,7 +32,6 @@ Stack: Next.js 16 (**App Router**) + React 19 + TypeScript (strict) + Tailwind C
 - `next.config.ts` sets `images.unoptimized` (required for static export) — `next/image` is fine to use but acts as a plain img.
 - Accessibility: icon-only links need `aria-label`; decorative icons get `aria-hidden="true"`; keep text contrast at AA on the dark background (`text-muted` is the lightest grey allowed for body copy).
 
-## Pending
+## Media notes
 
 - The CC Bot Tracker case study shows a real screen recording (`public/media/cc-bot-demo.{mp4,webm}` + poster) of a demo bot seeded with synthetic data (bot repo: `docs/DEMO.md`). `DemoVideo` only plays while on screen, never autoplays with reduced motion and has a pause button — keep those behaviours. Re-encode new recordings to ~600px wide, muted, H.264 + VP9, under ~1 MB each.
-- The resume button points to a Google Drive file (`siteData.resumeUrl`); swap to `/resume.pdf` once the updated CV is exported.
