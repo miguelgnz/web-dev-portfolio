@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Miguel González — Frontend Engineer — CV</title>
+    <meta name="author" content="Miguel González" />
+    <meta
+      name="description"
+      content="Frontend Engineer · React · Next.js · TypeScript · QA · AI-assisted development"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: Letter;
+        margin: 0.42in 0.55in;
+      }
+
+      :root {
+        --ink: #18181b;
+        --body: #3f3f46;
+        --muted: #71717a;
+        --rule: #e4e4e7;
+        --accent: #3451c7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      html,
+      body {
+        background: #fff;
+      }
+
+      body {
+        margin: 0;
+        color: var(--body);
+        font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+        font-size: 9.3pt;
+        line-height: 1.42;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* Header */
+      header {
+        padding-bottom: 10pt;
+        border-bottom: 1.5pt solid var(--ink);
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Space Grotesk", Inter, sans-serif;
+        font-size: 25pt;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .headline {
+        margin: 5pt 0 0;
+        color: var(--accent);
+        font-family: "Space Grotesk", Inter, sans-serif;
+        font-size: 11.5pt;
+        font-weight: 600;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2pt 0;
+        margin: 7pt 0 0;
+        padding: 0;
+        list-style: none;
+        color: var(--body);
+        font-size: 8.8pt;
+      }
+
+      .contact li + li::before {
+        content: "·";
+        margin: 0 6pt;
+        color: var(--muted);
+      }
+
+      /* Sections */
+      section {
+        margin-top: 12pt;
+      }
+
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 8pt;
+        margin: 0 0 6pt;
+        color: var(--accent);
+        font-size: 8.2pt;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h2::after {
+        content: "";
+        flex: 1;
+        height: 0.75pt;
+        background: var(--rule);
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .summary {
+        color: var(--body);
+      }
+
+      .summary strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      /* Skills */
+      .skills {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 2.5pt 12pt;
+        margin: 0;
+      }
+
+      .skills dt {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .skills dd {
+        margin: 0;
+      }
+
+      /* Roles */
+      .role {
+        break-inside: avoid;
+      }
+
+      .role + .role {
+        margin-top: 9pt;
+      }
+
+      .role-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12pt;
+      }
+
+      h3 {
+        margin: 0;
+        color: var(--ink);
+        font-size: 10.4pt;
+        font-weight: 600;
+      }
+
+      h3 .sep {
+        margin: 0 5pt;
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      h3 .title {
+        font-weight: 500;
+      }
+
+      .dates {
+        flex: none;
+        color: var(--muted);
+        font-size: 8.8pt;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .meta {
+        margin: 1pt 0 0;
+        color: var(--muted);
+        font-size: 8.8pt;
+      }
+
+      ul.bullets {
+        margin: 3pt 0 0;
+        padding-left: 11pt;
+      }
+
+      ul.bullets li {
+        padding-left: 2pt;
+      }
+
+      ul.bullets li + li {
+        margin-top: 1.5pt;
+      }
+
+      ul.bullets li::marker {
+        color: var(--accent);
+      }
+
+      .stack {
+        margin: 3pt 0 0;
+        color: var(--muted);
+        font-size: 8.6pt;
+      }
+
+      .stack b {
+        color: var(--body);
+        font-weight: 500;
+      }
+
+      /* Footer rows */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 24pt;
+      }
+
+      .two-col section {
+        margin-top: 10pt;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Miguel González</h1>
+      <p class="headline">
+        Frontend Engineer · React · Next.js · TypeScript · AI-assisted
+        development
+      </p>
+      <ul class="contact">
+        <li>Guatemala City · Remote</li>
+        <li><a href="mailto:mgx.gon@gmail.com">mgx.gon@gmail.com</a></li>
+        <li><a href="https://www.miguelgnz.dev">miguelgnz.dev</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/miguel-gnz/"
+            >linkedin.com/in/miguel-gnz</a
+          >
+        </li>
+        <li><a href="https://github.com/miguelgnz">github.com/miguelgnz</a></li>
+      </ul>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p class="summary">
+        Frontend Engineer with <strong>5+ years</strong> building production web
+        apps in financial services, healthcare and cybersecurity — from Figma to
+        API integration, tests and AWS delivery. Brings a
+        <strong>QA mindset</strong> from freelance testing across API, web and
+        mobile, and an <strong>AI-first workflow</strong> with Claude Code
+        (project memory, custom skills, subagents, MCP). Fluent English.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>
+            Vana<span class="sep">·</span
+            ><span class="title">Software Engineer</span>
+          </h3>
+          <span class="dates">Feb 2025 – Present</span>
+        </div>
+        <p class="meta">
+          Primary frontend engineer for three production collections apps used
+          by agents, supervisors and admins
+        </p>
+        <ul class="bullets">
+          <li>
+            Implemented the redesigned agent app from Figma: one customer view
+            for calls, payment reminders and outcomes.
+          </li>
+          <li>
+            Built supervisor dashboards (agent stats, status counts) and bulk
+            import/export of collection activity.
+          </li>
+          <li>
+            Created the supervisor app: Terraform for S3, CloudFront and
+            Cognito; GitHub Actions deploys and PR checks.
+          </li>
+          <li>
+            Shipped supervisor account and agency management in React,
+            TypeScript, TanStack Query and Ant Design.
+          </li>
+          <li>
+            Integrate REST APIs, write Jest unit tests and docs, and contribute
+            to technical decisions and sprint demos.
+          </li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>
+            Mekapal<span class="sep">·</span
+            ><span class="title">QA Engineer (Freelance)</span>
+          </h3>
+          <span class="dates">Sep 2026 – Present</span>
+        </div>
+        <p class="meta">
+          Remote · On-demand freight platform: API, web backoffice and
+          iOS/Android apps
+        </p>
+        <ul class="bullets">
+          <li>
+            Tested 40+ user stories to Done: auth, sessions, onboarding,
+            vehicles, zones, commissions, VAT and payouts.
+          </li>
+          <li>
+            Reported 29 defects and contract gaps (session revocation, account
+            enumeration, rate limiting); retested all.
+          </li>
+          <li>
+            Built a Claude Code QA workspace: six custom skills for test plans,
+            API evidence and Jira via Atlassian MCP.
+          </li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>
+            3Pillar Global<span class="sep">·</span
+            ><span class="title">Senior Software Engineer</span>
+          </h3>
+          <span class="dates">Apr 2022 – Sep 2024</span>
+        </div>
+        <ul class="bullets">
+          <li>
+            Cybersecurity portal: alert dashboards, ticket submission and user
+            management (React, TypeScript, GraphQL).
+          </li>
+          <li>
+            Healthcare: insurance-based obstetrics scheduling with a real-time
+            video SDK (Next.js, MUI, Jest).
+          </li>
+          <li>
+            Translated Figma designs into interfaces, integrated APIs and
+            shipped updates through GitHub Actions.
+          </li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>
+            Cognits<span class="sep">·</span
+            ><span class="title">Software Engineer</span>
+          </h3>
+          <span class="dates">Jun 2020 – Apr 2022</span>
+        </div>
+        <ul class="bullets">
+          <li>
+            Mobile and web banking apps for two banks (Colombia, Costa Rica),
+            both in production; balances and transfers.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <article class="role">
+        <div class="role-head">
+          <h3>
+            CC Bot Tracker<span class="sep">·</span
+            ><span class="title">Personal project, in production</span>
+          </h3>
+          <span class="dates">2026</span>
+        </div>
+        <ul class="bullets">
+          <li>
+            Private Telegram bot that imports bank purchase alerts from Gmail
+            and answers spending questions in Spanish.
+          </li>
+          <li>
+            Built in reviewed stages with Claude Code: Node.js, TypeScript,
+            PostgreSQL, OpenAI; 260+ tests; AWS Lightsail.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Frontend</dt>
+        <dd>
+          React, Next.js (App Router), TypeScript, JavaScript, HTML, CSS,
+          accessibility
+        </dd>
+        <dt>UI &amp; Data</dt>
+        <dd>
+          Tailwind CSS, Ant Design, Material UI, Styled Components, TanStack
+          Query, REST, GraphQL
+        </dd>
+        <dt>Testing &amp; QA</dt>
+        <dd>
+          Jest, React Testing Library, Vitest, Postman, API testing, test
+          planning, Jira
+        </dd>
+        <dt>Cloud &amp; Delivery</dt>
+        <dd>
+          AWS (S3, CloudFront, Cognito, Lightsail), Terraform, GitHub Actions,
+          Vercel, Git
+        </dd>
+        <dt>AI Engineering</dt>
+        <dd>
+          Claude Code (CLAUDE.md, skills, subagents, plan mode), MCP (Figma,
+          Atlassian, Postman), OpenCode, Copilot, OpenAI API
+        </dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Education &amp; Languages</h2>
+      <p>
+        <strong style="color: var(--ink)"
+          >Universidad Mariano Gálvez de Guatemala</strong
+        >
+        — Software Engineering, 2014 – 2019
+      </p>
+      <p>
+        <strong style="color: var(--ink)">Spanish</strong> — Native ·
+        <strong style="color: var(--ink)">English</strong> — Fluent,
+        professional communication with international teams
+      </p>
+    </section>
+  </body>
+</html>
