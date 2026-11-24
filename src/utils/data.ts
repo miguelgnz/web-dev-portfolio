@@ -188,6 +188,12 @@ type WorkflowStep = {
   description: string;
 };
 
+type Practice = {
+  label: string;
+  description: string;
+  items: { name: string; description: string; code?: boolean }[];
+};
+
 export const aiWorkflowData = {
   title: "How I work with AI",
   intro:
@@ -222,26 +228,59 @@ export const aiWorkflowData = {
         "Agent runs tests and lint; I review every diff before merge.",
     },
   ] satisfies WorkflowStep[],
-  practice: {
-    label: "In practice · Mekapal QA workspace",
-    description:
-      "I built a Claude Code workspace for my QA work: six custom skills cover the ticket lifecycle, the Atlassian MCP connects it to Jira, and every API check leaves redacted JSON evidence.",
-    skills: [
-      {
-        command: "/qa-ticket",
-        description: "test plan from acceptance criteria",
-      },
-      { command: "/api-test", description: "staging checks + saved evidence" },
-      {
-        command: "/bug-subtask",
-        description: "defect filed in Jira with repro steps",
-      },
-      {
-        command: "/doc-ticket · /uat",
-        description: "results and sign-off, after my approval",
-      },
-    ],
-  },
+  // Real setups, primary job first. `code: true` renders the name as a command.
+  practices: [
+    {
+      label: "In practice · Vana, full-time",
+      description:
+        "Claude Code is part of how I ship every day at Vana: new features for our collections apps, API integrations and screens built from Figma. I keep training my agents with project memory, custom skills and MCPs so they become more autonomous and efficient with every sprint.",
+      items: [
+        {
+          name: "Custom skills",
+          description: "create PRs, ship unstaged changes, verify before merge",
+        },
+        {
+          name: "Figma MCP",
+          description: "new screens built from the real designs",
+        },
+        {
+          name: "Postman MCP",
+          description: "API requests and contracts while integrating endpoints",
+        },
+        {
+          name: "Atlassian MCP",
+          description: "tickets documented in Jira as the work ships",
+        },
+      ],
+    },
+    {
+      label: "In practice · Mekapal QA workspace",
+      description:
+        "I built a Claude Code workspace for my QA work: six custom skills cover the ticket lifecycle, the Atlassian MCP connects it to Jira, and every API check leaves redacted JSON evidence.",
+      items: [
+        {
+          name: "/qa-ticket",
+          description: "test plan from acceptance criteria",
+          code: true,
+        },
+        {
+          name: "/api-test",
+          description: "staging checks + saved evidence",
+          code: true,
+        },
+        {
+          name: "/bug-subtask",
+          description: "defect filed in Jira with repro steps",
+          code: true,
+        },
+        {
+          name: "/doc-ticket · /uat",
+          description: "results and sign-off, after my approval",
+          code: true,
+        },
+      ],
+    },
+  ] satisfies Practice[],
   tools: [
     "Claude Code",
     "OpenCode",
