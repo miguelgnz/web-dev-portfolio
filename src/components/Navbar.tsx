@@ -4,7 +4,7 @@ import Link from "next/link";
 import { menuData } from "@/utils/data";
 
 const resumeUrl =
-  "https://drive.google.com/file/d/1n3tqOxS0pjagJod9XKcgnSvtOr81hha3/view?usp=sharing";
+  "https://drive.google.com/file/d/1uLlEibcZCC1Ho1BRY5J-4auTdwg_d-DY/view?usp=drive_link";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: "rgba(1, 22, 39, 0.82)",
@@ -129,7 +129,13 @@ const Navbar = () => {
     <StyledAppBar position="fixed">
       <Toolbar>
         <IdentityLink href="#home" aria-label="Back to home">
-          <Image alt="Miguel Gnz" src="/memoji.png" width={40} height={40} />
+          <Image
+            alt=""
+            src="/miguel-pixel-avatar-v2/navbar/miguel-head-128.png"
+            width={40}
+            height={40}
+            style={{ imageRendering: "pixelated" }}
+          />
           <IdentityName>Miguel Gnz</IdentityName>
         </IdentityLink>
 

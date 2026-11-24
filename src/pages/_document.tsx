@@ -13,9 +13,21 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <link rel="icon" href="/favicon.ico" sizes="any" />
-          <link rel="favicon" href="/favicon.ico" sizes="any" />
-          <link rel="apple-icon" href="/memoji.png" sizes="any" />
+          <link
+            rel="icon"
+            href="/miguel-pixel-avatar-v2/favicon/favicon.ico"
+            sizes="any"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            href="/miguel-pixel-avatar-v2/favicon/favicon-32.png"
+            sizes="32x32"
+          />
+          <link
+            rel="apple-touch-icon"
+            href="/miguel-pixel-avatar-v2/navbar/miguel-head-256.png"
+          />
         </Head>
         <body>
           <Main />
