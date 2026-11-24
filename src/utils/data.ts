@@ -154,6 +154,8 @@ type Project = {
   description: string;
   stack: string;
   image: string;
+  imageWidth: number;
+  imageHeight: number;
   imageAlt: string;
   liveUrl?: string;
   sourceUrl?: string;
@@ -166,8 +168,11 @@ export const projectsData = [
     description:
       "Responsive single-page site for a local tattoo studio: artists, featured work gallery, location and WhatsApp contact.",
     stack: "Next.js · TypeScript · MUI",
-    image: "/mdt.webp",
-    imageAlt: "Tattoo Studio site: featured art gallery",
+    image: "/mdt-full.webp",
+    imageWidth: 1120,
+    imageHeight: 4104,
+    imageAlt:
+      "Full-page preview of the Tattoo Studio site: hero, artist cards, studio story and featured art gallery",
     liveUrl: "https://mdt-ui.vercel.app",
     sourceUrl: "https://github.com/miguelgnz/mdt_ui",
   },

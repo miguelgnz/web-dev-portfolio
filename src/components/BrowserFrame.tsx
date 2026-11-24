@@ -1,15 +1,29 @@
+"use client";
+
 import Image from "next/image";
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
+import { useState } from "react";
+import { LuChevronLeft, LuChevronRight, LuPause, LuPlay } from "react-icons/lu";
 
 type BrowserFrameProps = {
   src: string;
   alt: string;
-  href?: string;
+  width: number;
+  height: number;
 };
 
-export default function BrowserFrame({ src, alt, href }: BrowserFrameProps) {
-  const content = (
-    <>
+// Browser window showing a full-page screenshot that scrolls slowly on a loop
+// (CSS `page-scroll` in globals.css). It pauses on hover and with the button,
+// and stays at the top for prefers-reduced-motion users.
+export default function BrowserFrame({
+  src,
+  alt,
+  width,
+  height,
+}: BrowserFrameProps) {
+  const [paused, setPaused] = useState(false);
+
+  return (
+    <div className="group flex flex-[1_1_460px] flex-col overflow-hidden rounded-[14px] border border-line-bright bg-surface-3 shadow-[0_24px_48px_rgba(0,0,0,0.45)]">
       <div className="flex items-center gap-3 border-b border-line-strong bg-[#1f1f23] px-3.5 py-2.5">
         <div aria-hidden="true" className="flex gap-1.5">
           <span className="size-[11px] rounded-full bg-[#ff5f57]" />
@@ -25,25 +39,27 @@ export default function BrowserFrame({ src, alt, href }: BrowserFrameProps) {
         <Image
           src={src}
           alt={alt}
-          fill
-          sizes="(min-width: 1024px) 560px, 100vw"
-          className="object-cover object-top"
+          width={width}
+          height={height}
+          sizes="(min-width: 1024px) 640px, 100vw"
+          data-paused={paused}
+          className="page-scroll absolute inset-0 size-full"
         />
+        <button
+          type="button"
+          onClick={() => setPaused((value) => !value)}
+          aria-label={
+            paused ? "Resume page preview scroll" : "Pause page preview scroll"
+          }
+          className="page-scroll-toggle absolute right-3 bottom-3 flex size-11 items-center justify-center rounded-full bg-bg/80 text-fg backdrop-blur transition-colors hover:bg-bg"
+        >
+          {paused ? (
+            <LuPlay aria-hidden="true" className="size-5" />
+          ) : (
+            <LuPause aria-hidden="true" className="size-5" />
+          )}
+        </button>
       </div>
-    </>
-  );
-
-  const frameClass =
-    "flex flex-[1_1_380px] flex-col overflow-hidden rounded-[14px] border border-line-bright bg-surface-3 shadow-[0_24px_48px_rgba(0,0,0,0.45)]";
-
-  return href ? (
-    <a
-      href={href}
-      className={`${frameClass} transition-transform hover:-translate-y-1`}
-    >
-      {content}
-    </a>
-  ) : (
-    <div className={frameClass}>{content}</div>
+    </div>
   );
 }

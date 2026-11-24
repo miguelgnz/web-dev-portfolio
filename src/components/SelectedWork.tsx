@@ -91,7 +91,8 @@ export default function SelectedWork() {
             <BrowserFrame
               src={project.image}
               alt={project.imageAlt}
-              href={project.liveUrl}
+              width={project.imageWidth}
+              height={project.imageHeight}
             />
             <div className="flex min-w-0 flex-[999_1_320px] flex-col gap-3">
               <p className="font-mono text-xs text-muted uppercase">
