@@ -270,6 +270,33 @@ type Experience = {
 
 export const experienceData = [
   {
+    company: "Vana",
+    role: "Software Engineer",
+    dates: "Feb 2025 — Present",
+    meta: "Full-time · Guatemala City",
+    current: true,
+    summary:
+      "Collections platform for overdue loan, credit card and installment accounts. I'm the primary frontend engineer for its three production apps, used by collection agents, supervisors and administrators.",
+    bullets: [
+      "Implemented the redesigned agent app from Figma, bringing all customer information into one view for collection calls, with payment reminders and contact-outcome recording.",
+      "Built supervisor dashboards for agent statistics and status counts, plus bulk import and export of collection activity records.",
+      "Created the supervisor app from scratch: repository, S3 + CloudFront + Cognito provisioned with Terraform, and GitHub Actions for deployments and unit-test checks on every pull request.",
+      "Shipped supervisor account creation, password changes and resets, and collection agency management.",
+      "Integrate APIs, write unit tests and documentation, and take part in technical decisions and sprint demos.",
+    ],
+    tags: [
+      "React",
+      "TypeScript",
+      "TanStack Query",
+      "Ant Design",
+      "Figma",
+      "Unit testing",
+      "Terraform",
+      "AWS",
+      "GitHub Actions",
+    ],
+  },
+  {
     company: "Mekapal",
     role: "QA Engineer",
     dates: "Sep 2026 — Present",
@@ -283,23 +310,6 @@ export const experienceData = [
       "Phase 1 alone: 120+ documented test cases with screenshots, recordings and API evidence attached in Jira.",
     ],
     tags: ["Postman", "Jira", "iOS", "Android", "Claude Code", "Atlassian MCP"],
-  },
-  {
-    company: "Vana",
-    role: "Software Engineer",
-    dates: "Feb 2025 — Present",
-    meta: "Guatemala City",
-    current: true,
-    summary:
-      "Primary frontend engineer for three production collections apps. Rebuilt the agent app from Figma, shipped supervisor dashboards with bulk import/export, and set up the supervisor repo with Terraform (S3, CloudFront, Cognito) and GitHub Actions.",
-    tags: [
-      "React",
-      "TypeScript",
-      "TanStack Query",
-      "Ant Design",
-      "Terraform",
-      "AWS",
-    ],
   },
   {
     company: "3Pillar Global",
