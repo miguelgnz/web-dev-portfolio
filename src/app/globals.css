@@ -92,3 +92,46 @@
     }
   }
 }
+
+/* Full-page screenshot that scrolls inside a fixed browser frame: holds at
+   the top, scrolls down, holds at the bottom, then returns. Paused on hover
+   or via the toggle; static (top of the page) with reduced motion. */
+@keyframes page-scroll {
+  0%,
+  8% {
+    object-position: 50% 0%;
+  }
+  78%,
+  86% {
+    object-position: 50% 100%;
+  }
+  100% {
+    object-position: 50% 0%;
+  }
+}
+
+@layer utilities {
+  .page-scroll {
+    object-fit: cover;
+    object-position: 50% 0%;
+  }
+
+  .page-scroll-toggle {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .page-scroll {
+      animation: page-scroll 28s ease-in-out infinite;
+    }
+
+    .page-scroll-toggle {
+      display: flex;
+    }
+
+    .group:hover .page-scroll,
+    .page-scroll[data-paused="true"] {
+      animation-play-state: paused;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import Reveal from "@/components/Reveal";
 import { aiWorkflowData } from "@/utils/data";
 
 export default function AiWorkflow() {
-  const { title, intro, steps, practice, tools } = aiWorkflowData;
+  const { title, intro, steps, practices, tools } = aiWorkflowData;
 
   return (
     <section
@@ -41,24 +41,32 @@ export default function AiWorkflow() {
           })}
         </ol>
 
-        <Reveal>
-          <div className="flex flex-col gap-4 rounded-2xl border border-line-strong bg-bg p-7">
-            <p className="font-mono text-xs text-accent uppercase">
-              {practice.label}
-            </p>
-            <p className="max-w-[80ch] text-fg-3">{practice.description}</p>
-            <dl className="grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
-              {practice.skills.map((skill) => (
-                <div key={skill.command}>
-                  <dt>
-                    <code className="font-mono">{skill.command}</code>
-                  </dt>
-                  <dd className="text-muted">{skill.description}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </Reveal>
+        <div className="flex flex-col gap-4">
+          {practices.map((practice) => (
+            <Reveal key={practice.label}>
+              <div className="flex flex-col gap-4 rounded-2xl border border-line-strong bg-bg p-7">
+                <p className="font-mono text-xs text-accent uppercase">
+                  {practice.label}
+                </p>
+                <p className="max-w-[80ch] text-fg-3">{practice.description}</p>
+                <dl className="grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
+                  {practice.items.map((item) => (
+                    <div key={item.name}>
+                      <dt>
+                        {"code" in item && item.code ? (
+                          <code className="font-mono">{item.name}</code>
+                        ) : (
+                          <span className="font-medium">{item.name}</span>
+                        )}
+                      </dt>
+                      <dd className="text-muted">{item.description}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </Reveal>
+          ))}
+        </div>
 
         <ul className="flex flex-wrap gap-2 text-[13px]">
           {tools.map((tool) => (

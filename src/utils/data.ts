@@ -46,8 +46,7 @@ export const siteData = {
   languages: "English · Spanish",
   avatar: "/miguel-pixel-avatar-v2/navbar/miguel-head-256.png",
   avatarAlt: "Pixel-art portrait of Miguel",
-  resumeUrl:
-    "https://drive.google.com/file/d/1uLlEibcZCC1Ho1BRY5J-4auTdwg_d-DY/view?usp=drive_link",
+  resumeUrl: "/resume.pdf",
 };
 
 export const contactData = {
@@ -86,8 +85,6 @@ type ArchitectureNode = {
   detail: string;
   emphasis?: "accent" | "optional";
 };
-
-type ChatMessage = { from: "me" | "bot"; text: string };
 
 export const caseStudyData = {
   title: "CC Bot Tracker",
@@ -136,21 +133,18 @@ export const caseStudyData = {
       emphasis: "optional",
     },
   ] satisfies ArchitectureNode[],
-  // Illustrative conversation with sample data — replace with the screen recording.
-  chat: [
-    { from: "me", text: "/ciclo" },
-    {
-      from: "bot",
-      text: "Ciclo actual · cierra 25 nov\nTotal: Q 3,482.10\n18 compras\nPago esperado: 15 dic",
-    },
-    { from: "me", text: "/compras de hoy" },
-    {
-      from: "bot",
-      text: "Hoy · 2 compras\nSupermercado · Q 214.35\nGasolinera · Q 300.00",
-    },
-    { from: "me", text: "¿cuánto gasté en gasolina este mes?" },
-  ] satisfies ChatMessage[],
-  chatCaption: "Illustrative demo · sample data",
+  // Screen recording of a dedicated demo bot seeded with synthetic purchases
+  // (see docs/DEMO.md in the bot repository).
+  video: {
+    mp4: "/media/cc-bot-demo.mp4",
+    webm: "/media/cc-bot-demo.webm",
+    poster: "/media/cc-bot-demo-poster.jpg",
+    width: 600,
+    height: 1224,
+    label:
+      "Screen recording of the Telegram bot answering /ciclo, /compras de hoy, “¿Cuánto gasté hoy?” and /compras Gasolinera with cycle totals and purchase lists",
+    caption: "Real recording · demo bot with synthetic data",
+  },
 };
 
 type Project = {
@@ -159,6 +153,8 @@ type Project = {
   description: string;
   stack: string;
   image: string;
+  imageWidth: number;
+  imageHeight: number;
   imageAlt: string;
   liveUrl?: string;
   sourceUrl?: string;
@@ -169,10 +165,13 @@ export const projectsData = [
     title: "Tattoo Studio SPA",
     label: "Client work · Live",
     description:
-      "Responsive single-page site for a local tattoo studio: artists, featured work gallery, location and WhatsApp contact.",
+      "Responsive single-page site for a local tattoo studio, redesigned in 2026: artists with work sliders, featured gallery, booking info, login and WhatsApp contact.",
     stack: "Next.js · TypeScript · MUI",
-    image: "/mdt.png",
-    imageAlt: "Tattoo Studio site: featured art gallery",
+    image: "/mdt-full.webp",
+    imageWidth: 1120,
+    imageHeight: 5176,
+    imageAlt:
+      "Full-page preview of the redesigned Tattoo Studio site: hero, process, artists, studio, featured art and contact",
     liveUrl: "https://mdt-ui.vercel.app",
     sourceUrl: "https://github.com/miguelgnz/mdt_ui",
   },
@@ -187,6 +186,12 @@ type WorkflowStep = {
   step: string;
   title: string;
   description: string;
+};
+
+type Practice = {
+  label: string;
+  description: string;
+  items: { name: string; description: string; code?: boolean }[];
 };
 
 export const aiWorkflowData = {
@@ -223,26 +228,59 @@ export const aiWorkflowData = {
         "Agent runs tests and lint; I review every diff before merge.",
     },
   ] satisfies WorkflowStep[],
-  practice: {
-    label: "In practice · Mekapal QA workspace",
-    description:
-      "I built a Claude Code workspace for my QA work: six custom skills cover the ticket lifecycle, the Atlassian MCP connects it to Jira, and every API check leaves redacted JSON evidence.",
-    skills: [
-      {
-        command: "/qa-ticket",
-        description: "test plan from acceptance criteria",
-      },
-      { command: "/api-test", description: "staging checks + saved evidence" },
-      {
-        command: "/bug-subtask",
-        description: "defect filed in Jira with repro steps",
-      },
-      {
-        command: "/doc-ticket · /uat",
-        description: "results and sign-off, after my approval",
-      },
-    ],
-  },
+  // Real setups, primary job first. `code: true` renders the name as a command.
+  practices: [
+    {
+      label: "In practice · Vana, full-time",
+      description:
+        "Claude Code is part of how I ship every day at Vana: new features for our collections apps, API integrations and screens built from Figma. I keep training my agents with project memory, custom skills and MCPs so they become more autonomous and efficient with every sprint.",
+      items: [
+        {
+          name: "Custom skills",
+          description: "create PRs, ship unstaged changes, verify before merge",
+        },
+        {
+          name: "Figma MCP",
+          description: "new screens built from the real designs",
+        },
+        {
+          name: "Postman MCP",
+          description: "API requests and contracts while integrating endpoints",
+        },
+        {
+          name: "Atlassian MCP",
+          description: "tickets documented in Jira as the work ships",
+        },
+      ],
+    },
+    {
+      label: "In practice · Mekapal QA workspace",
+      description:
+        "I built a Claude Code workspace for my QA work: six custom skills cover the ticket lifecycle, the Atlassian MCP connects it to Jira, and every API check leaves redacted JSON evidence.",
+      items: [
+        {
+          name: "/qa-ticket",
+          description: "test plan from acceptance criteria",
+          code: true,
+        },
+        {
+          name: "/api-test",
+          description: "staging checks + saved evidence",
+          code: true,
+        },
+        {
+          name: "/bug-subtask",
+          description: "defect filed in Jira with repro steps",
+          code: true,
+        },
+        {
+          name: "/doc-ticket · /uat",
+          description: "results and sign-off, after my approval",
+          code: true,
+        },
+      ],
+    },
+  ] satisfies Practice[],
   tools: [
     "Claude Code",
     "OpenCode",

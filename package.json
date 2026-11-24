@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint .",
-    "preview": "npx serve out"
+    "preview": "npx serve out",
+    "resume": "bash resume/build.sh",
+    "resume:docx": "node resume/make-docx.js"
   },
   "dependencies": {
     "next": "16.4.6",
@@ -19,6 +21,7 @@
     "@types/node": "22.19.1",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.2.3",
+    "docx": "9.5.1",
     "eslint": "9.39.5",
     "eslint-config-next": "16.4.6",
     "eslint-config-prettier": "10.1.8",
