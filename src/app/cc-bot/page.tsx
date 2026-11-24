@@ -1,13 +1,16 @@
 import Link from "next/link";
-import CcBotPage from "@/components/CcBotPage";
+import CcBotPage, { ccBotMetadata } from "@/components/CcBotPage";
+
+export const metadata = ccBotMetadata({
+  title: "CC Bot Tracker",
+  description:
+    "Bot privado de Telegram para consultar compras de tarjeta y registrar gastos personales.",
+  path: "/cc-bot",
+});
 
 export default function CcBotHome() {
   return (
-    <CcBotPage
-      title="CC Bot Tracker"
-      description="Bot privado de Telegram para consultar compras de tarjeta y registrar gastos personales."
-      path="/cc-bot"
-    >
+    <CcBotPage title="CC Bot Tracker">
       <p>
         CC Bot Tracker es una herramienta de uso personal desarrollada y
         administrada por Miguel González. Permite consultar compras de tarjeta

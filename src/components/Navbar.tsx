@@ -1,161 +1,66 @@
-import { AppBar, Box, Toolbar, Typography, styled } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
-import { menuData } from "@/utils/data";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { LuDownload } from "react-icons/lu";
 
-const resumeUrl =
-  "https://drive.google.com/file/d/1uLlEibcZCC1Ho1BRY5J-4auTdwg_d-DY/view?usp=drive_link";
+import { contactData, navItems, siteData } from "@/utils/data";
 
-const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: "rgba(1, 22, 39, 0.82)",
-  borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
-  boxShadow: "none",
-  backdropFilter: "blur(14px)",
-  "& .MuiToolbar-root": {
-    minHeight: "72px",
-    justifyContent: "space-between",
-    gap: "32px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    "& .MuiToolbar-root": {
-      minHeight: "64px",
-      gap: "14px",
-    },
-  },
-}));
-
-const IdentityLink = styled(Link)({
-  display: "inline-flex",
-  alignItems: "center",
-  flexShrink: 0,
-  gap: "12px",
-  color: "#FFFFFF",
-  textDecoration: "none",
-});
-
-const IdentityName = styled(Typography)(({ theme }) => ({
-  color: "#D9D9D9",
-  fontSize: "13px",
-  letterSpacing: "1px",
-  textTransform: "uppercase",
-  [theme.breakpoints.down("sm")]: {
-    display: "none",
-  },
-}));
-
-const Navigation = styled("nav")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  gap: "28px",
-  marginLeft: "auto",
-  [theme.breakpoints.down("md")]: {
-    display: "none",
-  },
-}));
-
-const SectionLink = styled(Link)(({ theme }) => ({
-  position: "relative",
-  color: "#8D8D8D",
-  fontSize: "12px",
-  letterSpacing: "0.8px",
-  textDecoration: "none",
-  transition: "color 0.2s ease",
-  "&::after": {
-    position: "absolute",
-    right: 0,
-    bottom: "-7px",
-    left: 0,
-    height: "1px",
-    backgroundColor: theme.palette.primary.main,
-    transform: "scaleX(0)",
-    transformOrigin: "right",
-    transition: "transform 0.2s ease",
-  },
-  "&:hover": {
-    color: theme.palette.primary.main,
-    "&::after": {
-      transform: "scaleX(1)",
-      transformOrigin: "left",
-    },
-  },
-}));
-
-const RightActions = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  gap: "20px",
-  flexShrink: 0,
-  [theme.breakpoints.down("sm")]: {
-    gap: "10px",
-  },
-}));
-
-const ResumeLink = styled(Link)(({ theme }) => ({
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minWidth: "104px",
-  height: "34px",
-  padding: "0 15px",
-  border: `1px solid ${theme.palette.primary.main}`,
-  borderRadius: "3px",
-  color: theme.palette.primary.main,
-  fontSize: "11px",
-  letterSpacing: "1px",
-  textDecoration: "none",
-  transition: "background-color 0.2s ease, color 0.2s ease",
-  "&:hover": {
-    backgroundColor: theme.palette.primary.main,
-    color: "#011627",
-  },
-  "&:focus-visible": {
-    outline: `2px solid ${theme.palette.secondary.main}`,
-    outlineOffset: "4px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    minWidth: "88px",
-    height: "32px",
-    padding: "0 12px",
-    fontSize: "10px",
-  },
-}));
-
-const Navbar = () => {
-  const visibleMenuItems = menuData.menu.items.filter(
-    (item) => item.text !== "Projects",
-  );
-
+export default function Navbar() {
   return (
-    <StyledAppBar position="fixed">
-      <Toolbar>
-        <IdentityLink href="#home" aria-label="Back to home">
+    <header className="sticky top-0 z-20 border-b border-line bg-bg/85 backdrop-blur-md">
+      <nav
+        aria-label="Main"
+        className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-3 px-6 py-3"
+      >
+        <a
+          href="#top"
+          className="flex items-center gap-2.5 font-display text-lg font-bold"
+        >
           <Image
+            src={siteData.avatar}
             alt=""
-            src="/miguel-pixel-avatar-v2/navbar/miguel-head-128.png"
-            width={40}
-            height={40}
-            style={{ imageRendering: "pixelated" }}
+            width={36}
+            height={36}
+            className="pixelated size-9"
+            priority
           />
-          <IdentityName>Miguel Gnz</IdentityName>
-        </IdentityLink>
+          miguelgnz<span className="text-muted">.dev</span>
+        </a>
 
-        <Navigation aria-label="Section navigation">
-          {visibleMenuItems.map((item) => (
-            <SectionLink key={item.id} href={item.url}>
-              {item.text}
-            </SectionLink>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-1 text-sm">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="hidden py-2.5 text-muted transition-colors hover:text-fg sm:inline-block"
+            >
+              {item.label}
+            </a>
           ))}
-        </Navigation>
-
-        <RightActions>
-          {/* <Availability>Open to opportunities</Availability> */}
-          <ResumeLink href={resumeUrl} target="_blank" rel="noreferrer">
-            RESUME
-          </ResumeLink>
-        </RightActions>
-      </Toolbar>
-    </StyledAppBar>
+          <div className="flex items-center">
+            <a
+              href={contactData.github}
+              aria-label="GitHub"
+              className="p-2.5 text-muted transition-colors hover:text-fg"
+            >
+              <FaGithub aria-hidden="true" className="size-5" />
+            </a>
+            <a
+              href={contactData.linkedin}
+              aria-label="LinkedIn"
+              className="p-2.5 text-muted transition-colors hover:text-fg"
+            >
+              <FaLinkedin aria-hidden="true" className="size-5" />
+            </a>
+          </div>
+          <a
+            href={siteData.resumeUrl}
+            className="inline-flex items-center gap-2 rounded-full border border-line-bright px-4 py-2.5 transition-colors hover:border-fg-3"
+          >
+            <LuDownload aria-hidden="true" className="size-4" />
+            Resume
+          </a>
+        </div>
+      </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}

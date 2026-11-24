@@ -1,357 +1,353 @@
-import { FaReact } from "react-icons/fa";
-import { IconType } from "react-icons";
+import type { IconType } from "react-icons";
+import { FaAws } from "react-icons/fa6";
 import {
-  SiMui,
-  SiTypescript,
-  SiJavascript,
-  SiGit,
+  LuBot,
+  LuCloud,
+  LuDatabase,
+  LuFileText,
+  LuListChecks,
+  LuMail,
+  LuMessageCircle,
+  LuRefreshCw,
+  LuShieldCheck,
+  LuSparkles,
+} from "react-icons/lu";
+import {
+  SiClaude,
+  SiGithubactions,
+  SiJest,
   SiNextdotjs,
-  SiNodedotjs,
-  SiExpress,
+  SiPostman,
+  SiReact,
+  SiReactquery,
   SiTailwindcss,
-  SiAntdesign,
+  SiTerraform,
+  SiTypescript,
+  SiVitest,
 } from "react-icons/si";
-import { SiClaudecode } from "react-icons/si";
-import { SiOpencode } from "react-icons/si";
-import { RiCopilotFill } from "react-icons/ri";
-import { FaAws } from "react-icons/fa";
 
-type Skill = {
-  id: number;
-  name: string;
+// ---------------------------------------------------------------------------
+// Site & profile
+// ---------------------------------------------------------------------------
+
+export const siteData = {
+  url: "https://www.miguelgnz.dev",
+  domainLabel: "miguelgnz.dev",
+  name: "Miguel González",
+  firstName: "Miguel",
+  lastName: "González",
+  role: "Frontend Engineer",
+  roleLine: "Frontend Engineer · QA · AI-assisted development",
+  tagline: "Frontend engineer with a QA mindset and an AI-first workflow.",
+  description:
+    "Miguel González — Frontend Engineer with 5+ years building production React and Next.js apps, a QA mindset and an AI-first workflow with Claude Code.",
+  availability: "Open to remote frontend roles",
+  location: "Guatemala City · GMT-6",
+  languages: "English · Spanish",
+  avatar: "/miguel-pixel-avatar-v2/navbar/miguel-head-256.png",
+  avatarAlt: "Pixel-art portrait of Miguel",
+  resumeUrl:
+    "https://drive.google.com/file/d/1uLlEibcZCC1Ho1BRY5J-4auTdwg_d-DY/view?usp=drive_link",
+};
+
+export const contactData = {
+  github: "https://github.com/miguelgnz",
+  githubHandle: "miguelgnz",
+  linkedin: "https://www.linkedin.com/in/miguel-gnz/",
+  linkedinHandle: "in/miguel-gnz",
+};
+
+export const navItems = [
+  { label: "Work", href: "#work" },
+  { label: "AI workflow", href: "#ai" },
+  { label: "Experience", href: "#experience" },
+];
+
+// ---------------------------------------------------------------------------
+// Highlights row (keep every number verifiable)
+// ---------------------------------------------------------------------------
+
+type Highlight = { value: string; label: string };
+
+export const highlightsData = [
+  { value: "5+", label: "years building for the web" },
+  { value: "3", label: "production apps owned at Vana" },
+  { value: "40+", label: "user stories QA’d to Done at Mekapal" },
+  { value: "260+", label: "automated tests in CC Bot Tracker" },
+] satisfies Highlight[];
+
+// ---------------------------------------------------------------------------
+// Selected work
+// ---------------------------------------------------------------------------
+
+type ArchitectureNode = {
   icon: IconType;
-  color?: string;
-};
-
-export const menuData = {
-  menu: {
-    items: [
-      {
-        id: 1,
-        text: "About",
-        url: "#about",
-      },
-      {
-        id: 2,
-        text: "Projects",
-        url: "#projects",
-      },
-      {
-        id: 3,
-        text: "Experience",
-        url: "#experience",
-      },
-    ],
-  },
-};
-
-export const heroData = {
-  nameTitle: "MIGUEL GNZ",
-  subtitle: "SOFTWARE ENGINEER",
-  intro: "Crafting stunning web experiences.",
-};
-
-type DescriptionSegment = {
-  text: string;
-  highlight?: boolean;
-};
-
-type CodeWindowEntry = {
-  key: string;
-  value: string | string[];
-};
-
-export const aboutData = {
-  description: [
-    [
-      { text: "As a " },
-      { text: "Web Developer", highlight: true },
-      {
-        text:
-          " with a solid background in modern web technologies, I specialize in crafting responsive, " +
-          "stateful and user-centric web applications. My experience spans across diverse high-impact projects in various " +
-          "industries where I have consistently delivered engaging and intuitive web experiences.",
-      },
-    ],
-    [
-      { text: "I am a self-driven and " },
-      { text: "quick learner", highlight: true },
-      {
-        text:
-          " who thrives in agile team environments, always eager to expand my knowledge " +
-          "and adapt to new challenges. My commitment to staying current with industry trends and best practices allows me to " +
-          "create innovative solutions that align with user needs and business goals.",
-      },
-    ],
-  ] satisfies DescriptionSegment[][],
-  codeWindow: {
-    fileName: "profile.ts",
-    variableName: "profile",
-    entries: [
-      { key: "name", value: "Miguel Gnz" },
-      { key: "role", value: "Software Engineer" },
-      { key: "company", value: "Vana" },
-      {
-        key: "stack",
-        value: ["ReactJS", "NextJS", "TypeScript", "AWS", "GitHub Actions"],
-      },
-      {
-        key: "AI Tools",
-        value: ["Claude Code", "GitHub Copilot", "Opencode"],
-      },
-    ] satisfies CodeWindowEntry[],
-  },
-  skills: [
-    {
-      id: 1,
-      name: "ReactJS",
-      icon: FaReact,
-      color: "#139ECA",
-    },
-    {
-      id: 2,
-      name: "NextJS",
-      icon: SiNextdotjs,
-      color: "#D9D9D9",
-    },
-    {
-      id: 3,
-      name: "TypeScript",
-      icon: SiTypescript,
-      color: "#007ACC",
-    },
-    {
-      id: 4,
-      name: "JavaScript",
-      icon: SiJavascript,
-      color: "#F7DF1E",
-    },
-    {
-      id: 5,
-      name: "Material UI",
-      icon: SiMui,
-      color: "#027FFE",
-    },
-    {
-      id: 6,
-      name: "Tailwind CSS",
-      icon: SiTailwindcss,
-      color: "#38B2AC",
-    },
-    {
-      id: 7,
-      name: "NodeJS",
-      icon: SiNodedotjs,
-      color: "#68A063",
-    },
-    {
-      id: 8,
-      name: "Express",
-      icon: SiExpress,
-      color: "#FFF",
-    },
-    {
-      id: 9,
-      name: "Git",
-      icon: SiGit,
-      color: "#F05032",
-    },
-    {
-      id: 10,
-      name: "Claude Code",
-      icon: SiClaudecode,
-      color: "#F05032",
-    },
-    {
-      id: 11,
-      name: "Copilot",
-      icon: RiCopilotFill,
-      color: "#fff",
-    },
-    {
-      id: 12,
-      name: "Ant Design",
-      icon: SiAntdesign,
-      color: "#0170FE",
-    },
-    {
-      id: 13,
-      name: "Opencode",
-      icon: SiOpencode,
-      color: "#fff",
-    },
-    {
-      id: 14,
-      name: "AWS",
-      icon: FaAws,
-      color: "#FF9900",
-    },
-  ] satisfies Skill[],
-};
-
-type Experience = {
   title: string;
-  company: string;
-  url: string;
-  startDate: string;
-  endDate: string;
-  description: string;
-  skills: string[];
+  detail: string;
+  emphasis?: "accent" | "optional";
 };
 
-export const experienceData = [
-  {
-    title: "Software Engineer",
-    company: "Vana",
-    url: "https://www.vana.gt/",
-    startDate: "Feb 2025",
-    endDate: "Present",
-    description:
-      "Directly contributing to the frontend of various collection systems, where I implemented and " +
-      "consumed APIs, built responsive user interfaces, and styled components following modern design " +
-      "practices. I managed deployment environments through GitHub Actions, configuring CI/CD pipelines " +
-      "to streamline delivery and ensure reliable releases. Leveraged AI-assisted coding tools such as " +
-      "Claude Code to accelerate development workflows and uphold code quality. Integrated AWS cloud " +
-      "services including Lambda and DynamoDB to support scalable, serverless architectures.",
-    skills: [
-      "ReactJS",
-      "NextJS",
-      "TypeScript",
-      "React Query",
-      "Github Actions",
-      "CI/CD",
-      "Claude Code",
-      "Ant Design",
-      "AWS S3",
-      "AWS Cloudfront",
-      "AWS Lambda",
-      "AWS DynamoDB",
-    ],
-  },
-  {
-    title: "Senior Software Engineer",
-    company: "3Pillar Global",
-    url: "https://www.3pillarglobal.com/",
-    startDate: "Apr 2022",
-    endDate: "Sep 2024",
-    description:
-      "Contributing to distinct projects for different clients, involving the development of a cybersecurity portal, " +
-      "where I harnessed the power of Typescript and React to create a robust and secure user interface. In another " +
-      "engagement within the healthcare industry, I worked with Next.js, MUI, and Typescript, delivering seamless and " +
-      "user-friendly web solutions tailored to the unique demands of this sector. ",
-    skills: [
-      "ReactJS",
-      "NextJS",
-      "TypeScript",
-      "GraphQL",
-      "MUI",
-      "Styled Components",
-    ],
-  },
-  {
-    title: "Software Engineer",
-    company: "Cognits",
-    url: "https://cognits.co/",
-    startDate: "Jun 2020",
-    endDate: "Apr 2022",
-    description:
-      "Played a pivotal role in shaping digital solutions for the banking industry. I undertook several projects that involved interfacing with banking core systems through API consumption, effectively leveraging JavaScript to integrate critical financial data into user-friendly interfaces. I showcased my frontend skills by crafting responsive UIs using CSS, ensuring an optimal user experience.",
-    skills: ["Javascript", "REST API", "CSS Modules"],
-  },
-  {
-    title: "Software Technical Specialist",
-    company: "HCL Tech",
-    url: "https://www.hcltech.com/",
-    startDate: "Jun 2019",
-    endDate: "May 2020",
-    description:
-      "While my role was centered around the technical field of networking, primarily focusing on delivering intricate solutions for multifunctional printers from a renowned brand. I adeptly tackled the challenges of this niche by providing technical expertise and problem-solving skills to optimize printer functionality. I also delved into the world of software by working with native applications developed using JavaScript.",
-    skills: ["Networking", "CISCO", "Javascript"],
-  },
-  {
-    title: "Freelancer/Selft-taught",
-    company: "Freelancer",
-    url: "https://www.miguelgnz.com/",
-    startDate: "Jun 2016",
-    endDate: "Jan 2019",
-    description:
-      "During my journey as a Freelancer and self-taught enthusiast, I've dedicated substantial time to continuous learning and skill development. I've eagerly pursued courses and certifications across a spectrum of cutting-edge web technologies, ensuring that my knowledge remains current and adaptable. Moreover, I've embraced personal projects as valuable learning opportunities, allowing me to put theory into practice and gain hands-on experience.",
-    skills: [
-      "NextJS",
-      "Typescript",
-      "MUI",
-      "Figma",
-      "AWS S3",
-      "AWS Cloudfront",
-    ],
-  },
-] satisfies Experience[];
+type ChatMessage = { from: "me" | "bot"; text: string };
+
+export const caseStudyData = {
+  title: "CC Bot Tracker",
+  badges: ["Case study", "2026", "Private repo", "In production"],
+  summary:
+    "A private Telegram bot that reads bank purchase alerts from Gmail and answers spending questions in plain Spanish — by billing cycle, month, merchant or currency.",
+  process:
+    "I designed it in reviewed stages with Claude Code: each stage had a written plan, explicit limits and its own tests before moving on.",
+  facts: [
+    { label: "Role", value: "Design, build, test, deploy" },
+    {
+      label: "Stack",
+      value:
+        "Node 22, TypeScript, PostgreSQL 17, Telegram Bot API, Gmail API, OpenAI",
+    },
+    { label: "Infra", value: "AWS Lightsail, systemd, encrypted S3 backups" },
+    {
+      label: "Quality",
+      value: "260+ unit, database and HTTP tests · Postman collections",
+    },
+  ],
+  architecture: [
+    { icon: LuMail, title: "Gmail API", detail: "read-only OAuth" },
+    { icon: LuRefreshCw, title: "Sync worker", detail: "parse · dedupe" },
+    {
+      icon: LuDatabase,
+      title: "PostgreSQL 17",
+      detail: "purchases · cycles · budgets",
+      emphasis: "accent",
+    },
+    {
+      icon: LuMessageCircle,
+      title: "Telegram bot",
+      detail: "owner-only gate",
+    },
+    {
+      icon: LuSparkles,
+      title: "OpenAI",
+      detail: "optional NL queries",
+      emphasis: "optional",
+    },
+    {
+      icon: LuCloud,
+      title: "AWS",
+      detail: "Lightsail · S3 backups",
+      emphasis: "optional",
+    },
+  ] satisfies ArchitectureNode[],
+  // Illustrative conversation with sample data — replace with the screen recording.
+  chat: [
+    { from: "me", text: "/ciclo" },
+    {
+      from: "bot",
+      text: "Ciclo actual · cierra 25 nov\nTotal: Q 3,482.10\n18 compras\nPago esperado: 15 dic",
+    },
+    { from: "me", text: "/compras de hoy" },
+    {
+      from: "bot",
+      text: "Hoy · 2 compras\nSupermercado · Q 214.35\nGasolinera · Q 300.00",
+    },
+    { from: "me", text: "¿cuánto gasté en gasolina este mes?" },
+  ] satisfies ChatMessage[],
+  chatCaption: "Illustrative demo · sample data",
+};
 
 type Project = {
   title: string;
-  url: string;
-  sourceLink: string;
+  label: string;
   description: string;
+  stack: string;
   image: string;
-  skills: string[];
-  featured?: boolean;
+  imageAlt: string;
+  liveUrl?: string;
+  sourceUrl?: string;
 };
 
 export const projectsData = [
   {
-    title: "Trello Clone App",
-    url: "https://trello-clone-six-dun.vercel.app",
-    sourceLink: "https://github.com/miguelgnz/trello-clone-fe",
-    description:
-      "A clone of the popular project management tool Trello. The app allows users to create boards, lists, and cards, and manage tasks efficiently.",
-    image: "/trello_clone.jpg",
-    skills: ["NextJS", "React", "Typescript", "Tailwind CSS", "NextUI"],
-    featured: true,
-  },
-  {
     title: "Tattoo Studio SPA",
-    url: "https://mdt-ui.vercel.app",
-    sourceLink: "https://github.com/miguelgnz/mdt_ui",
+    label: "Client work · Live",
     description:
-      " Responsive single-page application for a local tattoo studio. The site provides comprehensive information about the studio and artists, showcases featured tattoos, and includes essential contact details. The design ensures a seamless experience across all devices.",
+      "Responsive single-page site for a local tattoo studio: artists, featured work gallery, location and WhatsApp contact.",
+    stack: "Next.js · TypeScript · MUI",
     image: "/mdt.png",
-    skills: ["NextJS", "React", "Typescript", "MUI"],
-    featured: true,
-  },
-  {
-    title: "Developer Connector",
-    url: "https://dev-connector-prj-fe.onrender.com/",
-    sourceLink: "https://github.com/miguelgnz/dev_connector_prj",
-    description:
-      "A MERN stack application, built while learning web technologies through an online course. Consist in a social media network for developers.",
-    image: "/devconnector.png",
-    skills: ["MongoDB", "Express", "ReactJS", "NodeJS"],
-  },
-  {
-    title: "Car Seller Landing Page",
-    url: "https://miguelgnz.github.io/autotradeprod/",
-    sourceLink: "https://github.com/miguelgnz/autotradeprod",
-    description:
-      "A dynamic and user-friendly single-page web application built using React.js, JavaScript, and CSS. It serves as an online showcase for a local car dealer, offering visitors easy access to vital information.",
-    image: "/autotrade.png",
-    skills: [
-      "Reactjs",
-      "Javascript",
-      "CSS Modules",
-      "AWS S3",
-      "AWS Cloudfront",
-    ],
+    imageAlt: "Tattoo Studio site: featured art gallery",
+    liveUrl: "https://mdt-ui.vercel.app",
+    sourceUrl: "https://github.com/miguelgnz/mdt_ui",
   },
 ] satisfies Project[];
 
-type Contact = {
-  linkedin: string;
-  github: string;
-  credly: string;
+// ---------------------------------------------------------------------------
+// AI workflow
+// ---------------------------------------------------------------------------
+
+type WorkflowStep = {
+  icon: IconType;
+  step: string;
+  title: string;
+  description: string;
 };
 
-export const contactData = {
-  linkedin: "https://www.linkedin.com/in/miguel-gnz/",
-  github: "https://github.com/miguelgnz",
-  credly: "https://www.credly.com/users/miguel-gonzalez.4e4d7660",
-} satisfies Contact;
+export const aiWorkflowData = {
+  title: "How I work with AI",
+  intro:
+    "I treat agents like a teammate who needs context and review. Each repo carries its own instructions, every change starts with a plan I approve, and nothing ships without tests and my eyes on the diff.",
+  steps: [
+    {
+      icon: LuFileText,
+      step: "01 Context",
+      title: "CLAUDE.md & AGENTS.md",
+      description:
+        "Architecture, commands, conventions and pitfalls written down for the agent.",
+    },
+    {
+      icon: LuListChecks,
+      step: "02 Plan",
+      title: "Plan mode & staged specs",
+      description:
+        "Scope agreed before code; big features split into reviewed stages.",
+    },
+    {
+      icon: LuBot,
+      step: "03 Build",
+      title: "Skills, subagents, MCPs",
+      description:
+        "Figma, Atlassian and Postman MCPs bring real designs and tickets in.",
+    },
+    {
+      icon: LuShieldCheck,
+      step: "04 Verify",
+      title: "Tests & review",
+      description:
+        "Agent runs tests and lint; I review every diff before merge.",
+    },
+  ] satisfies WorkflowStep[],
+  practice: {
+    label: "In practice · Mekapal QA workspace",
+    description:
+      "I built a Claude Code workspace for my QA work: six custom skills cover the ticket lifecycle, the Atlassian MCP connects it to Jira, and every API check leaves redacted JSON evidence.",
+    skills: [
+      {
+        command: "/qa-ticket",
+        description: "test plan from acceptance criteria",
+      },
+      { command: "/api-test", description: "staging checks + saved evidence" },
+      {
+        command: "/bug-subtask",
+        description: "defect filed in Jira with repro steps",
+      },
+      {
+        command: "/doc-ticket · /uat",
+        description: "results and sign-off, after my approval",
+      },
+    ],
+  },
+  tools: [
+    "Claude Code",
+    "OpenCode",
+    "GitHub Copilot",
+    "OpenAI API",
+    "MCP: Figma · Atlassian · Postman",
+    "Custom skills · Subagents",
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// Experience (array order = display order, newest first)
+// ---------------------------------------------------------------------------
+
+type Experience = {
+  company: string;
+  role: string;
+  dates: string;
+  meta: string;
+  current?: boolean;
+  summary: string;
+  bullets?: string[];
+  tags: string[];
+};
+
+export const experienceData = [
+  {
+    company: "Vana",
+    role: "Software Engineer",
+    dates: "Feb 2025 — Present",
+    meta: "Full-time · Guatemala City",
+    current: true,
+    summary:
+      "Collections platform for overdue loan, credit card and installment accounts. I'm the primary frontend engineer for its three production apps, used by collection agents, supervisors and administrators.",
+    bullets: [
+      "Implemented the redesigned agent app from Figma, bringing all customer information into one view for collection calls, with payment reminders and contact-outcome recording.",
+      "Built supervisor dashboards for agent statistics and status counts, plus bulk import and export of collection activity records.",
+      "Created the supervisor app from scratch: repository, S3 + CloudFront + Cognito provisioned with Terraform, and GitHub Actions for deployments and unit-test checks on every pull request.",
+      "Shipped supervisor account creation, password changes and resets, and collection agency management.",
+      "Integrate APIs, write unit tests and documentation, and take part in technical decisions and sprint demos.",
+    ],
+    tags: [
+      "React",
+      "TypeScript",
+      "TanStack Query",
+      "Ant Design",
+      "Figma",
+      "Unit testing",
+      "Terraform",
+      "AWS",
+      "GitHub Actions",
+    ],
+  },
+  {
+    company: "Mekapal",
+    role: "QA Engineer",
+    dates: "Sep 2026 — Present",
+    meta: "Freelance · Remote",
+    current: true,
+    summary:
+      "On-demand freight platform connecting customers with truck, car and motorcycle carriers for light, heavy and express loads. I test across the API, the web backoffice and the iOS/Android apps.",
+    bullets: [
+      "Tested 40+ user stories through to Done across two phases: auth and sessions, customer and carrier onboarding, vehicles, work zones, commissions, VAT and payout accounts.",
+      "Reported 29 defects and contract discrepancies, including session-revocation, account-enumeration and rate-limiting gaps, and retested every fix.",
+      "Phase 1 alone: 120+ documented test cases with screenshots, recordings and API evidence attached in Jira.",
+    ],
+    tags: ["Postman", "Jira", "iOS", "Android", "Claude Code", "Atlassian MCP"],
+  },
+  {
+    company: "3Pillar Global",
+    role: "Senior Software Engineer",
+    dates: "Apr 2022 — Sep 2024",
+    meta: "Cybersecurity · Healthcare",
+    summary:
+      "Cybersecurity portal (alert dashboards, tickets, user management) and healthcare scheduling with real-time video consultations.",
+    tags: ["React", "Next.js", "TypeScript", "GraphQL", "MUI"],
+  },
+  {
+    company: "Cognits",
+    role: "Software Engineer",
+    dates: "Jun 2020 — Apr 2022",
+    meta: "Banking",
+    summary:
+      "Mobile and web banking apps for two banks in Colombia and Costa Rica, both in production.",
+    tags: ["JavaScript", "REST APIs", "CSS Modules"],
+  },
+] satisfies Experience[];
+
+// ---------------------------------------------------------------------------
+// Stack
+// ---------------------------------------------------------------------------
+
+type StackItem = { name: string; icon: IconType };
+
+export const stackData = [
+  { name: "React", icon: SiReact },
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "TanStack Query", icon: SiReactquery },
+  { name: "Jest", icon: SiJest },
+  { name: "Vitest", icon: SiVitest },
+  { name: "Postman", icon: SiPostman },
+  { name: "AWS", icon: FaAws },
+  { name: "Terraform", icon: SiTerraform },
+  { name: "GitHub Actions", icon: SiGithubactions },
+  { name: "Claude Code", icon: SiClaude },
+] satisfies StackItem[];
