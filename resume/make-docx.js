@@ -260,7 +260,7 @@ const doc = new Document({
             bold: true,
             color: INK,
           }),
-          run(" — Software Engineering, 2014 – 2019"),
+          run(" — Systems Engineering (coursework completed), 2014 – 2019"),
         ]),
         plain([
           run("Spanish", { bold: true, color: INK }),
